@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+.footer {
+    background-color: #fff;
+    padding: 60px 0 20px;
+    border-top: 1px solid #eee;
+    font-family: 'Inter', sans-serif;
+    color: #555;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin-bottom: 30px;
+    min-width: 200px;
+}
+
+.logo-section {
+    flex: 1.5;
+    /* Give logo section a bit more space */
+    padding-right: 40px;
+}
+
+.footer-logo {
+    height: 60px;
+    /* Adjust to match navbar */
+    margin-bottom: 20px;
+}
+
+.footer-description {
+    line-height: 1.6;
+    font-size: 15px;
+    color: #333;
+}
+
+.footer-heading {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #666;
+    /* Light greyish text */
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #63a928;
+    /* Match brand color on hover */
+}
+
+/* Contact Section */
+.contact-section {
+    padding-left: 20px;
+    /* Increase distance from Legal section */
+    text-align: left;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.contact-icon {
+    color: #5d87ff;
+    /* Blue icon color as requested - similar to provided image */
+    margin-right: 12px;
+    /* Increased gap between icon and text */
+    font-size: 16px;
+    min-width: 20px;
+    /* Ensure alignment */
+    margin-top: 3px;
+    /* Align icon with the first line of text */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media screen and (max-width: 960px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .logo-section {
+        padding-right: 0;
+    }
+}
