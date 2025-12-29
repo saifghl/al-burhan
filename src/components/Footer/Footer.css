@@ -15,6 +15,7 @@
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
+    text-align: left;
 }
 
 .footer-section {
@@ -66,7 +67,7 @@
 }
 
 .footer-links a:hover {
-    color: #63a928;
+    color: #64A926;
     /* Match brand color on hover */
 }
 

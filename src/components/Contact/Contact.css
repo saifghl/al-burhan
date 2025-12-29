@@ -1,0 +1,190 @@
+.contact-page {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hero Section */
+.contact-hero {
+    background-color: #64A926;
+    /* Brand Green */
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    /* Reduced padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-hero-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #0D1B0D;
+    /* Changed to dark green/black */
+}
+
+.contact-hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+/* Main Container Wrapper */
+.contact-container-wrapper {
+    background-color: #f9fbf9;
+    /* Light background for contrast */
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contact Card */
+.contact-card {
+    background-color: #fff;
+    border: 3px solid #d4eecf;
+    /* Light green border as seen in image */
+    border-radius: 0px;
+    /* Looks rectangular in image */
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    overflow: hidden;
+    /* Ensure content stays inside */
+    padding: 60px 80px;
+    /* Increased padding */
+    gap: 60px;
+}
+
+/* Left Info Side */
+.contact-info {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.info-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #000;
+    text-align: left;
+    /* Explicitly left-aligned */
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.info-icon {
+    color: #000;
+    /* Icons look black/dark in image */
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.info-details strong {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 5px;
+    text-align: left;
+    /* Ensure left align */
+}
+
+.info-details p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #333;
+    margin: 0;
+    text-align: left;
+    /* Ensure left align */
+}
+
+/* Right Form Side */
+.contact-form-section {
+    flex: 1;
+    text-align: left;
+    /* Explicitly left-aligned */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.form-group input,
+.form-group textarea {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background-color: #f8fcf8;
+    /* Very light fill */
+    padding: 10px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: #64A926;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.btn-send {
+    background-color: #64A926;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-send:hover {
+    background-color: #4f881f;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .contact-card {
+        flex-direction: column;
+        padding: 20px;
+        gap: 40px;
+    }
+
+    .contact-hero-title {
+        font-size: 2.5rem;
+    }
+}

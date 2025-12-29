@@ -1,8 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Home from './pages/Home/Home';
+import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
+import Admission from './components/Admission/Admission';
+import Donation from './components/Donation/Donation';
+import Contact from './components/Contact/Contact';
 import './App.css';
 
 function App() {
@@ -16,9 +19,9 @@ function App() {
           <Route path="/about" element={<div style={{ padding: '50px', textAlign: 'center' }}>About Us Page</div>} />
           <Route path="/administration" element={<div style={{ padding: '50px', textAlign: 'center' }}>Administration Page</div>} />
           <Route path="/academics" element={<div style={{ padding: '50px', textAlign: 'center' }}>Academics Page</div>} />
-          <Route path="/admission" element={<div style={{ padding: '50px', textAlign: 'center' }}>Admission Page</div>} />
-          <Route path="/donation" element={<div style={{ padding: '50px', textAlign: 'center' }}>Donation Page</div>} />
-          <Route path="/contact" element={<div style={{ padding: '50px', textAlign: 'center' }}>Contact Page</div>} />
+          <Route path="/admission" element={<Admission />} />
+          <Route path="/donation" element={<Donation />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<div style={{ padding: '50px', textAlign: 'center' }}>Login Page</div>} />
         </Routes>
         <Footer />
