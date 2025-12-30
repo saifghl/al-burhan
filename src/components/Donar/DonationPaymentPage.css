@@ -1,0 +1,582 @@
+/* Page Layout */
+.payment-page {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+}
+
+.payment-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 30px 40px;
+}
+
+/* Header */
+.donation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-icon {
+    font-size: 24px;
+}
+
+.brand-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #6aa342;
+    /* Brand Green */
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-avatar img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.back-link-small {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+}
+
+.page-header-content h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 5px 0;
+}
+
+.page-header-content p {
+    font-size: 15px;
+    color: #666;
+    margin: 0 0 30px 0;
+}
+
+/* Split Layout */
+.payment-split-layout {
+    display: flex;
+    gap: 30px;
+}
+
+.payment-methods-section {
+    flex: 2;
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+}
+
+.payment-methods-section h3 {
+    margin: 0 0 25px 0;
+    font-size: 18px;
+}
+
+.summary-sidebar {
+    flex: 1;
+    min-width: 350px;
+}
+
+/* Payment Methods Tabs */
+.methods-container {
+    display: flex;
+    gap: 30px;
+    min-height: 400px;
+}
+
+.methods-sidebar {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-right: 1px solid #eee;
+    padding-right: 20px;
+}
+
+.method-tab {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    border: none;
+    background: none;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.method-tab:hover {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.method-tab.active {
+    background-color: #6aa342;
+    /* Green active state */
+    color: white;
+    font-weight: 600;
+}
+
+.method-content {
+    flex: 1;
+    padding-top: 5px;
+}
+
+/* Card Form */
+.card-form h4 {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input {
+    width: 95%;
+    /* Adjusted for icon space */
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    /* Green border for active? */
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #6c9c3e;
+    box-shadow: 0 0 0 3px rgba(108, 156, 62, 0.1);
+}
+
+.input-icon {
+    position: absolute;
+    right: 15px;
+    top: 38px;
+    color: #999;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+.info-tooltip {
+    background: #eee;
+    color: #666;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    margin-left: 5px;
+    cursor: help;
+}
+
+.save-card-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #666;
+}
+
+.security-note {
+    margin-top: 30px;
+    background-color: #f8fbf6;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #4caf50;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Summary Card */
+.summary-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+    margin-bottom: 20px;
+}
+
+/* UPI Form */
+.upi-form h4,
+.netbanking-form h4,
+.qr-form h4 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+}
+
+.method-desc {
+    font-size: 13px;
+    color: #666;
+    margin: 0 0 20px 0;
+}
+
+.verify-btn {
+    background-color: #6c9c3e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Net Banking */
+.bank-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.bank-option {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.bank-option:hover {
+    border-color: #6c9c3e;
+    background-color: #f9fff9;
+    color: #6c9c3e;
+}
+
+.bank-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: inherit;
+}
+
+/* QR Code */
+.qr-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.qr-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.qr-placeholder svg {
+    width: 64px;
+    height: 64px;
+    opacity: 0.2;
+}
+
+.qr-display p {
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.timer-badge {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.summary-card h3 {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+}
+
+.summary-org-header {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.summary-thumb {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.summary-org-details h4 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+}
+
+.org-category {
+    display: block;
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.verified-badge-small {
+    font-size: 11px;
+    color: #6c9c3e;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+}
+
+.breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.breakdown-row.success {
+    color: #4caf50;
+}
+
+.summary-total {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+}
+
+.total-value {
+    font-size: 24px;
+    color: #6aa342;
+    /* Bright green */
+}
+
+.final-pay-btn {
+    width: 100%;
+    background-color: #6aa342;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.final-pay-btn:hover {
+    background-color: #5a8e38;
+}
+
+.final-pay-btn:active {
+    transform: scale(0.98);
+}
+
+.terms-text {
+    font-size: 10px;
+    color: #999;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.payment-trust-logos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.trust-logo {
+    width: 40px;
+    height: 24px;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+/* Sadaqah Promo */
+.sadaqah-promo {
+    background-color: #eff7e9;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.promo-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.sadaqah-promo p {
+    font-size: 11px;
+    color: #555;
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+}
+
+.promo-btn {
+    background: none;
+    border: none;
+    color: #2e7d32;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .payment-split-layout {
+        flex-direction: column-reverse;
+        /* Stack Summary ON BOTTOM for flow, or top? User usually wants to see what they are paying for. But form is priority. Let's keep it standard. */
+    }
+
+    .methods-container {
+        flex-direction: column;
+    }
+
+    .methods-sidebar {
+        width: 100%;
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-right: 0;
+        padding-bottom: 15px;
+        overflow-x: auto;
+        gap: 15px;
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .methods-sidebar::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
+    }
+
+    .method-tab {
+        flex-shrink: 0;
+        white-space: nowrap;
+        background-color: #f8f9fa;
+        border: 1px solid #eee;
+    }
+
+    .method-tab.active {
+        background-color: #6aa342;
+        border-color: #6aa342;
+        color: white;
+    }
+
+    .summary-sidebar {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .payment-container {
+        padding: 15px;
+    }
+
+    .page-header-content h1 {
+        font-size: 24px;
+    }
+
+    .payment-methods-section,
+    .summary-card {
+        padding: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .final-pay-btn {
+        position: sticky;
+        bottom: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+}
