@@ -55,7 +55,7 @@ const Donation = () => {
                         </div>
                         <div className="info-note">
                             <FaInfoCircle className="info-icon" />
-                            <p>Zakat is 2.5% of your total savings. <a href="#">Calculate yours here.</a></p>
+                            <p>Zakat is 2.5% of your total savings. <span className="highlight-link" style={{ cursor: 'pointer', textDecoration: 'underline' }}>Calculate yours here.</span></p>
                         </div>
                     </div>
 

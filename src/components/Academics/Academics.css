@@ -1,0 +1,479 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.academics-page {
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- Hero Section --- */
+.academics-hero {
+    position: relative;
+    height: 85vh;
+    min-height: 500px;
+    background-size: 100% 100%;
+    /* Force full width and height */
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.academics-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(13, 27, 42, 0.7); Removed dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.academics-hero-content {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    /* Ensure it spans if flex doesn't strech */
+    margin: 0 auto;
+    /* Force centering horizontally */
+    padding: 0 20px;
+    color: #fff;
+    /* Ensure text is still visible if bg is dark enough naturally, or change if needed */
+    z-index: 1;
+}
+
+.academics-hero-top-label {
+    display: inline-block;
+    color: #64A926;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.academics-hero-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.academics-hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+}
+
+.academics-hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.academics-btn-download {
+    background-color: #64A926;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    /* Slightly rounded */
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Jost', sans-serif;
+    transition: background 0.3s;
+}
+
+.academics-btn-download:hover {
+    background-color: #538d1f;
+}
+
+.academics-btn-admissions {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 12px 40px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    transition: all 0.3s;
+}
+
+.academics-btn-admissions:hover {
+    background-color: #fff;
+    color: #0d1b2a;
+}
+
+/* --- Content Container --- */
+.academics-content-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+/* --- Curriculum Overview --- */
+.overview-section {
+    margin-bottom: 80px;
+}
+
+.overview-header-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+    /* Align with top of text */
+}
+
+.green-bar-marker {
+    width: 6px;
+    height: 60px;
+    /* Adjust height to match visual */
+    background-color: #64A926;
+    border-radius: 4px;
+}
+
+.overview-titles {
+    display: flex;
+    flex-direction: column;
+}
+
+.overview-main-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.overview-subtitle {
+    font-size: 1.1rem;
+    color: #64A926;
+    font-weight: 600;
+}
+
+.overview-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 1000px;
+    text-align: left;
+    /* Explicitly left align */
+}
+
+/* --- Intro Cards (Restored) --- */
+.academics-intro-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.academics-intro-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s;
+}
+
+.academics-intro-card:hover {
+    transform: translateY(-5px);
+}
+
+.blue-light-bg {
+    background-color: #e6f0ff;
+}
+
+.blue-icon {
+    color: #1a73e8;
+}
+
+
+/* --- Subjects Offered --- */
+.academics-section-centered {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 80px;
+}
+
+.academics-main-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.academics-section-subtitle {
+    color: #555;
+    font-size: 1rem;
+}
+
+.academics-subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+.academics-subject-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 35px 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s;
+}
+
+.academics-subject-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-span-center {
+    grid-column: 2 / 3;
+    /* Center the last odd item in 3 col grid */
+}
+
+.academics-icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.academics-icon {
+    /* Base icon style */
+}
+
+.academics-card-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.academics-card-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.green-light-bg {
+    background-color: #f0fdf4;
+    /* Match light green theme */
+}
+
+.green-icon {
+    color: #64A926;
+}
+
+
+/* --- Split Section (Methodology & Languages) --- */
+.academics-split-section {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 100px;
+    text-align: left;
+    /* Ensure entire section is left aligned */
+}
+
+.academics-methodology,
+.academics-languages {
+    flex: 1;
+}
+
+.academics-section-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #000;
+    text-align: left;
+}
+
+.academics-section-desc {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Timeline */
+.academics-timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid #eee;
+    text-align: left;
+}
+
+.academics-timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 30px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -36px;
+    /* Center on line */
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background-color: #64A926;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: 4px solid #fff;
+    /* White border to separate from line */
+    box-shadow: 0 0 0 1px #eee;
+    /* Optional outline */
+}
+
+.timeline-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.timeline-text {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Language Cards */
+.academics-lang-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.academics-lang-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #f9f9f9;
+    /* Default greyish */
+    text-align: left;
+}
+
+.lang-code {
+    font-weight: 800;
+    color: #1a73e8;
+    /* Blue for EN */
+    font-size: 1.2rem;
+}
+
+.lang-code-green {
+    font-weight: 800;
+    color: #64A926;
+    /* Green */
+    font-size: 1.2rem;
+}
+
+.lang-code-gold {
+    font-weight: 800;
+    color: #d4a017;
+    /* Gold/Yellow */
+    font-size: 1.2rem;
+}
+
+.lang-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.lang-text {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Lang Card Variants */
+.lang-en {
+    background-color: #f5f5f5;
+}
+
+.lang-ur {
+    background-color: #f0fdf4;
+    /* Light green */
+}
+
+.lang-ar {
+    background-color: #fffbf0;
+    /* Light yellow */
+}
+
+
+/* Responsive */
+@media screen and (max-width: 960px) {
+    .academics-subjects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-span-center {
+        grid-column: auto;
+        /* Reset */
+    }
+
+    .academics-split-section {
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .academics-subjects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .academics-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .academics-hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .academics-btn-download,
+    .academics-btn-admissions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .overview-main-title {
+        font-size: 1.6rem;
+    }
+}

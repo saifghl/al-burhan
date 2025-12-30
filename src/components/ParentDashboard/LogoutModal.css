@@ -1,0 +1,102 @@
+/* src/components/ParentDashboard/LogoutModal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: #9CA3AF;
+    cursor: pointer;
+}
+
+.modal-icon-green {
+    width: 60px;
+    height: 60px;
+    background: #DCFCE7;
+    /* Light green */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    color: #16A34A;
+    /* Green icon */
+    font-size: 1.5rem;
+}
+
+.modal-content h2 {
+    font-family: 'Jost', sans-serif;
+    margin: 0 0 10px;
+    color: #111827;
+    font-size: 1.5rem;
+}
+
+.modal-content p {
+    color: #6B7280;
+    font-size: 0.95rem;
+    margin: 0 0 25px;
+    line-height: 1.5;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.cancel-btn {
+    flex: 1;
+    background: white;
+    border: 1px solid #D1D5DB;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.logout-confirm-btn {
+    flex: 1;
+    background: #65A30D;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.cancel-btn:hover {
+    background: #F9FAFB;
+}
+
+.logout-confirm-btn:hover {
+    background: #4D7C0F;
+}

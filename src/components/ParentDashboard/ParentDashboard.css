@@ -1,0 +1,767 @@
+/* ParentDashboard.css */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.parent-dashboard {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F9FA;
+    min-height: 100vh;
+    padding-bottom: 80px;
+    /* Space for bottom nav */
+    color: #333;
+}
+
+/* Header */
+.pd-header {
+    background: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.pd-logo {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #64A926;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 30px;
+    /* Reduced size */
+    width: auto;
+}
+
+/* Assuming an icon similar to the logo in the image */
+.logo-icon::before {
+    content: "🕌";
+    margin-right: 5px;
+}
+
+.pd-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.header-profile img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.pd-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Student Profile Card */
+.student-profile-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.student-info-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.student-avatar-large img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #FF9F1C;
+    /* Orange border from design */
+}
+
+.student-details h2 {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.8rem;
+    margin: 0 0 5px;
+    color: #0d1b2a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-badge {
+    background: #E8F5E9;
+    color: #64A926;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.student-meta {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.student-meta .dot {
+    margin: 0 8px;
+    color: #ccc;
+}
+
+.student-info-right {
+    text-align: right;
+}
+
+.date-display h3 {
+    margin: 0 0 5px;
+    font-size: 1.2rem;
+    color: #0d1b2a;
+}
+
+.date-display p {
+    margin: 0;
+    color: #64A926;
+    font-weight: 500;
+}
+
+/* Grid System */
+.pd-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 Columns structure essentially */
+    gap: 20px;
+}
+
+.pd-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #0d1b2a;
+}
+
+.card-icon {
+    color: #64A926;
+}
+
+.status-text.success {
+    color: #64A926;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Attendance Card */
+.attendance-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.circular-progress {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(#64A926 92%, #ecf7e6 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.circular-progress::before {
+    content: "";
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+}
+
+.progress-value {
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0d1b2a;
+}
+
+.attendance-stats {
+    flex: 1;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.stat-row strong {
+    color: #0d1b2a;
+}
+
+.card-link {
+    display: inline-block;
+    color: #64A926;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.card-link.center {
+    display: block;
+    text-align: center;
+}
+
+/* Namaz Card */
+.namaz-card {
+    grid-column: span 1;
+}
+
+/* Specifically target namaz card to span 2 cols on tablet if needed, but per image it looks like a wide card or top row split? The image has Attendance | Namaz Tracker. Homework | Academics | Notices. Actually Namaz tracker is larger. */
+/* Let's fix grid: layout in image is: 
+Row 1: Profile (Full width)
+Row 2: Attendance (1/3), Namaz (2/3)
+Row 3: Homework (1/3), Academics (1/3), Notices (1/3) */
+
+/* Adjusting Grid for specific items */
+.pd-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.attendance-card {
+    grid-column: span 1;
+}
+
+.namaz-card {
+    grid-column: span 2;
+}
+
+/* Namaz Styling */
+.namaz-status-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background: #fdfdfd;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.namaz-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.namaz-item span {
+    font-size: 0.85rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.check-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.namaz-item.completed .check-circle {
+    background: #E8F5E9;
+    color: #64A926;
+}
+
+.namaz-item.pending .check-circle {
+    border: 2px solid #FF9F1C;
+}
+
+.namaz-item.future .check-circle {
+    border: 2px solid #EEE;
+}
+
+.consistency-wrapper {
+    margin-top: 15px;
+}
+
+.small-label {
+    font-size: 0.8rem;
+    color: #88F;
+    /* Greenish tone? Image says 'Weekly Consistency' in small green text */
+    color: #8BC34A;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.consistency-bars {
+    display: flex;
+    gap: 5px;
+}
+
+.bar {
+    height: 6px;
+    width: 30px;
+    border-radius: 3px;
+}
+
+.bar.filled {
+    background: #7CB342;
+}
+
+.bar.empty {
+    background: #E0E0E0;
+}
+
+
+/* Homework Card */
+.homework-card {
+    grid-column: span 1;
+}
+
+.homework-summary {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.hw-box {
+    flex: 1;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pending-box {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+.submitted-box {
+    background: #E3F2FD;
+    color: #1565C0;
+}
+
+.hw-box strong {
+    font-size: 1.5rem;
+    display: block;
+}
+
+.hw-box span {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.homework-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hw-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.hw-item:last-child {
+    border-bottom: none;
+}
+
+.hw-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.dot.orange {
+    background: #FF9F1C;
+}
+
+.hw-info h4 {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.due-date {
+    font-size: 0.8rem;
+    color: #64A926;
+}
+
+.arrow-icon {
+    color: #ccc;
+    font-size: 1.2rem;
+}
+
+/* Academics Card */
+.academics-card {
+    grid-column: span 1;
+}
+
+.status-badge.gray {
+    background: #F5F5F5;
+    color: #666;
+}
+
+.subjects-list {
+    margin-bottom: 20px;
+}
+
+.subject-item {
+    margin-bottom: 15px;
+}
+
+.subject-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.grade {
+    font-weight: 700;
+}
+
+.grade.success {
+    color: #64A926;
+}
+
+.grade.primary {
+    color: #1976D2;
+}
+
+.grade.warning {
+    color: #FF9F1C;
+}
+
+.progress-bar-bg {
+    height: 6px;
+    background: #F0F0F0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+}
+
+.progress-bar-fill.success {
+    background: #64A926;
+}
+
+.progress-bar-fill.primary {
+    background: #4285F4;
+}
+
+.progress-bar-fill.warning {
+    background: #FF9F1C;
+}
+
+.full-report-btn {
+    width: 100%;
+    background: #dcede3;
+    color: #558b2f;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.full-report-btn:hover {
+    background: #c3e6cb;
+}
+
+/* Notices Card */
+.notices-card {
+    grid-column: span 1;
+}
+
+.notices-list {
+    margin-bottom: 20px;
+}
+
+.notice-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.notice-tag {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    height: fit-content;
+    text-transform: uppercase;
+}
+
+.notice-tag.exam {
+    background: #E8F5E9;
+    color: #64A926;
+}
+
+.notice-tag.holiday {
+    background: #E3F2FD;
+    color: #1976D2;
+}
+
+.notice-content {
+    flex: 1;
+}
+
+.notice-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.notice-top h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.time {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+.notice-content p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Floating Bottom Nav */
+/* Floating Bottom Nav - Redesign */
+.pd-bottom-nav {
+    position: fixed;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2px;
+    /* Adjust gap to fit items comfortably */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: auto;
+    min-width: 320px;
+    /* Ensure enough width for all items */
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #333;
+    /* Darker for better contrast */
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    min-width: 60px;
+    flex-shrink: 0;
+    height: 60px;
+    /* Set specific height */
+}
+
+.nav-item svg {
+    font-size: 1.4rem;
+    /* Slightly larger, bolder icons */
+    color: #222;
+    transition: color 0.3s ease;
+}
+
+/* Active State - The Green Squircle */
+.nav-item.active {
+    background: #64A926;
+    color: #fff;
+    border-radius: 20px;
+    /* Squircle shape */
+    padding: 1px 2px;
+    /* Larger padding for the 'pop' effect */
+    box-shadow: 0 8px 20px rgba(100, 169, 38, 0.4);
+    transform: translateY(-5px);
+    /* Lift effect */
+    margin-top: -15px;
+    /* Creating that 'breaking out' look if needed, or just aligning centering */
+    margin-bottom: 5px;
+}
+
+/* Specific alignment to ensure the active item center aligns with others text-wise or container-wise */
+.pd-bottom-nav {
+    align-items: flex-end;
+    /* Align items to bottom so different heights grow upwards */
+    padding-bottom: 15px;
+}
+
+.nav-item.active svg {
+    color: #fff;
+}
+
+.nav-item:hover:not(.active) {
+    background-color: #f5f5f5;
+}
+
+/* Responsive */
+@media screen and (max-width: 960px) {
+    .pd-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .attendance-card,
+    .namaz-card,
+    .homework-card,
+    .academics-card,
+    .notices-card {
+        grid-column: span 1;
+    }
+
+    .student-profile-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .student-info-right {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .pd-header {
+        padding: 10px 15px;
+    }
+
+    .pd-logo {
+        font-size: 1.2rem;
+    }
+
+    .logo-img {
+        height: 25px;
+    }
+
+    .pd-container {
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+
+    .student-profile-card {
+        padding: 20px;
+    }
+
+    .student-avatar-large img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .student-details h2 {
+        font-size: 1.4rem;
+    }
+
+    .pd-card {
+        padding: 20px;
+    }
+
+    .card-header h3 {
+        font-size: 1rem;
+    }
+
+    /* Namaz row scrollable on very small screens */
+    .namaz-status-row {
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 15px;
+        padding-bottom: 10px;
+        /* Space for scrollbar if needed */
+    }
+
+    .namaz-item {
+        min-width: 60px;
+    }
+
+    .pd-bottom-nav {
+        width: 90%;
+        gap: 10px;
+        padding: 6px 15px;
+    }
+
+    .nav-item {
+        min-width: auto;
+        flex: 1;
+        padding: 6px 5px;
+    }
+
+    .nav-item span {
+        font-size: 0.65rem;
+    }
+}
