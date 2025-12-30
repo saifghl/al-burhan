@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useLayoutEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
@@ -136,6 +137,39 @@ function StudentLayout() {
       </div>
     </div>
   );
+=======
+import React, { useState } from 'react';
+import './App.css';
+import DonorSignup from './Component/Donar/DonorSignup';
+import DonorLogin from './Component/Donar/DonorLogin';
+import DonorForgotPassword from './Component/Donar/DonorForgotPassword';
+import DonorVerifyOtp from './Component/Donar/DonorVerifyOtp';
+
+function App() {
+  const [screen, setScreen] = useState('signup'); // signup | login | forgot | otp
+
+  const renderScreen = () => {
+    switch (screen) {
+      case 'login':
+        return (
+          <DonorLogin
+            onGoToSignup={() => setScreen('signup')}
+            onForgotPassword={() => setScreen('forgot')}
+            onLoginViaOtp={() => setScreen('otp')}
+          />
+        );
+      case 'forgot':
+        return <DonorForgotPassword />;
+      case 'otp':
+        return <DonorVerifyOtp />;
+      case 'signup':
+      default:
+        return <DonorSignup onGoToLogin={() => setScreen('login')} />;
+    }
+  };
+
+  return <div className="App">{renderScreen()}</div>;
+>>>>>>> Stashed changes
 }
 
 /* ConditionalLayout hides Navbar & Footer on /student routes AND dashboard routes */
