@@ -114,6 +114,26 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
+.mini-card-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 280px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+}
+
+.mini-card-link:hover {
+    transform: translateY(-3px);
+}
+
+
 .sc-header {
     display: flex;
     align-items: center;

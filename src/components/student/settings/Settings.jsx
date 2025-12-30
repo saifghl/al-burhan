@@ -1,5 +1,5 @@
 
-import React from 'react';
+import { Link } from 'react-router-dom';
 import './Settings.css';
 import { FaUser, FaShieldAlt, FaBell, FaGlobe, FaQuestionCircle, FaLock, FaSlidersH, FaFileAlt } from 'react-icons/fa';
 
@@ -105,13 +105,13 @@ const Settings = () => {
                             <FaShieldAlt className="mc-icon" />
                         </div>
 
-                        <div className="mini-card">
+                        <Link to="/student/settings/faq" className="mini-card-link">
                             <div className="mc-content">
                                 <h4>Help Center</h4>
                                 <p>Find FAQs regarding exams, grades, and technical issues.</p>
                             </div>
                             <FaQuestionCircle className="mc-icon" />
-                        </div>
+                        </Link>
                     </div>
 
                 </div>
