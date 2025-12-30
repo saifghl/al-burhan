@@ -68,7 +68,7 @@ const Sidebar = () => {
     { key: 'attendance', label: 'Attendance', to: '/student/attendance' },
     { key: 'results', label: 'Results', to: '/student/results' },
     { key: 'fees', label: 'Fees', to: '/student/fees' },
-    { key: 'activity', label: 'My Activities', to: '#' },
+    { key: 'activity', label: 'My Activities', to: '/student/activities' },
   ];
 
   return (
@@ -111,13 +111,13 @@ const Sidebar = () => {
               </Link>
             </li>
             <li>
-              <Link to="#" className="center-btn">
+              <Link to="/student/notifications" className="center-btn">
                 <span className="cicon"><Icon name="bell" /></span>
                 <span className="ctext">Notification</span>
               </Link>
             </li>
             <li>
-              <Link to="#" className="center-btn">
+              <Link to="/student/settings" className="center-btn">
                 <span className="cicon"><Icon name="gear" /></span>
                 <span className="ctext">Settings</span>
               </Link>
@@ -126,7 +126,9 @@ const Sidebar = () => {
         </div>
 
         <div className="sidebar-footer">
-          <button className="signout"><span className="signout-icon"><Icon name="logout" /></span> Sign Out</button>
+          <Link to="/student/logout" className="signout" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'center' }}>
+            <span className="signout-icon"><Icon name="logout" /></span> Sign Out
+          </Link>
         </div>
       </aside>
     </>

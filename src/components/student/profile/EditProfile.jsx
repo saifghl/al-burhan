@@ -1,6 +1,6 @@
 import React from 'react';
 import './EditProfile.css';
-import { FaTimes, FaSave, FaUserEdit } from 'react-icons/fa';
+import { FaTimes, FaSave, FaUserEdit, FaUsers } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 const EditProfile = () => {

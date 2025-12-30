@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
-import { FaBookOpen, FaBullhorn, FaCheckCircle, FaClock, FaUserGraduate } from 'react-icons/fa';
+import { FaBookOpen, FaBullhorn, FaCheckCircle, FaClock, FaUserGraduate, FaLock } from 'react-icons/fa';
 
 const AttendanceDonut = ({ percent = 92, size = 120, stroke = 12 }) => {
   const radius = (size - stroke) / 2;
@@ -34,6 +34,20 @@ const AttendanceDonut = ({ percent = 92, size = 120, stroke = 12 }) => {
 };
 
 const Home = () => {
+  const [prayers, setPrayers] = useState([
+    { name: 'Fajr', time: '05:15 AM', completed: true },
+    { name: 'Dhuhr', time: '12:30 PM', completed: true },
+    { name: 'Asr', time: '03:45 PM', completed: false },
+    { name: 'Maghrib', time: '06:10 PM', completed: false },
+    { name: 'Isha', time: '07:45 PM', completed: false }
+  ]);
+
+  const togglePrayer = (index) => {
+    const updated = [...prayers];
+    updated[index].completed = !updated[index].completed;
+    setPrayers(updated);
+  };
+
   return (
     <div className="student-home">
       {/* Header Section */}
@@ -72,12 +86,21 @@ const Home = () => {
           <span className="upcoming-prayer">Next: Asr at 3:45 PM</span>
         </div>
         <div className="prayers-list">
-          {['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'].map((p, i) => (
-            <div key={p} className={`prayer-box ${i === 2 ? 'active' : ''}`}>
-              <div className="p-time">{i === 0 ? '05:15 AM' : i === 1 ? '12:30 PM' : i === 2 ? '03:45 PM' : i === 3 ? '06:10 PM' : '07:45 PM'}</div>
-              <div className="p-name">{p}</div>
+          {prayers.map((p, i) => (
+            <div
+              key={p.name}
+              className={`prayer-box ${p.completed ? 'active' : ''}`}
+              onClick={() => togglePrayer(i)}
+              style={{ cursor: 'pointer' }}
+            >
+              <div className="p-time">{p.time}</div>
+              <div className="p-name">{p.name}</div>
               <div className="p-status">
-                {i < 2 ? <FaCheckCircle className="status-icon done" /> : i === 2 ? <span className="status-icon empty" /> : <span className="status-icon lock" />}
+                {p.completed ? (
+                  <FaCheckCircle className="status-icon done" />
+                ) : (
+                  <div className="status-icon empty" style={{ borderColor: '#ccc' }}></div>
+                )}
               </div>
             </div>
           ))}

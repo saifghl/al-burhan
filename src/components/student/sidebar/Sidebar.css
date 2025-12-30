@@ -92,12 +92,10 @@
 }
 
 /* Center actions */
-/* compact and left-aligned to match Figma */
 .sidebar-center {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-top: 8px
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
 }
 
 .center-actions {
@@ -106,56 +104,80 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  align-items: flex-start
+  gap: 10px;
 }
 
 .center-btn {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  color: #2b2b2b;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: all 0.2s;
+  font-weight: 600;
+  font-size: 15px;
+  /* Match nav link size */
+}
+
+.center-btn:hover {
+  background: rgba(100, 169, 38, 0.06);
   color: var(--primary);
-  padding: 6px 8px;
-  border-radius: 8px
+  transform: translateX(6px);
 }
 
 .cicon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: rgba(100, 169, 38, 0.06);
-  color: var(--primary);
-  font-size: 14px
+  color: inherit;
+  /* Inherit from parent hover state */
+  font-size: 18px;
+  width: auto;
+  height: auto;
+  background: none;
+  /* Remove background box */
 }
 
 .ctext {
-  color: var(--muted);
+  color: inherit;
   font-weight: 600;
-  font-size: 14px
+  font-size: 14px;
 }
 
 /* Footer signout */
 .sidebar-footer {
-  padding: 12px 0;
+  padding: 20px 0 0 0;
   display: flex;
-  justify-content: center;
-  align-items: center
+  justify-content: flex-start;
+  /* Align left to match others */
+  align-items: center;
+  margin-top: auto;
+  /* Push to bottom */
 }
 
 .signout {
   background: transparent;
-  color: #d25b5b;
-  border: 1px solid rgba(210, 91, 91, 0.08);
-  padding: 8px 12px;
-  border-radius: 8px;
+  color: #e74c3c;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 10px;
   cursor: pointer;
   display: flex;
-  gap: 8px;
-  align-items: center
+  gap: 12px;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  width: 100%;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.signout:hover {
+  background: #fff5f5;
+  transform: translateX(6px);
 }
 
 .signout-icon {

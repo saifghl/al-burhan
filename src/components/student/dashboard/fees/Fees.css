@@ -12,6 +12,8 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 30px;
+    text-align: left;
+    /* Explicitly left align */
 }
 
 .fh-left h2 {

@@ -2,23 +2,35 @@
 .student-area {
   display: flex;
   min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-light);
+  /* Ensure bg matches */
 }
 
+/* Main Content Area */
 .student-content {
   flex: 1;
   margin-left: 260px;
-  /* Sidebar width */
-  transition: margin-left 0.3s ease;
+  /* Offset for fixed sidebar */
   width: calc(100% - 260px);
+  /* Prevent overflow */
+  padding: 40px;
+  /* Standard padding */
+  background: #f7faf7;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 @media (max-width: 900px) {
   .student-content {
     margin-left: 0;
     width: 100%;
+    padding: 20px;
   }
 }
 
+/* Global App Styles */
 .App {
   text-align: center;
 }
@@ -59,24 +71,4 @@
   }
 }
 
-/* Student layout helpers */
-.student-area {
-  display: flex;
-  align-items: flex-start;
-}
-
-/* when sidebar is fixed, give content a left offset */
-.student-content {
-  padding: 28px;
-  width: 100%;
-  background: #f7faf7;
-  min-height: calc(100vh - 80px);
-  margin-left: 260px;
-}
-
-@media (max-width:900px) {
-  .student-content {
-    margin-left: 0;
-    padding: 16px
-  }
-}
+/* ... existing styles ... */

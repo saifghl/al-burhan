@@ -408,21 +408,26 @@
 
     .profile-header {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        /* Align left */
+        text-align: left;
     }
 
     .ph-left {
         flex-direction: column;
-        gap: 10px;
+        align-items: flex-start;
+        /* Align left */
+        gap: 15px;
     }
 
     .ph-info {
-        text-align: center;
+        text-align: left;
     }
 
     .ph-meta-row {
         flex-direction: column;
+        align-items: flex-start;
+        /* Align left */
         gap: 7px;
     }
 

@@ -17,7 +17,12 @@ import Results from './components/student/dashboard/results/Results';
 import Profile from './components/student/profile/Profile';
 import EditProfile from './components/student/profile/EditProfile';
 import Fees from './components/student/dashboard/fees/Fees';
+import Settings from './components/student/settings/Settings';
+import Notifications from './components/student/dashboard/notifications/Notifications';
+import Activities from './components/student/dashboard/activities/Activities';
+import Logout from './components/student/dashboard/logout/Logout';
 import './App.css';
+import { FaBell } from 'react-icons/fa'; // Import bell icon for header
 
 function App() {
   return (
@@ -46,6 +51,10 @@ function App() {
               <Route path="profile" element={<Profile />} />
               <Route path="profile/edit" element={<EditProfile />} />
               <Route path="fees" element={<Fees />} />
+              <Route path="settings" element={<Settings />} />
+              <Route path="notifications" element={<Notifications />} />
+              <Route path="activities" element={<Activities />} />
+              <Route path="logout" element={<Logout />} />
             </Route>
           </Routes>
         </ConditionalLayout>
@@ -58,9 +67,33 @@ function StudentLayout() {
   return (
     <div className="student-area" style={{ display: 'flex' }}>
       <Sidebar />
-      <main className="student-content" style={{ flex: 1 }}>
-        <Outlet />
-      </main>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', position: 'relative' }}>
+
+        {/* Global Student Header */}
+        <div style={{
+          position: 'absolute',
+          top: '20px',
+          right: '30px',
+          zIndex: 100,
+          background: '#fff',
+          borderRadius: '50%',
+          width: '45px',
+          height: '45px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+          cursor: 'pointer'
+        }}>
+          <a href="/student/notifications" style={{ color: '#64A926', display: 'flex', fontSize: '20px' }}>
+            <FaBell />
+          </a>
+        </div>
+
+        <main className="student-content" style={{ flex: 1 }}>
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 }
