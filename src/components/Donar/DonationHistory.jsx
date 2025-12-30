@@ -75,7 +75,7 @@ const DonationHistory = () => {
                     </div>
                     <div className="header-actions-right">
                         <button className="icon-btn"><Icons.Bell /></button>
-                        <button className="icon-btn"><Icons.Settings /></button>
+                        <button className="icon-btn" onClick={() => navigate('/settings')}><Icons.Settings /></button>
                         <div className="user-avatar">
                             <img src={UserAvatar} alt="User" />
                         </div>

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DonationPaymentPage.css';
-import MadarsaThumb from '../../assets/Picture33.png'; // Using placeholder, likely 'Picture2' for Al-Nur
+import MadarsaThumb from '../../assets/Picture33.png'; // Using placeholder
+import CardPage from './PaymentPages/CardPage';
+import UPIPage from './PaymentPages/UPIPage';
+import NetBankingPage from './PaymentPages/NetBankingPage';
+import QrPage from './PaymentPages/QrPage';
 
 const DonationPaymentPage = () => {
     const navigate = useNavigate();
@@ -82,103 +86,10 @@ const DonationPaymentPage = () => {
                             </div>
 
                             <div className="method-content">
-                                {paymentMethod === 'card' && (
-                                    <div className="card-form">
-                                        <h4>Enter Card Details</h4>
-                                        <div className="card-logos">
-                                            <div className="card-logo-placeholder"></div>
-                                            <div className="card-logo-placeholder"></div>
-                                        </div>
-
-                                        <div className="form-group">
-                                            <label>Card Number</label>
-                                            <input type="text" placeholder="0000 0000 0000 0000" />
-                                            <span className="input-icon"><Icons.Card /></span>
-                                        </div>
-
-                                        <div className="form-row">
-                                            <div className="form-group half">
-                                                <label>Expiry Date</label>
-                                                <input type="text" placeholder="MM/YY" />
-                                            </div>
-                                            <div className="form-group half">
-                                                <label>CVV <span className="info-tooltip">?</span></label>
-                                                <input type="text" placeholder="123" />
-                                            </div>
-                                        </div>
-
-                                        <div className="form-group">
-                                            <label>Name on Card</label>
-                                            <input type="text" placeholder="John Doe" />
-                                        </div>
-
-                                        <div className="save-card-option">
-                                            <input type="checkbox" id="saveCard" />
-                                            <label htmlFor="saveCard">Securely save this card for future donations</label>
-                                        </div>
-
-                                        <div className="security-note">
-                                            <Icons.Lock /> Your payment details are encrypted and processed securely.
-                                        </div>
-                                    </div>
-                                )}
-                                {paymentMethod === 'upi' && (
-                                    <div className="upi-form">
-                                        <h4>Enter UPI ID</h4>
-                                        <p className="method-desc">Pay securely using your UPI app (Google Pay, PhonePe, Paytm, etc.)</p>
-
-                                        <div className="form-group">
-                                            <label>UPI ID</label>
-                                            <input type="text" placeholder="username@upi" />
-                                            <span className="input-icon"><Icons.Smartphone /></span>
-                                        </div>
-
-                                        <button className="verify-btn">Verify</button>
-
-                                        <div className="security-note">
-                                            <Icons.Lock /> Secure payment via your preferred UPI app.
-                                        </div>
-                                    </div>
-                                )}
-
-                                {paymentMethod === 'netbanking' && (
-                                    <div className="netbanking-form">
-                                        <h4>Select Bank</h4>
-                                        <p className="method-desc">Choose your bank to complete the payment securely.</p>
-
-                                        <div className="bank-grid">
-                                            <div className="bank-option">HDFC</div>
-                                            <div className="bank-option">ICICI</div>
-                                            <div className="bank-option">SBI</div>
-                                            <div className="bank-option">Axis</div>
-                                        </div>
-
-                                        <div className="form-group">
-                                            <label>Other Bank</label>
-                                            <select className="bank-select">
-                                                <option>Select a bank</option>
-                                                <option>Kotak Mahindra</option>
-                                                <option>Punjab National Bank</option>
-                                                <option>Yes Bank</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                )}
-
-                                {paymentMethod === 'qr' && (
-                                    <div className="qr-form">
-                                        <h4>Scan QR Code</h4>
-                                        <p className="method-desc">Open your UPI app and scan the code below to pay.</p>
-
-                                        <div className="qr-display">
-                                            <div className="qr-placeholder">
-                                                <Icons.Qr />
-                                            </div>
-                                            <p>Scan to pay ₹5,000</p>
-                                            <div className="timer-badge">Expires in 04:59</div>
-                                        </div>
-                                    </div>
-                                )}
+                                {paymentMethod === 'card' && <CardPage />}
+                                {paymentMethod === 'upi' && <UPIPage />}
+                                {paymentMethod === 'netbanking' && <NetBankingPage />}
+                                {paymentMethod === 'qr' && <QrPage />}
                             </div>
                         </div>
                     </div>

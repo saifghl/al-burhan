@@ -41,7 +41,7 @@ const ReviewDonationPage = () => {
                 </div>
                 <div className="header-actions">
                     <button className="icon-btn"><Icons.Bell /></button>
-                    <button className="icon-btn"><Icons.Settings /></button>
+                    <button className="icon-btn" onClick={() => navigate('/settings')}><Icons.Settings /></button>
                     <div className="user-avatar">
                         <img src="https://via.placeholder.com/40" alt="User" />
                     </div>

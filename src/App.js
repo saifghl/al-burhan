@@ -14,6 +14,7 @@ import DonationDetailsPage from './components/Donar/DonationDetailsPage';
 import NotificationsPage from './components/Donar/NotificationsPage';
 import UrgentAppealPage from './components/Donar/UrgentAppealPage';
 import ProfilePage from './components/Donar/ProfilePage';
+import SettingsPage from './components/Donar/SettingsPage';
 import Home from './pages/Home/Home';
 import Footer from './components/Footer/Footer';
 import './App.css';
@@ -33,7 +34,8 @@ const AppContent = () => {
     '/payment-success',
     '/notifications',
     '/urgent-appeal',
-    '/profile'
+    '/profile',
+    '/settings'
   ];
 
   const isDashboardRoute = dashboardRoutes.some(route => location.pathname === route || location.pathname.startsWith(route + '/'));
@@ -66,6 +68,7 @@ const AppContent = () => {
         <Route path="/notifications" element={<NotificationsPage />} />
         <Route path="/urgent-appeal" element={<UrgentAppealPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/settings" element={<SettingsPage />} />
         <Route path="/login" element={<div style={{ padding: '50px', textAlign: 'center' }}>Login Page</div>} />
       </Routes>
       {!isDashboardRoute && <Footer />}
