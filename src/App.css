@@ -1,3 +1,24 @@
+/* Student Layout Global Styles */
+.student-area {
+  display: flex;
+  min-height: 100vh;
+}
+
+.student-content {
+  flex: 1;
+  margin-left: 260px;
+  /* Sidebar width */
+  transition: margin-left 0.3s ease;
+  width: calc(100% - 260px);
+}
+
+@media (max-width: 900px) {
+  .student-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
 .App {
   text-align: center;
 }
@@ -32,7 +53,30 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Student layout helpers */
+.student-area {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* when sidebar is fixed, give content a left offset */
+.student-content {
+  padding: 28px;
+  width: 100%;
+  background: #f7faf7;
+  min-height: calc(100vh - 80px);
+  margin-left: 260px;
+}
+
+@media (max-width:900px) {
+  .student-content {
+    margin-left: 0;
+    padding: 16px
   }
 }
