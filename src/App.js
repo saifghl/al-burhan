@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import React, { useLayoutEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
@@ -19,8 +18,13 @@ import SettingsPage from './components/Donar/SettingsPage';
 import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
 import Admission from './components/Admission/Admission';
-
 import Contact from './components/Contact/Contact';
+
+/* Stashed Components */
+import DonorSignup from './Component/Donar/DonorSignup';
+import DonorLogin from './Component/Donar/DonorLogin';
+import DonorForgotPassword from './Component/Donar/DonorForgotPassword';
+import DonorVerifyOtp from './Component/Donar/DonorVerifyOtp';
 
 /* Student components */
 import Sidebar from './components/student/sidebar/Sidebar';
@@ -55,7 +59,12 @@ function App() {
             <Route path="/admission" element={<Admission />} />
             <Route path="/donation" element={<DonationPage />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<div style={{ padding: '50px', textAlign: 'center' }}>Login Page</div>} />
+
+            {/* Auth Routes (Integrated from Stash) */}
+            <Route path="/login" element={<AuthWrapper component={DonorLogin} />} />
+            <Route path="/signup" element={<DonorSignup />} />
+            <Route path="/forgot-password" element={<DonorForgotPassword />} />
+            <Route path="/verify-otp" element={<DonorVerifyOtp />} />
 
             {/* Donor Dashboard Routes */}
             <Route path="/dashboard" element={<Dashboard />} />
@@ -95,6 +104,16 @@ function App() {
     </Router>
   );
 }
+
+// Simple Wrapper to pass navigation props to DonorLogin (quick fix for props dependency)
+const AuthWrapper = ({ component: Component }) => {
+  // Use window.location for simple navigation redirection since component expects props
+  return <Component
+    onGoToSignup={() => window.location.href = '/signup'}
+    onForgotPassword={() => window.location.href = '/forgot-password'}
+    onLoginViaOtp={() => window.location.href = '/verify-otp'}
+  />;
+};
 
 function ScrollToTop() {
   const location = useLocation();
@@ -137,42 +156,9 @@ function StudentLayout() {
       </div>
     </div>
   );
-=======
-import React, { useState } from 'react';
-import './App.css';
-import DonorSignup from './Component/Donar/DonorSignup';
-import DonorLogin from './Component/Donar/DonorLogin';
-import DonorForgotPassword from './Component/Donar/DonorForgotPassword';
-import DonorVerifyOtp from './Component/Donar/DonorVerifyOtp';
-
-function App() {
-  const [screen, setScreen] = useState('signup'); // signup | login | forgot | otp
-
-  const renderScreen = () => {
-    switch (screen) {
-      case 'login':
-        return (
-          <DonorLogin
-            onGoToSignup={() => setScreen('signup')}
-            onForgotPassword={() => setScreen('forgot')}
-            onLoginViaOtp={() => setScreen('otp')}
-          />
-        );
-      case 'forgot':
-        return <DonorForgotPassword />;
-      case 'otp':
-        return <DonorVerifyOtp />;
-      case 'signup':
-      default:
-        return <DonorSignup onGoToLogin={() => setScreen('login')} />;
-    }
-  };
-
-  return <div className="App">{renderScreen()}</div>;
->>>>>>> Stashed changes
 }
 
-/* ConditionalLayout hides Navbar & Footer on /student routes AND dashboard routes */
+/* ConditionalLayout hides Navbar & Footer on /student routes AND dashboard routes AND auth routes */
 function ConditionalLayout({ children }) {
   const location = useLocation();
   const dashboardRoutes = [
@@ -192,11 +178,13 @@ function ConditionalLayout({ children }) {
     '/settings'
   ];
 
-  const isStudent = location.pathname.startsWith('/student');
-  // Check if current path is one of the dashboard routes (exact match or start check if needed)
-  const isDashboardRoute = dashboardRoutes.some(route => location.pathname === route || location.pathname.startsWith(route + '/'));
+  const authRoutes = ['/login', '/signup', '/forgot-password', '/verify-otp'];
 
-  const shouldHideNavbarAndFooter = isStudent || isDashboardRoute;
+  const isStudent = location.pathname.startsWith('/student');
+  const isDashboardRoute = dashboardRoutes.some(route => location.pathname === route || location.pathname.startsWith(route + '/'));
+  const isAuthRoute = authRoutes.some(route => location.pathname === route);
+
+  const shouldHideNavbarAndFooter = isStudent || isDashboardRoute || isAuthRoute;
 
   return (
     <>
