@@ -18,6 +18,7 @@ import Profile from './components/student/profile/Profile';
 import EditProfile from './components/student/profile/EditProfile';
 import Fees from './components/student/dashboard/fees/Fees';
 import Settings from './components/student/settings/Settings';
+import FAQ from './components/student/settings/FAQ';
 import Notifications from './components/student/dashboard/notifications/Notifications';
 import Activities from './components/student/dashboard/activities/Activities';
 import Logout from './components/student/dashboard/logout/Logout';
@@ -52,6 +53,7 @@ function App() {
               <Route path="profile/edit" element={<EditProfile />} />
               <Route path="fees" element={<Fees />} />
               <Route path="settings" element={<Settings />} />
+              <Route path="settings/faq" element={<FAQ />} />
               <Route path="notifications" element={<Notifications />} />
               <Route path="activities" element={<Activities />} />
               <Route path="logout" element={<Logout />} />

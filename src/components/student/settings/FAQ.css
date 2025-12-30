@@ -1,0 +1,130 @@
+.faq-page {
+    padding: 30px;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.faq-header h2 {
+    font-family: 'Cherry Swash', cursive;
+    color: #64A926;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.faq-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.faq-card:hover {
+    box-shadow: 0 6px 16px rgba(100, 169, 38, 0.1);
+    border-color: #64A926;
+}
+
+.faq-question {
+    padding: 20px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fdfdfd;
+}
+
+.faq-question h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.toggle-icon {
+    color: #64A926;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-card.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: #fff;
+}
+
+.faq-card.active .faq-answer {
+    max-height: 200px;
+    /* Adjust based on content length */
+    padding: 0 25px 20px 25px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.faq-answer p {
+    color: #555;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+.faq-contact-info {
+    margin-top: 40px;
+    text-align: center;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    border: 1px dashed #64A926;
+}
+
+.faq-contact-info h3 {
+    color: #64A926;
+    margin-bottom: 15px;
+    font-family: 'Cherry Swash', cursive;
+}
+
+.faq-contact-info p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.faq-contact-info strong {
+    color: #333;
+}
+
+.faq-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.faq-back-btn:hover {
+    color: #64A926;
+}
