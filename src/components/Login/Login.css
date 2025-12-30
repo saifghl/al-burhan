@@ -1,0 +1,599 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    /* Adjust based on navbar/footer */
+    padding: 60px 20px;
+    background-color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Common Text Styles */
+.login-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0d1b2a;
+    /* Dark navy/black */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.login-subheading {
+    font-size: 1rem;
+    color: #7d8da7;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* --- View 1: Workspace Selection --- */
+.workspace-selection-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.role-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.role-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Generalized hover effect for all cards (green bg) */
+.role-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background-color: #84d642;
+    /* Bright green */
+    border-color: #84d642;
+}
+
+.role-card:hover .role-content h3,
+.role-card:hover .role-content p,
+.role-card:hover .arrow-icon {
+    color: #fff !important;
+    /* Force white text on green bg */
+}
+
+.role-img-container {
+    height: 180px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.role-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.role-content {
+    padding: 20px;
+}
+
+.role-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.role-header h3 {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.arrow-icon {
+    color: #999;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.role-card:hover .arrow-icon {
+    color: #64A926;
+    /* Green on hover generic */
+}
+
+.role-content p {
+    font-size: 0.85rem;
+    color: #777;
+    line-height: 1.5;
+}
+
+.sign-out-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-sign-out {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+}
+
+.support-link {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+
+/* --- View 2: Login Form --- */
+.login-form-container {
+    max-width: 450px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back-link {
+    align-self: flex-start;
+    margin-bottom: 20px;
+    color: #64A926;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.login-form-box {
+    width: 100%;
+    background: #fff;
+    /* Often forms have shadow or border, keeping it clean as per image */
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+    text-align: left !important;
+    /* Force left align */
+}
+
+.login-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    /* Light grey border */
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    background-color: #f9fbf9;
+    /* Very light bg */
+}
+
+.login-input:focus {
+    border-color: #64A926;
+    background-color: #fff;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.forgot-password {
+    font-size: 0.85rem;
+    color: #64A926;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    color: #999;
+}
+
+.btn-login-submit {
+    width: 100%;
+    background-color: #84d642;
+    /* Bright green from image */
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-family: 'Jost', sans-serif;
+    transition: background-color 0.2s;
+}
+
+.btn-login-submit:hover {
+    background-color: #6dbb2e;
+}
+
+.divider-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background-color: #eee;
+}
+
+.btn-otp-login {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #000;
+    font-family: 'Jost', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-otp-login:hover {
+    background-color: #f9f9f9;
+}
+
+.login-footer-links {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-link {
+    font-size: 0.85rem;
+    color: #777;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .role-cards-grid {
+        grid-template-columns: 1fr;
+        /* Stack cards */
+    }
+}
+
+/* --- Common Helper --- */
+.navbar-simple,
+.navbar-simple-verify {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 0.9rem;
+    color: #666;
+    cursor: pointer;
+}
+
+/* --- Language Selection --- */
+.language-selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.welcome-heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0d1b2a;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+}
+
+.urdu-text {
+    font-family: 'Inter', sans-serif;
+    /* Or a specific Urdu font if available */
+    color: #1a73e8;
+    /* Blue from image */
+}
+
+.welcome-subtext {
+    color: #666;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.language-cards-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.language-card {
+    position: relative;
+    width: 250px;
+    height: 160px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #eee;
+}
+
+.language-card.active {
+    border-color: #1a73e8;
+    /* Blue active border */
+}
+
+.lang-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    /* Dim image slightly to read text */
+}
+
+.lang-content {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lang-label {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.check-icon {
+    color: #1a73e8;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+.btn-next {
+    background-color: #1a73e8;
+    /* Blue button */
+    color: #fff;
+    border: none;
+    padding: 12px 60px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.skip-link {
+    color: #999;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* --- Verify Identity --- */
+.verify-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.verify-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.lock-icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #f0fdf4;
+    /* Light green bg */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.lock-icon {
+    color: #64A926;
+    font-size: 1.5rem;
+}
+
+.verify-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: 'Jost', sans-serif;
+}
+
+.verify-subtext {
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.otp-inputs-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.otp-field {
+    width: 45px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.otp-field:focus {
+    border-color: #64A926;
+}
+
+.timer-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.timer-count {
+    color: #64A926;
+    font-weight: 600;
+}
+
+.btn-verify {
+    width: 100%;
+    background-color: #84d642;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background 0.3s;
+}
+
+.btn-verify:hover {
+    background-color: #6dbb2e;
+}
+
+.resend-link {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.click-to-resend {
+    color: #64A926;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.back-login-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Responsive */
+
+/* --- Forgot Password --- */
+.forgot-password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.forgot-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    /* Optional: add shadow if needed to match card look, design looks clean/flat or card-like */
+}
+
+.icon-circle-light {
+    width: 60px;
+    height: 60px;
+    background-color: #f0fdf4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.chart-icon {
+    color: #64A926;
+    font-size: 1.5rem;
+}
+
+.form-group-forgot {
+    width: 100%;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group-forgot label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.centered-link {
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.recaptcha-text {
+    margin-top: 50px;
+    font-size: 0.8rem;
+    color: #999;
+    text-align: center;
+}

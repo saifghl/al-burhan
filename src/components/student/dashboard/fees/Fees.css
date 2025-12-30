@@ -1,0 +1,415 @@
+.student-fees {
+    padding: 55px;
+    background-color: var(--bg-light);
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    color: var(--text-dark);
+}
+
+/* --- Page Header --- */
+.fees-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    text-align: left;
+    /* Explicitly left align */
+}
+
+.fh-left h2 {
+    margin: 0 0 6px 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.breadcrumb {
+    font-size: 13px;
+    color: #95a5a6;
+    margin-bottom: 5px;
+}
+
+.fh-year {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.download-stmt-btn {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 18px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.download-stmt-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* --- Student Info Card --- */
+.fees-student-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.fsc-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.fsc-avatar {
+    width: 70px;
+    height: 70px;
+    background: #e0e0e0;
+    border-radius: 50%;
+}
+
+.fsc-info h3 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+.fsc-info p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.active-tag {
+    background: rgba(100, 169, 38, 0.1);
+    color: var(--primary);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.fsc-stats {
+    display: flex;
+    gap: 40px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: #95a5a6;
+    margin-bottom: 4px;
+}
+
+.stat-val {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* --- Main Grid --- */
+.fees-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 30px;
+}
+
+/* Fee Breakdown */
+.fee-breakdown-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+}
+
+.fb-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.fb-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+.cycle-badge {
+    background: #f8f9fa;
+    color: #7f8c8d;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.fee-table-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.fee-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.fi-info h4 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.fi-info p {
+    margin: 0;
+    font-size: 11px;
+    color: #95a5a6;
+}
+
+.fi-amount {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.fee-divider {
+    height: 1px;
+    background: #eee;
+    margin: 20px 0;
+}
+
+.fee-subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+}
+
+.admin-note {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    gap: 15px;
+}
+
+.note-icon {
+    color: #2196f3;
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+.note-cnt h4 {
+    margin: 0 0 5px 0;
+    font-size: 13px;
+    color: #0d47a1;
+}
+
+.note-cnt p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #546e7a;
+}
+
+/* Right Column */
+.fees-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Scholarship Card */
+.scholarship-card {
+    background: linear-gradient(135deg, #eef7e9 0%, #ffffff 100%);
+    border: 1px solid #c8e6c9;
+    border-radius: 16px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sc-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.sc-icon {
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.sc-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+.sc-status {
+    background: var(--primary);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.sc-bg-icon {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 100px;
+    color: rgba(100, 169, 38, 0.05);
+    transform: rotate(15deg);
+}
+
+.sc-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.sc-label {
+    color: #7f8c8d;
+}
+
+.sc-val {
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: right;
+}
+
+.sc-val.discount {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Payment Summary */
+.payment-summary {
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+}
+
+.ps-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.ps-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.ps-label {
+    color: #7f8c8d;
+}
+
+.ps-val {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.ps-val.deduction {
+    color: var(--primary);
+}
+
+.net-payable {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.np-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.np-amount {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.pay-btn {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.pay-btn:hover {
+    background: var(--primary-dark);
+}
+
+.secure-note {
+    font-size: 10px;
+    color: #95a5a6;
+    text-align: center;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .fees-grid {
+        grid-template-columns: 1fr;
+        padding: 25px
+    }
+}

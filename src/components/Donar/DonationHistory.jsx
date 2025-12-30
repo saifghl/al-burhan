@@ -5,11 +5,11 @@ import '../Donar/Dashboard.css';
 
 // Importing Assets
 import UserAvatar from '../../assets/Picture33.png'; // Assuming this is a profile pic
-import Madarsa1 from '../../assets/Picture1.png';
-import Madarsa2 from '../../assets/Picture2.png';
-import Madarsa3 from '../../assets/Picture3.png';
-import Madarsa4 from '../../assets/Picture4.png';
-import Madarsa5 from '../../assets/Picture5.png';
+import Madarsa1 from '../../assets/Picture16.png';
+import Madarsa2 from '../../assets/Picture17.png';
+import Madarsa3 from '../../assets/Picture18.png';
+import Madarsa4 from '../../assets/Picture19.png';
+import Madarsa5 from '../../assets/Picture20.png';
 
 const DonationHistory = () => {
     const navigate = useNavigate();

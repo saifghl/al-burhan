@@ -1,3 +1,40 @@
+/* Student Layout Global Styles */
+.student-area {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-light);
+  /* Ensure bg matches */
+}
+
+/* Main Content Area */
+.student-content {
+  flex: 1;
+  margin-left: 260px;
+  /* Offset for fixed sidebar */
+  width: calc(100% - 260px);
+  /* Prevent overflow */
+  padding: 40px;
+  /* Standard padding */
+  background: #f7faf7;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .student-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Global App Styles */
+.App {
+  text-align: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

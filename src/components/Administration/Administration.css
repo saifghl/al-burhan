@@ -1,0 +1,375 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&family=Jost:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.administration-page {
+    padding: 60px 20px;
+    background-color: #fff;
+    font-family: 'Inter', sans-serif;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.admin-header-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.admin-main-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.admin-subtitle {
+    font-family: 'Cherry Swash', cursive;
+    font-size: 1.2rem;
+    color: #64A926;
+    /* Light Green */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.admin-content-container {
+    display: flex;
+    gap: 40px;
+}
+
+/* --- Sidebar --- */
+.admin-sidebar {
+    width: 350px;
+    flex-shrink: 0;
+}
+
+.profile-card {
+    background: #f9fdf9;
+    /* Very light green hint */
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    /* Reverted to center */
+    margin-bottom: 20px;
+}
+
+.profile-img-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    /* Reverted to center margin */
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-family: 'Cherry Swash', cursive;
+    font-size: 1.8rem;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.profile-role {
+    color: #64A926;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.profile-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin-bottom: 25px;
+}
+
+.profile-details {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.detail-icon-circle {
+    width: 36px;
+    height: 36px;
+    background-color: #eafbe4;
+    color: #64A926;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.detail-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-size: 0.8rem;
+    color: #64A926;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.detail-value {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.btn-schedule {
+    width: 100%;
+    background-color: #64A926;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Jost', sans-serif;
+    box-shadow: 0 4px 10px rgba(100, 169, 38, 0.3);
+    transition: background 0.3s;
+}
+
+.btn-schedule:hover {
+    background-color: #538d1f;
+}
+
+.office-hours-card {
+    background: #eafbe4;
+    /* Light green block */
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.office-hours-card h3 {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.contact-icon {
+    color: #64A926;
+    margin-right: 10px;
+}
+
+/* --- Main Content --- */
+.admin-main-content {
+    flex: 1;
+    text-align: left;
+    /* Explicitly left align right section */
+}
+
+.message-section {
+    position: relative;
+    padding: 40px;
+    background: #fcfdfc;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    /* optional border or subtle shadow if needed */
+}
+
+.green-decoration-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 150px;
+    background: radial-gradient(circle at top right, #eafbe4 0%, transparent 70%);
+    border-top-right-radius: 12px;
+    z-index: 0;
+}
+
+.quote-icon-large {
+    color: #84d642;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.message-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #000;
+    position: relative;
+    z-index: 1;
+}
+
+.bismillah {
+    font-style: italic;
+    color: #000;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.message-body {
+    position: relative;
+    z-index: 1;
+}
+
+.message-body p {
+    margin-bottom: 20px;
+    color: #444;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.message-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Left align footer/signature */
+    position: relative;
+}
+
+.signature-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.signature-dash {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.signature-name {
+    font-family: 'Cherry Swash', cursive;
+    font-size: 2rem;
+    color: #000;
+}
+
+.signature-role {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.official-badge {
+    background-color: #eafbe4;
+    color: #468c17;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+}
+
+/* --- Info Cards --- */
+.admin-info-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.info-card {
+    flex: 1;
+    background: #fcfdfc;
+    /* Off white */
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    border: 1px solid #f0f0f0;
+}
+
+.info-icon-wrapper {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.policy-icon {
+    background-color: #e6f0ff;
+    color: #1a73e8;
+}
+
+.board-icon {
+    background-color: #fff4e5;
+    color: #f68b1f;
+    /* Orange */
+}
+
+.info-content h3 {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.info-content p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media screen and (max-width: 960px) {
+    .admin-content-container {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+    }
+
+    .admin-info-cards {
+        flex-direction: column;
+    }
+
+    .official-badge {
+        position: static;
+        margin-top: 15px;
+    }
+
+    .admin-main-title {
+        font-size: 2.2rem;
+    }
+}
