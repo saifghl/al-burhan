@@ -71,7 +71,7 @@ const SubjectDetail = () => {
                 </div>
 
                 <div className="card-footer">
-                    <button className="study-material-btn"><FaBookOpen /> Study Material</button>
+                    <button className="study-material-btn" onClick={() => navigate('/student/learning/study-material')}><FaBookOpen /> Study Material</button>
                 </div>
             </div>
         </div>

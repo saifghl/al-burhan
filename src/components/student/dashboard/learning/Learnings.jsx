@@ -109,7 +109,7 @@ const Learnings = () => {
     <div className="learnings-page">
       <header className="learnings-header">
         <div className="breadcrumbs">
-          Home / <span>My Learning</span>
+          <span onClick={() => navigate(-1)} style={{ cursor: 'pointer' }}>Back</span> / <span>My Learning</span>
         </div>
         <h2>My Learning</h2>
         <p>Browse our comprehensive curriculum by department</p>

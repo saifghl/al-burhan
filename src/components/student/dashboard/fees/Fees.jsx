@@ -2,14 +2,17 @@ import React from 'react';
 import './Fees.css';
 import { FaDownload, FaAward, FaCreditCard, FaInfoCircle, FaShieldAlt } from 'react-icons/fa';
 
+import { useNavigate } from 'react-router-dom';
+
 const Fees = () => {
+    const navigate = useNavigate();
     return (
         <div className="student-fees">
 
             {/* --- Header --- */}
             <div className="fees-header">
                 <div className="fh-left">
-                    <div className="breadcrumb">Home / Fees Details</div>
+                    <div className="breadcrumb"><span onClick={() => navigate(-1)} style={{ cursor: 'pointer' }}>Back</span> / Fees Details</div>
                     <h2>Fees & Scholarship Details</h2>
                     <span className="fh-year">Academic Year: 2023-2024 / 1445 AH</span>
                 </div>

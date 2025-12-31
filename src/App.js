@@ -30,8 +30,10 @@ import DonorVerifyOtp from './Component/Donar/DonorVerifyOtp';
 import Sidebar from './components/student/sidebar/Sidebar';
 import StudentHome from './components/student/dashboard/Home';
 import Learnings from './components/student/dashboard/learning/Learnings';
+import StudyMaterial from './components/student/dashboard/learning/StudyMaterial';
 import SubjectDetail from './components/student/dashboard/learning/SubjectDetail';
 import Attendance from './components/student/dashboard/attendance/Attendance';
+import SubjectAttendance from './components/student/dashboard/attendance/SubjectAttendance';
 import Results from './components/student/dashboard/results/Results';
 import Profile from './components/student/profile/Profile';
 import EditProfile from './components/student/profile/EditProfile';
@@ -86,8 +88,10 @@ function App() {
               <Route index element={<StudentHome />} />
               <Route path="home" element={<StudentHome />} />
               <Route path="learning" element={<Learnings />} />
+              <Route path="learning/study-material" element={<StudyMaterial />} />
               <Route path="learning/:subjectId" element={<SubjectDetail />} />
               <Route path="attendance" element={<Attendance />} />
+              <Route path="attendance/subject/:subjectId" element={<SubjectAttendance />} />
               <Route path="results" element={<Results />} />
               <Route path="profile" element={<Profile />} />
               <Route path="profile/edit" element={<EditProfile />} />
@@ -96,6 +100,7 @@ function App() {
               <Route path="settings/faq" element={<FAQ />} />
               <Route path="notifications" element={<Notifications />} />
               <Route path="activities" element={<Activities />} />
+
               <Route path="logout" element={<Logout />} />
             </Route>
           </Routes>
