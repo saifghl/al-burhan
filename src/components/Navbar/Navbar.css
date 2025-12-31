@@ -118,29 +118,32 @@
     .nav-menu {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        height: 90vh;
-        /* Fixed height for consistent centering */
-        position: absolute;
-        top: 80px;
-        left: -100%;
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+        /* Fit content */
+        max-height: 90vh;
+        overflow-y: auto;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
         opacity: 0;
+        visibility: hidden;
         transition: all 0.3s ease-in-out;
         background-color: #fff;
         z-index: 1000;
-        padding-top: 0;
-        /* Remove top padding */
-        align-items: center;
-        /* Center horizontally */
-        justify-content: center;
-        /* Center vertically */
+        padding: 30px 0;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        /* Uniform shadow */
     }
 
     .nav-menu.active {
-        left: 0;
         opacity: 1;
-        transition: all 0.3s ease-in-out;
-        z-index: 999;
+        visibility: visible;
+        transform: translate(-50%, -50%) scale(1);
+        z-index: 1002;
     }
 
     .nav-item {
@@ -176,6 +179,8 @@
         transform: translate(-100%, 60%);
         font-size: 1.8rem;
         cursor: pointer;
+        z-index: 1003;
+        /* Above the menu */
     }
 
     .nav-button {

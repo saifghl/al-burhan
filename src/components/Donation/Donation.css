@@ -370,4 +370,28 @@
     .donation-title {
         font-size: 2rem;
     }
+
+    .donation-tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        flex: 1 1 45%;
+        /* Grow to fill/wrap */
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .donation-tabs {
+        flex-direction: column;
+    }
+
+    .amount-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .amount-btn.custom {
+        grid-column: span 2;
+    }
 }

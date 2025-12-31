@@ -8,7 +8,7 @@
     height: 120vh;
     /* Increased height */
     /* Large hero area */
-    background-size: 100% 100%;
+    background-size: cover;
     /* Stretch to fill */
     background-position: center;
     position: relative;
@@ -17,6 +17,7 @@
     justify-content: center;
     text-align: center;
     color: #fff;
+    min-height: 100vh;
 }
 
 /* Overlay removed */
@@ -385,6 +386,8 @@
     outline: none;
     transition: box-shadow 0.2s;
     color: #333;
+    box-sizing: border-box;
+    /* Fix for overflow */
 }
 
 .admission-input::placeholder,
