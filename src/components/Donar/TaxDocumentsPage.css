@@ -710,3 +710,33 @@
         flex-direction: column;
     }
 }
+
+/* Back Button Styles */
+.td-title-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.back-btn-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #374151;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    margin-top: 4px;
+    /* Align with H1 baseline roughly */
+}
+
+.back-btn-circle:hover {
+    background: #f3f4f6;
+    color: #111827;
+    border-color: #d1d5db;
+}
