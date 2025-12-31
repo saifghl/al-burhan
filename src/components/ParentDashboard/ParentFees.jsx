@@ -72,8 +72,8 @@ const ParentFees = () => {
                             <div className="icon-circle blue"><FaWallet /></div>
                         </div>
                         <div className="pf-main-stat">
-                            <h2>$150.00</h2>
-                            <span className="old-price">$200.00</span>
+                            <h2>Rs. 150.00</h2>
+                            <span className="old-price">Rs. 200.00</span>
                         </div>
                         <p className="pf-sub green-text"><FaCheckCircle /> 25% Sponsorship Applied</p>
                     </div>
@@ -105,7 +105,7 @@ const ParentFees = () => {
                                         <span>Need-based aid</span>
                                     </div>
                                 </div>
-                                <div className="fund-amount">-$50.00</div>
+                                <div className="fund-amount">-Rs. 50.00</div>
                             </div>
 
                             <div className="info-box">
@@ -149,9 +149,9 @@ const ParentFees = () => {
                                                     <span>Tuition Fee</span>
                                                 </div>
                                             </td>
-                                            <td>$200.00</td>
-                                            <td className="green-text">-$50.00</td>
-                                            <td><strong>$150.00</strong></td>
+                                            <td>Rs. 200.00</td>
+                                            <td className="green-text">-Rs. 50.00</td>
+                                            <td><strong>Rs. 150.00</strong></td>
                                             <td><span className="status-pill paid">• PAID</span></td>
                                             <td><button className="icon-only-btn"><FaDownload /></button></td>
                                         </tr>
@@ -162,9 +162,9 @@ const ParentFees = () => {
                                                     <span>Tuition Fee</span>
                                                 </div>
                                             </td>
-                                            <td>$200.00</td>
-                                            <td className="green-text">-$50.00</td>
-                                            <td><strong>$150.00</strong></td>
+                                            <td>Rs. 200.00</td>
+                                            <td className="green-text">-Rs. 50.00</td>
+                                            <td><strong>Rs. 150.00</strong></td>
                                             <td><span className="status-pill paid">• PAID</span></td>
                                             <td><button className="icon-only-btn"><FaDownload /></button></td>
                                         </tr>
@@ -175,9 +175,9 @@ const ParentFees = () => {
                                                     <span>Tuition Fee</span>
                                                 </div>
                                             </td>
-                                            <td>$200.00</td>
-                                            <td className="green-text">-$50.00</td>
-                                            <td><strong>$150.00</strong></td>
+                                            <td>Rs. 200.00</td>
+                                            <td className="green-text">-Rs. 50.00</td>
+                                            <td><strong>Rs. 150.00</strong></td>
                                             <td><span className="status-pill paid">• PAID</span></td>
                                             <td><button className="icon-only-btn"><FaDownload /></button></td>
                                         </tr>

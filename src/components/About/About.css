@@ -268,7 +268,8 @@
 
 /* Contact Section */
 .contact-section {
-    margin-bottom: 80px;
+    margin-bottom: 50px;
+    /* Reduced from 80px */
 }
 
 .contact-grid {
@@ -276,49 +277,58 @@
     align-items: center;
     /* Allow overlap */
     position: relative;
+    max-width: 1000px;
+    /* Limit width */
+    margin: 0 auto;
 }
 
 .contact-info-side {
     flex: 1;
     z-index: 2;
     /* Bring text/cards to front */
-    max-width: 500px;
+    max-width: 450px;
     /* Limit width to keep it compact on the left */
 }
 
 .contact-map-side {
-    flex: 1.5;
-    /* Make map area larger */
-    margin-left: -100px;
-    /* Pull map to the left to underlap */
+    flex: 1;
+    /* Reduced flex */
+    margin-left: -50px;
+    /* Reduced overlap */
     position: relative;
     z-index: 1;
 }
 
 .contact-subtitle {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
+    /* Reduced from 40px */
     color: #555;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .map-img {
     width: 100%;
-    border-radius: 30px;
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: block;
 }
 
-.contact-card {
+.about-page .contact-card {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
-    margin-bottom: 30px;
+    gap: 15px;
+    /* Reduced gap */
+    margin-bottom: 20px;
+    /* Reduced from 30px */
     background: #fff;
     /* Ensure it's opaque */
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #eee;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 10px;
+    /* Further reduced from 15px */
+    border-radius: 20px;
+    /* Sharp edges to curve */
+    border: 1px solid #d4eecf;
+    /* Greenish border to match hint */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     /* Add shadow for lift */
     position: relative;
     /* For z-index context if needed */

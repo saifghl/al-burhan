@@ -8,6 +8,7 @@ const Donation = () => {
     const [donationType, setDonationType] = useState('Sadaqah');
     const [amount, setAmount] = useState(1000);
     const [paymentMethod, setPaymentMethod] = useState('UPI');
+    const [emailReceipt, setEmailReceipt] = useState(false);
 
     const handleAmountClick = (val) => {
         setAmount(val);
@@ -90,8 +91,14 @@ const Donation = () => {
                             <input type="text" placeholder="PAN (Optional for 80G)" className="form-input" />
                         </div>
                         <div className="checkbox-group">
-                            <FaCheckCircle className="check-icon" />
-                            <span>Email me the 80G tax exemption receipt automatically.</span>
+                            <input
+                                type="checkbox"
+                                id="tax-receipt"
+                                checked={emailReceipt}
+                                onChange={(e) => setEmailReceipt(e.target.checked)}
+                                style={{ accentColor: '#64A926', width: '18px', height: '18px', cursor: 'pointer' }}
+                            />
+                            <label htmlFor="tax-receipt" style={{ cursor: 'pointer' }}>Email me the 80G tax exemption receipt automatically.</label>
                         </div>
                     </div>
 
