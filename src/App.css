@@ -32,7 +32,9 @@
 
 /* Global App Styles */
 .App {
-  text-align: center;
+  text-align: left;
+  /* Reset center alignment for dashboard apps */
+  width: 100%;
 }
 
 .App-logo {

@@ -1,18 +1,50 @@
 /* Dashboard Layout */
+* {
+  box-sizing: border-box;
+}
+
 .dashboard-layout {
   display: flex;
   min-height: 100vh;
   background-color: #f8f9fa;
   font-family: 'Inter', sans-serif;
   color: #333;
+  width: 100%;
+}
+
+/* ... skipped sidebar ... */
+/* Main Content Area */
+.dashboard-main {
+  flex: 1;
+  /* Take up all remaining space */
+  min-width: 0;
+  /* meaningful for grid/flex children to shrink properly */
+  padding: 24px;
+  /* Slightly adjusted padding */
+  overflow-y: auto;
+  background-color: #f9fbfb;
+  /* width is handled by flex: 1 */
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 0;
+  background: transparent;
+  width: 100%;
 }
 
 /* Left Sidebar - Menu */
 .left-sidebar {
-  width: 250px;
+  width: 220px;
+  /* Reduced width */
   background: white;
   border-right: 1px solid #eee;
-  padding: 20px;
+  padding: 15px;
+  /* Restore padding for floating look */
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -25,8 +57,8 @@
 .sidebar-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px;
+  gap: 12px;
+  padding: 0 10px;
   margin-bottom: 40px;
 }
 
@@ -37,22 +69,26 @@
 
 .brand-text {
   font-size: 20px;
-  font-weight: 700;
+  /* Slightly smaller font */
+  font-weight: 800;
+  /* Bolder as per image */
   color: #6c9c3e;
 }
 
 .menu-group {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
+  /* Spacing between items */
+  width: 100%;
 }
 
 .menu-label {
   font-size: 12px;
   text-transform: uppercase;
   color: #999;
-  margin-bottom: 10px;
-  padding-left: 10px;
+  margin-bottom: 12px;
+  padding-left: 8px;
   font-weight: 600;
 }
 
@@ -60,30 +96,52 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 15px;
-  border-radius: 8px;
+  padding: 12px 10px;
+  /* Reduced left padding */
+  border-radius: 12px;
+  /* Rounded corners */
+  border-left: none;
+  /* Remove edge indicator */
   color: #555;
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s;
+  font-weight: 600;
+  /* Slightly bolder */
+  width: 100%;
+  font-size: 14px;
+  /* Slightly smaller text */
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  justify-content: flex-start;
+  /* Ensure left align */
 }
 
-.menu-item:hover {
-  background-color: #f5f5f5;
-  color: #333;
+.menu-item:not(.active):hover {
+  background-color: #f1f8e9;
+  /* Light green hover */
+  color: #6c9c3e;
 }
 
 .menu-item.active {
   background-color: #6c9c3e;
   color: white;
+  box-shadow: 0 4px 12px rgba(108, 156, 62, 0.3);
+  /* Soft shadow */
 }
 
+/* Sidebar footer */
 .sidebar-footer {
   margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #f5f5f5;
+  /* Separator for logout */
 }
 
 .menu-item.logout {
+  width: 100%;
+  border-radius: 12px;
+  padding: 12px 16px;
   color: #d32f2f;
+  margin: 0;
 }
 
 .menu-item.logout:hover {
@@ -91,12 +149,19 @@
 }
 
 /* Main Content Area */
+/* Main Content Area */
 .dashboard-main {
   flex: 1;
-  padding: 30px;
-  width: calc(100% - 250px);
+  padding: 24px;
+  width: 100%;
+  /* Force full width */
+  min-width: 0;
   overflow-y: auto;
+  background-color: #f9fbfb;
+  box-sizing: border-box;
 }
+
+
 
 /* Header */
 .dashboard-header {
@@ -104,56 +169,100 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 30px;
+  /* Reduced margin */
+  padding: 0;
+  background: transparent;
 }
 
-.mobile-menu-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 24px;
-  margin-right: 15px;
-}
+/* ... skipped mobile toggle ... */
 
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
+  /* Increased gap */
 }
 
 .search-bar {
   display: flex;
   align-items: center;
-  background: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  border: 1px solid #eee;
-  width: 250px;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  /* Pill shape */
+  border: 1px solid #eef2f6;
+  width: 280px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.search-bar:focus-within {
+  border-color: #6c9c3e;
+  box-shadow: 0 4px 12px rgba(108, 156, 62, 0.1);
 }
 
 .search-bar svg {
-  color: #999;
-  margin-right: 8px;
+  color: #9ca3af;
+  margin-right: 10px;
+  font-size: 18px;
 }
 
 .search-bar input {
   border: none;
   outline: none;
-  font-size: 14px;
+  background: transparent;
   width: 100%;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.search-bar input::placeholder {
+  color: #9ca3af;
 }
 
 .icon-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #555;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* Full circle */
+  background-color: white;
+  border: 1px solid #eee;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.2s;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: relative;
+  /* For badge positioning */
+}
+
+.badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: #d32f2f;
+  /* Red badge */
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  /* Border to separate from button */
 }
 
 .icon-btn:hover {
+  background-color: #f5f5f5;
   color: #1a1a1a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .user-avatar img {
@@ -165,18 +274,30 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.dashboard-content-wrapper {
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 /* Content Grid (Columns) */
 .content-grid {
   display: flex;
-  gap: 30px;
+  gap: 24px;
+  /* Sync with stats-grid gap */
+  width: 100%;
 }
 
 .content-left {
-  flex: 3;
+  flex: 2;
+  /* Main content takes 2/3 space */
+  min-width: 0;
 }
 
 .content-right {
   flex: 1;
+  /* Sidebar takes 1/3 space */
   min-width: 300px;
 }
 
@@ -200,7 +321,8 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 30px;
+  margin-top: 10px;
+  /* Reduced from 30px */
   margin-bottom: 15px;
 }
 
@@ -215,44 +337,64 @@
 }
 
 /* Welcome Card */
+/* Welcome Card */
 .welcome-card {
   background-color: white;
-  padding: 30px;
-  border-radius: 16px;
+  padding: 40px 50px;
+  /* More horizontal padding */
+  border-radius: 20px;
+  /* Matching image radius */
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-  margin-bottom: 30px;
+  align-items: center;
+  /* Center content vertically */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  /* Soft shadow */
+  margin-bottom: 40px;
+  /* Spacing below */
+  border: none;
 }
 
 .verified-badge {
   color: #6c9c3e;
-  font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+}
+
+.welcome-text {
+  text-align: left;
+  /* Explicitly align text to the left */
 }
 
 .welcome-text h1 {
-  font-size: 28px;
-  font-weight: 700;
-  margin: 0 0 10px 0;
+  font-size: 32px;
+  /* Larger title */
+  font-weight: 800;
+  margin: 0 0 12px 0;
   color: #1a1a1a;
+  letter-spacing: -0.5px;
 }
 
 .welcome-text p {
   color: #666;
   margin: 0;
   font-size: 16px;
+  line-height: 1.5;
+  max-width: 600px;
+  /* Prevent too wide text */
 }
 
 .welcome-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
+  /* Separator space */
 }
 
 .view-receipts-link {
@@ -262,6 +404,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 15px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
 }
 
 .donate-now-btn {
@@ -288,23 +434,48 @@
 .impact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.full-width-stats {
+  width: 100%;
 }
 
 .stat-card,
 .impact-card {
   background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  padding: 24px;
+  /* Increased padding inside card */
+  border-radius: 16px;
+  /* Enhanced radius */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  /* Better shadow */
   display: flex;
   flex-direction: column;
 }
 
 .stat-card {
   justify-content: space-between;
-  min-height: 120px;
+  /* Ensure left alignment */
+  text-align: left;
+  min-height: 180px;
+  /* Increased height for better spacing */
 }
+
+.stat-top-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 25px;
+  /* Spacing between top row and label */
+}
+
+/* Remove old stat-header styles if not used elsewhere or keep for legacy, but we use top-row now */
 
 .impact-card {
   text-align: center;
@@ -315,34 +486,46 @@
 
 .stat-icon,
 .impact-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
+  width: 50px;
+  /* Slightly larger icon wrapper */
+  height: 50px;
+  border-radius: 12px;
+  /* Softer radius */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
+  /* Reset margin as it's in a flex row */
+}
+
+.stat-icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .impact-icon {
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  margin-bottom: 15px;
 }
 
 .green-bg {
-  background-color: #e8f5e9;
-  color: #2e7d32;
+  background-color: #dcfce7;
+  /* Lighter green */
+  color: #166534;
 }
 
 .blue-bg {
-  background-color: #e3f2fd;
-  color: #1565c0;
+  background-color: #dbeafe;
+  /* Lighter blue */
+  color: #1e40af;
 }
 
 .purple-bg {
-  background-color: #f3e5f5;
-  color: #7b1fa2;
+  background-color: #f3e8ff;
+  /* Lighter purple */
+  color: #6b21a8;
 }
 
 .orange-bg {
@@ -369,30 +552,48 @@
 
 .stat-label,
 .impact-label {
-  font-size: 14px;
-  color: #888;
+  font-size: 15px;
+  color: #6b7280;
+  /* Cool gray */
+  margin-bottom: 8px;
+  /* Space between label and value */
+  display: block;
 }
 
 .stat-trend {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 12px;
-  background: #e8f5e9;
-  color: #2e7d32;
+  padding: 6px 12px;
+  border-radius: 20px;
+  /* Pillow shape */
+  background: #dcfce7;
+  color: #166534;
+  height: fit-content;
+}
+
+.stat-date {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 5px;
+  /* Alignment adjustment */
 }
 
 .stat-value {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 32px;
+  /* Much larger */
+  font-weight: 800;
+  /* Extra bold */
   color: #1a1a1a;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
 .stat-subtext {
   font-size: 14px;
-  color: #888;
-  font-weight: 400;
-  margin-left: 5px;
+  color: #9ca3af;
+  font-weight: 500;
+  margin-left: 8px;
+  vertical-align: middle;
 }
 
 .impact-number {
@@ -545,7 +746,18 @@
 }
 
 /* Responsive Design */
+/* Responsive Design */
+@media (max-width: 1200px) {
+
+  /* Tight desktop/Landscape Tablet */
+  .dashboard-main {
+    padding: 20px;
+  }
+}
+
 @media (max-width: 1024px) {
+
+  /* Portrait Tablet / Small Desktop */
   .content-grid {
     flex-direction: column;
   }
@@ -553,10 +765,21 @@
   .content-right {
     width: 100%;
     min-width: auto;
+    margin-top: 30px;
+  }
+
+  .stats-grid,
+  .impact-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* Keep 3 columns if space allows, or switch to 2? 3 usually fits on 768+ */
+    gap: 15px;
+    /* Tighter gap */
   }
 }
 
 @media (max-width: 768px) {
+
+  /* Mobile */
   .left-sidebar {
     position: fixed;
     transform: translateX(-100%);
@@ -570,43 +793,77 @@
 
   .dashboard-main {
     width: 100%;
-    padding: 20px;
+    padding: 15px;
+    /* Smaller padding on mobile */
   }
 
   .mobile-menu-toggle {
     display: block;
   }
 
+  /* Stack all grids on mobile */
   .stats-grid,
   .impact-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .welcome-card {
     flex-direction: column;
     align-items: flex-start;
+    padding: 25px;
+    /* Reduced padding */
   }
 
   .welcome-actions {
     margin-top: 20px;
     width: 100%;
-    justify-content: space-between;
-  }
-
-  .dashboard-header {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* Stack buttons */
     gap: 15px;
   }
 
+  .view-receipts-link,
+  .donate-now-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .dashboard-header .section-title {
+    align-self: flex-start;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
 
   .search-bar {
     order: 3;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 5px;
+  }
+
+  .recent-donations-table-container {
+    overflow-x: auto;
+    /* Allow table scroll */
+  }
+
+  .section-header-row {
+    flex-direction: row;
+    /* Keep row for title/link */
+    align-items: center;
   }
 }
 
+/* Utility */
 .mt-30 {
-  margin-top: 30px;
+  margin-top: 15px;
+  /* Reduced from 30px */
 }
