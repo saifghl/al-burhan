@@ -17,7 +17,7 @@ const Academics = () => {
                             Nurturing Minds, Cultivating Faith. A comprehensive approach blending traditional wisdom of the Dars-e-Nizami with modern academic excellence.
                         </p>
                         <div className="academics-hero-buttons">
-                            <Link to="/academics/syllabus" className="academics-btn-download">
+                            <Link to="/syllabus" className="academics-btn-download">
                                 <FaDownload /> Download Syllabus
                             </Link>
                             <button className="academics-btn-admissions">Admissions</button>

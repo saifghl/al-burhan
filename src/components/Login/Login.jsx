@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { BsArrowRight } from 'react-icons/bs';
 import teacherImg from '../../assets/teacher.png';
@@ -9,6 +9,7 @@ import donorImg from '../../assets/donar.png';
 import './Login.css';
 
 const Login = () => {
+    const navigate = useNavigate();
     const [selectedRole, setSelectedRole] = useState(null);
     const [showPassword, setShowPassword] = useState(false);
 
@@ -22,6 +23,18 @@ const Login = () => {
 
     const handleBackToSelection = () => {
         setSelectedRole(null);
+    };
+
+    const handleLogin = () => {
+        if (selectedRole === 'Parent') {
+            navigate('/parent-dashboard');
+        } else if (selectedRole === 'Student') {
+            navigate('/student/home');
+        } else if (selectedRole === 'Donor') {
+            navigate('/dashboard');
+        } else {
+            alert('Teacher dashboard coming soon!');
+        }
     };
 
     return (
@@ -115,7 +128,7 @@ const Login = () => {
                         <div className="form-group">
                             <div className="label-row">
                                 <label>Password</label>
-                                <Link to="/login/forgot-password" style={{ textDecoration: 'none' }}>
+                                <Link to="/forgot-password" style={{ textDecoration: 'none' }}>
                                     <span className="forgot-password">Forgot Password?</span>
                                 </Link>
                             </div>
@@ -130,7 +143,7 @@ const Login = () => {
                             </div>
                         </div>
 
-                        <button className="btn-login-submit">Log In</button>
+                        <button className="btn-login-submit" onClick={handleLogin}>Log In</button>
 
                         <div className="divider-row">
                             <span className="divider-line"></span>

@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Dashboard from './components/Donar/Dashboard';
-import DonationPage from './components/Donar/DonationPage';
+// import DonationPage from './components/Donar/DonationPage'; // Replaced by public Donation component
 import DonationAmountPage from './components/Donar/DonationAmountPage';
 import ReviewDonationPage from './components/Donar/ReviewDonationPage';
 import DonationPaymentPage from './components/Donar/DonationPaymentPage';
@@ -18,13 +18,18 @@ import SettingsPage from './components/Donar/SettingsPage';
 import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
 import Admission from './components/Admission/Admission';
+import About from './components/About/About';
+import Administration from './components/Administration/Administration';
+import Academics from './components/Academics/Academics';
+import Syllabus from './components/Syllabus/Syllabus';
+import Donation from './components/Donation/Donation';
 import Contact from './components/Contact/Contact';
 
 /* Stashed Components */
-import DonorSignup from './Component/Donar/DonorSignup';
-import DonorLogin from './Component/Donar/DonorLogin';
-import DonorForgotPassword from './Component/Donar/DonorForgotPassword';
-import DonorVerifyOtp from './Component/Donar/DonorVerifyOtp';
+// import DonorSignup from './components/Login/Signup'; // File not found, commented out to fix build
+import DonorLogin from './components/Login/Login';
+import DonorForgotPassword from './components/Login/ForgotPassword';
+import DonorVerifyOtp from './components/Login/VerifyIdentity';
 
 /* Student components */
 import Sidebar from './components/student/sidebar/Sidebar';
@@ -43,6 +48,15 @@ import FAQ from './components/student/settings/FAQ';
 import Notifications from './components/student/dashboard/notifications/Notifications';
 import Activities from './components/student/dashboard/activities/Activities';
 import Logout from './components/student/dashboard/logout/Logout';
+
+/* Parent Dashboard Components */
+import ParentDashboard from './components/ParentDashboard/ParentDashboard';
+import ParentAttendance from './components/ParentDashboard/ParentAttendance';
+import ParentProgress from './components/ParentDashboard/ParentProgress';
+import ParentFees from './components/ParentDashboard/ParentFees';
+import ParentProfile from './components/ParentDashboard/ParentProfile';
+import ParentSettings from './components/ParentDashboard/ParentSettings';
+import ParentNotifications from './components/ParentDashboard/ParentNotifications';
 import './App.css';
 import { FaBell } from 'react-icons/fa'; // Import bell icon for header
 
@@ -55,16 +69,17 @@ function App() {
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<div style={{ padding: '50px', textAlign: 'center' }}>About Us Page</div>} />
-            <Route path="/administration" element={<div style={{ padding: '50px', textAlign: 'center' }}>Administration Page</div>} />
-            <Route path="/academics" element={<div style={{ padding: '50px', textAlign: 'center' }}>Academics Page</div>} />
+            <Route path="/about" element={<About />} />
+            <Route path="/administration" element={<Administration />} />
+            <Route path="/academics" element={<Academics />} />
+            <Route path="/syllabus" element={<Syllabus />} />
             <Route path="/admission" element={<Admission />} />
-            <Route path="/donation" element={<DonationPage />} />
+            <Route path="/donation" element={<Donation />} />
             <Route path="/contact" element={<Contact />} />
 
             {/* Auth Routes (Integrated from Stash) */}
             <Route path="/login" element={<AuthWrapper component={DonorLogin} />} />
-            <Route path="/signup" element={<DonorSignup />} />
+            {/* <Route path="/signup" element={<DonorSignup />} /> */}
             <Route path="/forgot-password" element={<DonorForgotPassword />} />
             <Route path="/verify-otp" element={<DonorVerifyOtp />} />
 
@@ -103,6 +118,15 @@ function App() {
 
               <Route path="logout" element={<Logout />} />
             </Route>
+
+            {/* Parent Dashboard Routes */}
+            <Route path="/parent-dashboard" element={<ParentDashboard />} />
+            <Route path="/parent-dashboard/attendance" element={<ParentAttendance />} />
+            <Route path="/parent-dashboard/progress" element={<ParentProgress />} />
+            <Route path="/parent-dashboard/fees" element={<ParentFees />} />
+            <Route path="/parent-dashboard/profile" element={<ParentProfile />} />
+            <Route path="/parent-dashboard/settings" element={<ParentSettings />} />
+            <Route path="/parent-dashboard/notifications" element={<ParentNotifications />} />
           </Routes>
         </ConditionalLayout>
       </div>
@@ -168,7 +192,7 @@ function ConditionalLayout({ children }) {
   const location = useLocation();
   const dashboardRoutes = [
     '/dashboard',
-    '/donation',
+    // '/donation', // Public route
     '/donation-amount',
     '/donation-history',
     '/tax-documents',
@@ -180,7 +204,8 @@ function ConditionalLayout({ children }) {
     '/notifications',
     '/urgent-appeal',
     '/profile',
-    '/settings'
+    '/settings',
+    '/parent-dashboard'
   ];
 
   const authRoutes = ['/login', '/signup', '/forgot-password', '/verify-otp'];

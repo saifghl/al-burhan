@@ -28,6 +28,9 @@
     flex: 1.5;
     /* Give logo section a bit more space */
     padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .footer-logo {

@@ -22,8 +22,8 @@ const ParentProfile = () => {
                     <img src={logoText} alt="Al Burhan" className="logo-img" />
                 </div>
                 <div className="pd-header-actions">
-                    <Link to="/login/parent-dashboard/notifications" className="icon-btn"><FaBell /></Link>
-                    <Link to="/login/parent-dashboard/settings" className="icon-btn"><FaCog /></Link>
+                    <Link to="/parent-dashboard/notifications" className="icon-btn"><FaBell /></Link>
+                    <Link to="/parent-dashboard/settings" className="icon-btn"><FaCog /></Link>
                     <button className="icon-btn" onClick={() => setShowLogout(true)}><FaSignOutAlt /></button>
                     <div className="header-profile">
                         <img src={pProfile} alt="Profile" />
@@ -188,23 +188,23 @@ const ParentProfile = () => {
 
             {/* Bottom Nav */}
             <div className="pd-bottom-nav">
-                <Link to="/login/parent-dashboard" className="nav-item">
+                <Link to="/parent-dashboard" className="nav-item">
                     <FaHome />
                     <span>Home</span>
                 </Link>
-                <Link to="/login/parent-dashboard/progress" className="nav-item">
+                <Link to="/parent-dashboard/progress" className="nav-item">
                     <FaChartLine />
                     <span>Progress</span>
                 </Link>
-                <Link to="/login/parent-dashboard/attendance" className="nav-item">
+                <Link to="/parent-dashboard/attendance" className="nav-item">
                     <FaCalendarAlt />
                     <span>Attend</span>
                 </Link>
-                <Link to="/login/parent-dashboard/fees" className="nav-item">
+                <Link to="/parent-dashboard/fees" className="nav-item">
                     <FaMoneyBillWave />
                     <span>Fees</span>
                 </Link>
-                <Link to="/login/parent-dashboard/profile" className="nav-item active">
+                <Link to="/parent-dashboard/profile" className="nav-item active">
                     <FaUser />
                     <span>Profile</span>
                 </Link>
