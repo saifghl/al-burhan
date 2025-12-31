@@ -6,7 +6,7 @@ import UserAvatar from '../../assets/Picture33.png'; // User Avatar
 // Icons
 const Icons = {
     Bell: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>,
-    Settings: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>,
+    Settings: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.96l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.26-1.13.59-1.62.96l-2.39-.96c-.21-.08-.47-.01-.59.22L3.13 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.96l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.26 1.13-.59 1.62-.96l2.39.96c.21.08.47.01.59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"></path></svg>,
     HelpCircle: () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>,
     TrendingUp: () => <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>,
     CheckCircle: () => <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>,
@@ -24,11 +24,11 @@ const TaxDocumentsPage = () => {
     const navigate = useNavigate();
 
     const receipts = [
-        { id: '#RCT-1024', date: 'Oct 12, 2023', org: 'Darul Uloom Center', type: 'General Fund', amount: '$50.00', method: 'Visa •••• 4242' },
-        { id: '#RCT-0988', date: 'Sep 01, 2023', org: 'Madarsa Al-Nur', type: 'Zakat Contribution', amount: '$100.00', method: 'Bank Transfer' },
-        { id: '#RCT-0852', date: 'Aug 15, 2023', org: 'Islamic Relief Fund', type: 'Emergency Aid', amount: '$250.00', method: 'Visa •••• 4242' },
-        { id: '#RCT-0721', date: 'Jul 30, 2023', org: 'Masjid Al-Falah', type: 'Building Construction', amount: '$500.00', method: 'PayPal' },
-        { id: '#RCT-0615', date: 'Jun 12, 2023', org: 'Darul Uloom Center', type: 'Monthly Sponsorship', amount: '$350.00', method: 'Visa •••• 4242' }
+        { id: '#RCT-1024', date: 'Oct 12, 2023', org: 'Darul Uloom Center', type: 'General Fund', amount: '₹50.00', method: 'Visa •••• 4242' },
+        { id: '#RCT-0988', date: 'Sep 01, 2023', org: 'Madarsa Al-Nur', type: 'Zakat Contribution', amount: '₹100.00', method: 'Bank Transfer' },
+        { id: '#RCT-0852', date: 'Aug 15, 2023', org: 'Islamic Relief Fund', type: 'Emergency Aid', amount: '₹250.00', method: 'Visa •••• 4242' },
+        { id: '#RCT-0721', date: 'Jul 30, 2023', org: 'Masjid Al-Falah', type: 'Building Construction', amount: '₹500.00', method: 'PayPal' },
+        { id: '#RCT-0615', date: 'Jun 12, 2023', org: 'Darul Uloom Center', type: 'Monthly Sponsorship', amount: '₹350.00', method: 'Visa •••• 4242' }
     ];
 
     return (
@@ -44,7 +44,7 @@ const TaxDocumentsPage = () => {
                         <Icons.Search />
                         <input type="text" placeholder="Search Donations" />
                     </div>
-                    <div className="icon-btn" onClick={() => navigate('/notifications')}><Icons.Bell /><span className="dot"></span></div>
+                    <div className="icon-btn" onClick={() => navigate('/notifications')}><Icons.Bell /></div>
                     <div className="icon-btn" onClick={() => navigate('/settings')}><Icons.Settings /></div>
                     <div className="user-avatar-small" onClick={() => navigate('/profile')}>
                         <img src={UserAvatar} alt="User" />
@@ -70,7 +70,7 @@ const TaxDocumentsPage = () => {
                             <span className="stat-label">2023 Total Contributions</span>
                             <span className="icon-circle green-light"><Icons.TrendingUp /></span>
                         </div>
-                        <div className="td-stat-value">$1,250.00</div>
+                        <div className="td-stat-value">₹1,250.00</div>
                         <div className="td-stat-subtext"><span className="green-text">+15%</span> from last year</div>
                     </div>
 
@@ -79,7 +79,7 @@ const TaxDocumentsPage = () => {
                             <span className="stat-label">Tax Deductible Amount</span>
                             <span className="icon-circle green-light"><Icons.CheckCircle /></span>
                         </div>
-                        <div className="td-stat-value">$1,250.00</div>
+                        <div className="td-stat-value">₹1,250.00</div>
                         <div className="td-stat-subtext">100% of contributions are eligible</div>
                     </div>
 

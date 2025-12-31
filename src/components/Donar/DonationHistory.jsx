@@ -160,7 +160,7 @@ const DonationHistory = () => {
                                             </span>
                                         </td>
                                         <td>
-                                            <button className="icon-action-btn">
+                                            <button className="icon-action-btn" onClick={() => navigate('/donation-details')}>
                                                 <Icons.MoreVertical />
                                             </button>
                                         </td>

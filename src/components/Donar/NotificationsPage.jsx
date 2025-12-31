@@ -32,7 +32,7 @@ const NotificationsPage = () => {
             message: 'We are 80% towards our goal of providing Iftar for 500 students. Help us cross the finish line!',
             time: '5 hours ago',
             actionLabel: 'Donate Now',
-            actionLink: '/donation',
+            actionLink: '/urgent-appeal',
             actionBtnClass: 'btn-green-solid',
             iconType: 'heart-orange'
         },

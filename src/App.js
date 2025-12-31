@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Dashboard from './components/Donar/Dashboard';
-// import DonationPage from './components/Donar/DonationPage'; // Replaced by public Donation component
+import DonorDonationPage from './components/Donar/DonationPage';
 import DonationAmountPage from './components/Donar/DonationAmountPage';
 import ReviewDonationPage from './components/Donar/ReviewDonationPage';
 import DonationPaymentPage from './components/Donar/DonationPaymentPage';
@@ -85,6 +85,7 @@ function App() {
 
             {/* Donor Dashboard Routes */}
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/make-donation" element={<DonorDonationPage />} />
             <Route path="/donation-amount" element={<DonationAmountPage />} />
             <Route path="/review-donation" element={<ReviewDonationPage />} />
             <Route path="/donation-payment" element={<DonationPaymentPage />} />
@@ -193,6 +194,7 @@ function ConditionalLayout({ children }) {
   const dashboardRoutes = [
     '/dashboard',
     // '/donation', // Public route
+    '/make-donation',
     '/donation-amount',
     '/donation-history',
     '/tax-documents',

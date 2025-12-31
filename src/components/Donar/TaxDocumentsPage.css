@@ -74,14 +74,22 @@
     align-items: center;
 }
 
-.icon-btn .dot {
+.badge {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 6px;
-    height: 6px;
-    background: #ef4444;
+    top: -2px;
+    right: -2px;
+    background-color: #d32f2f;
+    /* Red badge */
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
 }
 
 .user-avatar-small {
@@ -103,6 +111,9 @@
     max-width: 1100px;
     margin: 0 auto;
     padding: 40px 30px;
+    width: 100%;
+    /* Ensure it takes width but constrained by max-width */
+    text-align: left;
 }
 
 .td-page-title-row {
@@ -156,6 +167,8 @@
     border-radius: 12px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     border: 1px solid #f3f4f6;
+    text-align: left;
+    /* Enforce left alignment */
 }
 
 .td-stat-header {
@@ -589,18 +602,55 @@
     cursor: pointer;
 }
 
-/* Response */
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .td-stats-grid {
+        gap: 15px;
+    }
+
+    .td-content-container {
+        padding: 30px;
+    }
+}
+
 @media (max-width: 900px) {
     .td-stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns for tablet */
     }
 
     .td-hero-banner {
         flex-direction: column;
     }
 
+    .td-hero-content {
+        padding: 30px;
+    }
+
+    .td-hero-image {
+        min-height: 180px;
+        /* Show image on tablet but smaller */
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .td-stats-grid {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+    }
+
+    .td-header-standalone {
+        padding: 15px 20px;
+    }
+
+    .td-content-container {
+        padding: 20px;
+    }
+
     .td-hero-image {
         display: none;
+        /* Hide optional illustration on small screens */
     }
 
     .td-history-header {
@@ -611,10 +661,52 @@
 
     .td-history-filters {
         width: 100%;
+        flex-direction: column;
     }
 
+    .year-select,
     .search-box-small {
-        flex: 1;
-        width: auto;
+        width: 100%;
+    }
+
+    .header-right .td-search-top {
+        display: none;
+        /* Simplify header on mobile */
+    }
+
+    .td-page-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .td-table {
+        min-width: 600px;
+        /* Ensure table scrolls */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 18px;
+        /* Smaller logo */
+    }
+
+    .td-page-title-row h1 {
+        font-size: 24px;
+    }
+
+    .td-stat-value {
+        font-size: 24px;
+    }
+
+    .btn-download,
+    .btn-email {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .td-hero-actions {
+        flex-direction: column;
     }
 }

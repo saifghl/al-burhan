@@ -31,15 +31,28 @@ const UrgentAppealPage = () => {
         navigate('/');
     };
 
-    // Campaign Data
-    const campaign = {
-        title: "Urgent Appeal: Winter Blanket Drive for Students",
-        raised: 1750,
-        goal: 5000,
-        currency: "₹"
-    };
-
-    const percentage = (campaign.raised / campaign.goal) * 100;
+    // Campaign Data Array
+    const campaigns = [
+        {
+            id: 1,
+            title: "Urgent Appeal: Winter Blanket Drive",
+            raised: 1750,
+            goal: 5000,
+            currency: "₹",
+            madarsa: "Al-Falah Madarsa",
+            tag: "Urgent",
+            img1: CampaignImg1,
+            img2: CampaignImg2,
+            bodyText: (
+                <>
+                    <p><strong>Assalamu Alaikum,</strong></p>
+                    <p>As winter approaches rapidly, we need 200 blankets for our resident students who lack adequate winter gear.</p>
+                    <p>Our goal is to raise <strong>₹5,000</strong> to procure heavy thermal blankets and heaters for the dormitory.</p>
+                </>
+            ),
+            attachment: "Winter_Budget_Breakdown_2024.pdf"
+        }
+    ];
 
     return (
         <div className="ua-layout-standalone">
@@ -67,77 +80,72 @@ const UrgentAppealPage = () => {
                         <span className="current">Urgent Appeal Details</span>
                     </div>
 
-                    <div className="ua-card">
-                        <div className="ua-header">
-                            <div className="ua-campaign-info">
-                                <div className="ua-avatar">
-                                    <img src={MadarsaLogo} alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
-                                    <div className="ua-avatar-check"><Icons.Check /></div>
+                    <div className="ua-scroll-container">
+                        {campaigns.map((camp) => (
+                            <div key={camp.id} className="ua-card">
+                                <div className="ua-header">
+                                    <div className="ua-campaign-info">
+                                        <div className="ua-avatar">
+                                            <img src={MadarsaLogo} alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
+                                            <div className="ua-avatar-check"><Icons.Check /></div>
+                                        </div>
+                                        <div className="ua-meta">
+                                            <h3>{camp.madarsa}</h3>
+                                            <p>Campaign ID: #Win2024-{camp.id} • 2 hours ago</p>
+                                        </div>
+                                    </div>
+                                    <button className="ua-options-btn"><Icons.MoreVertical /></button>
                                 </div>
-                                <div className="ua-meta">
-                                    <h3>Al-Falah Madarsa</h3>
-                                    <p>Campaign ID: #Win2024-AFM • 2 hours ago</p>
+
+                                <div className="ua-tags">
+                                    <span className={`ua-tag ${camp.tag.toLowerCase()}`}><Icons.Flash /> {camp.tag}</span>
+                                    <span className="ua-tag fundraiser">Fundraiser</span>
+                                </div>
+
+                                <h1 className="ua-title">{camp.title}</h1>
+
+                                <div className="ua-body">
+                                    {camp.bodyText}
+                                </div>
+
+                                <span className="ua-subtitle">Campaign Images</span>
+                                <div className="ua-images-grid">
+                                    <div className="ua-img-box"><img src={camp.img1} alt="Campaign 1" /></div>
+                                    <div className="ua-img-box"><img src={camp.img2} alt="Campaign 2" /></div>
+                                </div>
+
+                                <span className="ua-subtitle">Attachments</span>
+                                <div className="ua-attachment-card">
+                                    <div className="ua-att-left">
+                                        <div className="ua-pdf-icon"><Icons.FileText /></div>
+                                        <div className="ua-att-info">
+                                            <h4>{camp.attachment}</h4>
+                                            <p>PDF Document</p>
+                                        </div>
+                                    </div>
+                                    <button className="ua-download-btn"><Icons.Download /></button>
+                                </div>
+
+                                {/* Card Footer inside card now */}
+                                <div className="ua-card-footer">
+                                    <div className="ua-progress-section">
+                                        <div className="ua-progress-bar">
+                                            <div className="ua-progress-fill" style={{ width: `${(camp.raised / camp.goal) * 100}%` }}></div>
+                                        </div>
+                                        <div className="ua-progress-labels">
+                                            <span className="ua-raised">{camp.currency}{camp.raised.toLocaleString()} raised</span>
+                                            <span className="ua-goal">Goal: {camp.currency}{camp.goal.toLocaleString()}</span>
+                                        </div>
+                                    </div>
+                                    <div className="ua-actions">
+                                        <button className="ua-share-btn"><Icons.Share /> Share</button>
+                                        <button className="ua-donate-btn" onClick={() => navigate('/donation')}>
+                                            Donate Now
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                            <button className="ua-options-btn"><Icons.MoreVertical /></button>
-                        </div>
-
-                        <div className="ua-tags">
-                            <span className="ua-tag urgent"><Icons.Flash /> Urgent</span>
-                            <span className="ua-tag fundraiser">Fundraiser</span>
-                        </div>
-
-                        <h1 className="ua-title">{campaign.title}</h1>
-
-                        <div className="ua-body">
-                            <p><strong>Assalamu Alaikum,</strong></p>
-                            <p>We hope this message finds you in the best of health and iman. As winter approaches rapidly in the northern regions, we are launching an urgent campaign to ensure the well-being of our 200 resident students.</p>
-                            <p>Many of our students come from underprivileged backgrounds and lack adequate winter gear. The temperature has already dropped significantly, and our current dormitory bedding is insufficient to keep them warm during the freezing nights ahead.</p>
-                            <p>Our goal is to raise <strong>{campaign.currency}{campaign.goal.toLocaleString()}</strong> by the end of this week to procure:</p>
-                            <ul className="ua-target-list">
-                                <li>200 Heavy Thermal Blankets</li>
-                                <li>Heaters for the main dormitory halls</li>
-                                <li>Winter socks and caps for each student</li>
-                            </ul>
-                            <p>Your support can provide warmth and comfort to a seeker of knowledge. "The believer's shade on the Day of Resurrection will be his charity." (Tirmidhi)</p>
-                        </div>
-
-                        <span className="ua-subtitle">Campaign Images</span>
-                        <div className="ua-images-grid">
-                            <div className="ua-img-box"><img src={CampaignImg1} alt="Student Illustration" /></div>
-                            <div className="ua-img-box"><img src={CampaignImg2} alt="Blankets Stack" /></div>
-                        </div>
-
-                        <span className="ua-subtitle">Attachments</span>
-                        <div className="ua-attachment-card">
-                            <div className="ua-att-left">
-                                <div className="ua-pdf-icon"><Icons.FileText /></div>
-                                <div className="ua-att-info">
-                                    <h4>Winter_Budget_Breakdown_2024.pdf</h4>
-                                    <p>1.2 MB • PDF Document</p>
-                                </div>
-                            </div>
-                            <button className="ua-download-btn"><Icons.Download /></button>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Fixed Footer */}
-                <div className="ua-fixed-footer">
-                    <div className="ua-progress-section">
-                        <div className="ua-progress-bar">
-                            <div className="ua-progress-fill" style={{ width: `${percentage}%` }}></div>
-                        </div>
-                        <div className="ua-progress-labels">
-                            <span className="ua-raised">{campaign.currency}{campaign.raised.toLocaleString()} raised</span>
-                            <span className="ua-goal">Goal: {campaign.currency}{campaign.goal.toLocaleString()}</span>
-                        </div>
-                    </div>
-                    <div className="ua-actions">
-                        <button className="ua-share-btn"><Icons.Share /> Share</button>
-                        <button className="ua-donate-btn" onClick={() => navigate('/donation')}>
-                            Donate Now
-                        </button>
+                        ))}
                     </div>
                 </div>
 
