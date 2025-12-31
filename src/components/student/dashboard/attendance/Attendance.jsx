@@ -5,8 +5,58 @@ import Class from './Class';
 import Namaz from './Namaz';
 import { FaCheckCircle, FaTimesCircle, FaPercentage } from 'react-icons/fa';
 
+const CircularChart = ({ percentage, color, id }) => {
+    const radius = 15.9155;
+    const circumference = 2 * Math.PI * radius; // ~100
+    const strokeDashoffset = circumference - (percentage / 100) * circumference;
+
+    return (
+        <div className="overall-circle">
+            <svg viewBox="0 0 36 36" className="attendance-circular-chart">
+                <defs>
+                    <filter id={`dropShadow-${id}`} height="130%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="1" />
+                        <feOffset dx="0" dy="1" result="offsetblur" />
+                        <feComponentTransfer>
+                            <feFuncA type="linear" slope="0.2" />
+                        </feComponentTransfer>
+                        <feMerge>
+                            <feMergeNode />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+                <circle
+                    className="attendance-circle-bg"
+                    cx="18"
+                    cy="18"
+                    r={radius}
+                    fill="none"
+                    stroke="#eee"
+                    strokeWidth="2.5"
+                />
+                <circle
+                    className="attendance-circle-fg"
+                    cx="18"
+                    cy="18"
+                    r={radius}
+                    fill="none"
+                    stroke={color}
+                    strokeWidth="2.5"
+                    strokeDasharray={circumference}
+                    strokeDashoffset={strokeDashoffset}
+                    strokeLinecap="round"
+                    filter={`url(#dropShadow-${id})`}
+                    transform="rotate(-90 18 18)"
+                />
+                <text x="18" y="20.35" className="percentage" style={{ fill: '#333', fontSize: '8px', fontWeight: 'bold' }}>{percentage}%</text>
+            </svg>
+        </div>
+    );
+};
+
 const Attendance = () => {
-    const [activeTab, setActiveTab] = useState('namaz'); // 'class' or 'namaz'
+    const [activeTab, setActiveTab] = useState('class'); // 'class' or 'namaz'
     const navigate = useNavigate();
 
     return (
@@ -40,22 +90,7 @@ const Attendance = () => {
                         <div className="subjects-overview">
                             <div className="overall-stats-card">
                                 <h3>Overall Attendance</h3>
-                                <div className="overall-circle">
-                                    <svg viewBox="0 0 36 36" className="circular-chart">
-                                        <path className="circle-bg"
-                                            d="M18 2.0845
-                                               a 15.9155 15.9155 0 0 1 0 31.831
-                                               a 15.9155 15.9155 0 0 1 0 -31.831"
-                                        />
-                                        <path className="circle"
-                                            strokeDasharray="87.5, 100"
-                                            d="M18 2.0845
-                                               a 15.9155 15.9155 0 0 1 0 31.831
-                                               a 15.9155 15.9155 0 0 1 0 -31.831"
-                                        />
-                                        <text x="18" y="20.35" className="percentage">87.5%</text>
-                                    </svg>
-                                </div>
+                                <CircularChart percentage={87.5} color="#64A926" id="class-chart" />
                                 <p>You are doing great! Keep it up.</p>
                             </div>
 
@@ -89,15 +124,7 @@ const Attendance = () => {
                             {/* Assuming Namaz uses full width or compatible layout */}
                             <div className="overall-stats-card" style={{ marginBottom: '20px' }}>
                                 <h3>Prayer Consistency</h3>
-                                {/* Similar graph or summary for Namaz can go here if requested, or keep simple */}
-                                <div className="overall-circle">
-                                    {/* Simplified generic version for namaz demo */}
-                                    <svg viewBox="0 0 36 36" className="circular-chart">
-                                        <path className="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path className="circle" strokeDasharray="92, 100" stroke="#f39c12" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <text x="18" y="20.35" className="percentage">92%</text>
-                                    </svg>
-                                </div>
+                                <CircularChart percentage={92} color="#f39c12" id="namaz-chart" />
                             </div>
                             <Namaz />
                         </div>

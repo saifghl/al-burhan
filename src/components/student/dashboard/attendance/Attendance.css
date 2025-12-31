@@ -108,32 +108,22 @@
     position: relative;
 }
 
-.circular-chart {
+.attendance-circular-chart {
     display: block;
     margin: 0 auto;
     max-width: 100%;
     max-height: 250px;
 }
 
-.circle-bg {
+.attendance-circle-bg {
     fill: none;
-    stroke: #eee;
-    stroke-width: 2.5;
+    stroke: #f0f0f0;
+    stroke-width: 3.5;
 }
 
-.circle {
+.attendance-circle-fg {
     fill: none;
-    stroke-width: 2.5;
-    stroke-linecap: round;
-    stroke: #64A926;
-    /* Default color, overridden inline */
-    animation: progress 1s ease-out forwards;
-}
-
-@keyframes progress {
-    0% {
-        stroke-dasharray: 0 100;
-    }
+    transition: stroke-dashoffset 1s ease-out;
 }
 
 .percentage {
@@ -143,6 +133,7 @@
     font-size: 0.5em;
     /* relative to viewbox */
     text-anchor: middle;
+    font-weight: 800;
 }
 
 /* Subject List */
@@ -421,24 +412,40 @@
     margin: 5px 0 20px 0;
 }
 
-.namaz-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid #f5f5f5;
+.namaz-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
 }
 
-.namaz-item:last-child {
-    border-bottom: none;
+.namaz-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    transition: all 0.2s;
+}
+
+.namaz-item:hover {
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+    border-color: #64A926;
 }
 
 .namaz-info {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    font-weight: 500;
+    gap: 8px;
+    font-weight: 600;
     color: #444;
+    margin-bottom: 8px;
+    font-size: 13px;
 }
 
 .n-icon {
