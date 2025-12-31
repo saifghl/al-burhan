@@ -513,3 +513,32 @@
         gap: 20px;
     }
 }
+
+@media (max-width: 480px) {
+
+    .term-select,
+    .btn-download-report {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .act-controls {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .event-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ec-time {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .badges-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

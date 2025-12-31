@@ -330,5 +330,35 @@
     .results-tabs {
         overflow-x: auto;
         white-space: nowrap;
+        padding-bottom: 5px;
+        /* Add space for scrollbar */
+    }
+
+    /* Hide scrollbar for cleaner look */
+    .results-tabs::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .results-tabs::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .results-container {
+        padding: 20px;
+    }
+
+    .stat-content h3 {
+        font-size: 28px;
+    }
+
+    .subject-card {
+        padding: 20px;
+    }
+
+    .score-big {
+        font-size: 28px;
     }
 }
