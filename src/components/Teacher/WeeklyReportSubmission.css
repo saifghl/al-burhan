@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&family=Inter:wght@400;500;600;700&family=Jost:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #64A926;
+    --primary-light: #E8F5E9;
+    --bg-color: #F8F9FA;
+    --card-bg: #FFFFFF;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --border-color: #E2E8F0;
+    --font-title: 'Jost', sans-serif;
+    --font-subtitle: 'Cherry Swash', cursive;
+    --font-normal: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F4F7F2;
+    font-family: var(--font-normal);
+    color: var(--text-main);
+}
+
+.submission-page-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: #F8F9FA;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    margin-left: 240px;
+}
+
+.submission-main-header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submission-content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.submission-main-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E2E8F0;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.header-meta h1 {
+    font-family: var(--font-title);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.teacher-info {
+    font-size: 14px;
+    color: #999;
+}
+
+.teacher-info span {
+    color: #111;
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+.save-draft-btn {
+    background: #F0F2F5;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+/* Summary Stats */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.stat-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 12px;
+}
+
+.stat-icon {
+    color: var(--primary-color);
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.completion-hint {
+    font-size: 11px;
+    color: #999;
+    margin-top: 4px;
+}
+
+/* Section Divisions */
+.form-section-card {
+    margin-bottom: 48px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-family: var(--font-title);
+}
+
+.title-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.icon-wrap {
+    background: #F0F9EB;
+    color: var(--primary-color);
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+}
+
+.add-btn {
+    color: var(--primary-color);
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Academic Delivery Table/Grid */
+.delivery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 40px;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.grid-label {
+    font-size: 12px;
+    color: #999;
+    font-weight: 500;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-family: var(--font-normal);
+    font-size: 14px;
+    background: #FDFDFD;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.delete-btn {
+    color: #FF4D4F;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Performance and Progress */
+.progress-summary-box h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.summary-hint {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 12px;
+}
+
+.textarea-field {
+    width: 100%;
+    min-height: 100px;
+    padding: 14px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-family: var(--font-normal);
+    font-size: 14px;
+    resize: vertical;
+}
+
+/* Obstacles and Moving Forward */
+.side-by-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.tag-chips {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.chip {
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    background: #F7F9FB;
+    color: #999;
+    border: 1px solid #EDF2F7;
+    cursor: pointer;
+}
+
+.chip.active {
+    background: #F0F9EB;
+    color: var(--primary-color);
+    border-color: #C6F6D5;
+}
+
+/* Footer Section */
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid #E2E8F0;
+}
+
+.certification {
+    font-size: 14px;
+    color: #666;
+}
+
+.footer-btns {
+    display: flex;
+    gap: 16px;
+}
+
+.cancel-btn {
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .side-by-side {
+        grid-template-columns: 1fr;
+    }
+
+    .delivery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .delete-btn {
+        grid-column: span 2;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-content {
+        padding: 20px;
+    }
+
+    .form-footer {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .footer-btns {
+        width: 100%;
+    }
+
+    .submit-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}

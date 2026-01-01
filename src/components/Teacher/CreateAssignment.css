@@ -1,0 +1,404 @@
+/* CreateAssignment.css */
+
+.create-assignment-wrapper {
+    display: flex;
+    background-color: #F9FBFA;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Shared Layout Containers */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Specific body container needs flex-direction column for children */
+.content-body.container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 4rem;
+}
+
+/* Shared Top Header Styling (consistent across teacher pages) */
+.top-header {
+    background-color: #fff;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #efefef;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    margin-left: 240px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header-icon {
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Content Body Styling */
+/* Padding now handled by .content-body.container */
+
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.page-subtitle {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+}
+
+.assignment-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+}
+
+/* Card Styling */
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid #f0f0f0;
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+.icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box.green {
+    background-color: #F0FDF4;
+    color: #64A926;
+}
+
+/* Form Styling */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.form-select,
+.form-input {
+    padding: 0.75rem;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background-color: #F8FAFC;
+    outline: none;
+}
+
+.rich-text-editor {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #F8FAFC;
+}
+
+.editor-toolbar {
+    padding: 0.5rem;
+    border-bottom: 1px solid #E2E8F0;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.toolbar-btn {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    color: #64748B;
+    border-radius: 4px;
+}
+
+.toolbar-btn:hover {
+    background-color: #EDF2F7;
+}
+
+.editor-content {
+    width: 100%;
+    min-height: 120px;
+    padding: 1rem;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+    resize: vertical;
+}
+
+/* Attachments */
+.upload-area {
+    border: 2px dashed #E2E8F0;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.upload-icon {
+    font-size: 2rem;
+    color: #64A926;
+    margin-bottom: 1rem;
+}
+
+.upload-hint {
+    font-size: 0.75rem;
+    color: #94A3B8;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F8FAFC;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border: 1px solid #E2E8F0;
+    border-left: 4px solid #F87171;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.file-icon.pdf {
+    color: #F87171;
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+
+.file-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.file-size {
+    font-size: 0.75rem;
+    color: #94A3B8;
+    margin-left: 8px;
+}
+
+.remove-file {
+    background: none;
+    border: none;
+    color: #94A3B8;
+    cursor: pointer;
+}
+
+/* Sidebar Widgets */
+.widget-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.widget-subtitle {
+    font-size: 0.75rem;
+    color: #AAA;
+    margin-bottom: 1.5rem;
+}
+
+.recent-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1.25rem;
+}
+
+.recent-icon {
+    width: 36px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.recent-icon.purple {
+    background-color: #F3E8FF;
+    color: #9333EA;
+}
+
+.recent-icon.blue {
+    background-color: #DBEAFE;
+    color: #2563EB;
+}
+
+.recent-icon.orange {
+    background-color: #FFEDD5;
+    color: #EA580C;
+}
+
+.recent-details h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.recent-details p {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.view-all-link {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #64A926;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.tip-card {
+    background-color: #F0FDF4;
+    border: none;
+}
+
+.tip-title {
+    color: #166534;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.tip-card p {
+    font-size: 0.8rem;
+    color: #166534;
+    line-height: 1.5;
+}
+
+.btn-full-green {
+    width: 100%;
+    background-color: #64A926;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Page Footer Actions */
+.page-footer-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #E2E8F0;
+}
+
+.footer-right {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: #64748B;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-text-green {
+    background: none;
+    border: none;
+    color: #64A926;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #64A926;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .assignment-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .top-header,
+    .content-body {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}

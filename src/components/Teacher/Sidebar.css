@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Cherry+Swash&family=Inter:wght@300;400;500;600;700&display=swap');
+
+.sidebar-main {
+    width: 240px;
+    background-color: #FFFFFF;
+    padding: 2.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #E5E7EB;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 3rem;
+    padding-left: 0.5rem;
+    text-decoration: none;
+}
+
+.sidebar-logo-icon {
+    font-size: 1.5rem;
+    color: #64A926;
+}
+
+.sidebar-logo-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #64A926;
+    margin: 0;
+}
+
+.sidebar-nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    color: #6B7280;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+}
+
+.sidebar-menu-item.active {
+    background-color: #64A926;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.sidebar-menu-item:hover:not(.active) {
+    background-color: #f0fdf4;
+    color: #64A926;
+}
+
+.sidebar-menu-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Mobile Toggle - Styles used in pages */
+.sidebar-mobile-toggle {
+    display: none;
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 101;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .sidebar-main {
+        transform: translateX(-100%);
+    }
+
+    .sidebar-main.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-mobile-toggle {
+        display: block;
+    }
+}
