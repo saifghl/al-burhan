@@ -1,0 +1,349 @@
+/* ParentSettings.css */
+.parent-settings-page {
+    font-family: 'Inter', sans-serif;
+    background-color: #F9FAFB;
+    min-height: 100vh;
+    padding-bottom: 100px;
+    color: #1F2937;
+}
+
+.ps-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.ps-title-section {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.ps-title-section h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.8rem;
+    color: #111827;
+    margin: 0 0 5px;
+}
+
+.ps-title-section p {
+    color: #6B7280;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.ps-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    /* Very subtle shadow */
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #F3F4F6;
+}
+
+/* Profile Card */
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ps-profile-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ps-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.ps-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ps-details h2 {
+    margin: 0 0 4px;
+    font-size: 1.1rem;
+    color: #111827;
+    font-family: 'Jost', sans-serif;
+    text-align: left;
+}
+
+.role-text {
+    margin: 0 0 2px;
+    font-size: 0.85rem;
+    color: #6B7280;
+    font-weight: 500;
+}
+
+.email-text {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #9CA3AF;
+}
+
+.edit-profile-btn {
+    background: none;
+    border: none;
+    color: #64A926;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Sections */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.section-icon {
+    color: #4B5563;
+    font-size: 1.1rem;
+}
+
+.section-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #111827;
+    font-weight: 700;
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.setting-row:last-child {
+    margin-bottom: 0px;
+}
+
+.setting-row.compact {
+    margin-bottom: 15px;
+}
+
+.setting-info h4 {
+    margin: 0 0 4px;
+    font-size: 0.95rem;
+    color: #374151;
+    text-align: left;
+}
+
+.setting-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #6B7280;
+}
+
+.update-btn {
+    background: #64A926;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    width: 44px;
+    height: 24px;
+    background: #E5E7EB;
+    border-radius: 20px;
+    padding: 2px;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative;
+}
+
+.toggle-switch.active {
+    background: #64A926;
+}
+
+.toggle-thumb {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle-switch.active .toggle-thumb {
+    transform: translateX(20px);
+}
+
+.toggle-switch.small {
+    width: 36px;
+    height: 20px;
+}
+
+.toggle-switch.small .toggle-thumb {
+    width: 16px;
+    height: 16px;
+}
+
+.toggle-switch.small.active .toggle-thumb {
+    transform: translateX(16px);
+}
+
+/* Preferences */
+.lang-select {
+    padding: 8px 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    color: #374151;
+    font-size: 0.9rem;
+    outline: none;
+    background: #fff;
+}
+
+.setting-group {
+    border-top: 1px solid #F3F4F6;
+    padding-top: 20px;
+    margin-top: 5px;
+}
+
+.group-title {
+    margin: 0 0 15px;
+    font-size: 0.9rem;
+    color: #374151;
+    font-weight: 600;
+    text-align: left;
+}
+
+.setting-label {
+    font-size: 0.9rem;
+    color: #4B5563;
+}
+
+/* Link List */
+.link-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.link-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #F3F4F6;
+    cursor: pointer;
+}
+
+.link-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.link-item:first-child {
+    padding-top: 0;
+}
+
+.li-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #4B5563;
+}
+
+.li-left span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.chevron {
+    font-size: 0.8rem;
+    color: #9CA3AF;
+}
+
+/* Danger Zone */
+.danger-limit {
+    margin-top: 30px;
+}
+
+.danger-title {
+    color: #DC2626;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+    text-align: left;
+}
+
+.danger-zone-card {
+    background: #FEF2F2;
+    /* Light red */
+    border: 1px solid #FECACA;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.danger-info h4 {
+    margin: 0 0 4px;
+    font-size: 0.95rem;
+    color: #111827;
+    text-align: left;
+}
+
+.danger-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #6B7280;
+}
+
+.deactivate-btn {
+    background: #fff;
+    border: 1px solid #FCA5A5;
+    color: #DC2626;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+/* Header Override for Active Cog */
+.icon-btn.active-s {
+    color: #111827;
+    /* Darker when on settings page? or keep default */
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .profile-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .edit-profile-btn {
+        align-self: flex-end;
+        margin-top: -30px;
+    }
+
+    /* Adjust position */
+    .danger-zone-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .deactivate-btn {
+        width: 100%;
+    }
+}

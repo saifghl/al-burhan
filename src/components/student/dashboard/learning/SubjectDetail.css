@@ -1,0 +1,138 @@
+.subject-detail-container {
+    padding: 55px;
+    background-color: #f7fbf7;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #64A926;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.subject-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+    /* Explicit left alignment */
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.subject-tag {
+    background-color: #eef7e9;
+    color: #64A926;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.subject-icon-top {
+    font-size: 28px;
+    color: #64A926;
+}
+
+.subject-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 16px 0;
+}
+
+.subject-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 80%;
+}
+
+.topics-section h3 {
+    font-size: 16px;
+    color: #64A926;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.topic-icon {
+    font-size: 18px;
+}
+
+.topics-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.topic-badge {
+    background-color: #f7f9fc;
+    color: #333;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #edf2f7;
+}
+
+.card-footer {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.study-material-btn {
+    background-color: #64A926;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.study-material-btn:hover {
+    background-color: #4e8b1e;
+}
+
+@media (max-width: 768px) {
+    .subject-card {
+        padding: 25px;
+    }
+
+    .subject-title {
+        font-size: 28px;
+    }
+
+    .subject-description {
+        max-width: 100%;
+    }
+}

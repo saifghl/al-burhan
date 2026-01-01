@@ -1,0 +1,220 @@
+.payment-success-layout {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.success-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Centered Card */
+.success-card-centered {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Decorative Circles/Cutouts usually seen in receipts */
+.success-card-centered::before,
+.success-card-centered::after {
+    content: '';
+    position: absolute;
+    top: 220px;
+    /* Adjust based on where you want the "cut" */
+    width: 20px;
+    height: 20px;
+    background-color: #f8f9fa;
+    /* Match bg color */
+    border-radius: 50%;
+}
+
+.success-card-centered::before {
+    left: -10px;
+}
+
+.success-card-centered::after {
+    right: -10px;
+}
+
+
+.success-header {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed #eee;
+    /* Receipt tear line look */
+}
+
+.check-icon-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.success-header h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 10px 0;
+}
+
+.success-header p {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+}
+
+.green-text {
+    color: #4caf50;
+}
+
+.amount-display {
+    font-size: 36px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-top: 15px;
+}
+
+/* Transaction Details */
+.transaction-details-box {
+    margin-bottom: 30px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.detail-row .label {
+    color: #888;
+}
+
+.detail-row .value {
+    color: #333;
+    font-weight: 600;
+    text-align: right;
+}
+
+.icon-value {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.value-badge {
+    background-color: #e8f5e9;
+    color: #4caf50;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* Actions */
+.action-buttons-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.download-btn {
+    background-color: #6aa342;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 4px rgba(106, 163, 66, 0.2);
+}
+
+.download-btn:hover {
+    background-color: #5a8e38;
+}
+
+.secondary-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.text-btn {
+    background: none;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.text-btn:hover {
+    color: #1a1a1a;
+    text-decoration: underline;
+}
+
+/* Footer Links */
+.footer-links-row {
+    margin-top: 0;
+    font-size: 12px;
+    color: #999;
+    display: flex;
+    gap: 10px;
+}
+
+.footer-link {
+    cursor: pointer;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.sign-out-link {
+    color: #d32f2f;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+    .success-card-centered {
+        padding: 30px 20px;
+    }
+
+    .amount-display {
+        font-size: 30px;
+    }
+
+    .secondary-actions {
+        flex-direction: row;
+        /* Keep side by side typically fits, or wrap if needed */
+        justify-content: space-between;
+    }
+}

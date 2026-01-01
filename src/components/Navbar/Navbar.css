@@ -79,7 +79,7 @@
 }
 
 .btn-login {
-    background-color: #63a928;
+    background-color: #64A926;
     /* Green button color */
     color: #fff;
     padding: 10px 30px;
@@ -96,10 +96,125 @@
     background-color: #4f881f;
 }
 
-/* Responsive adjustments (basic) */
+
+.menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #64A926;
+    /* Green icon */
+}
+
+.nav-item-mobile {
+    display: none;
+}
+
+/* Responsive adjustments */
 @media screen and (max-width: 960px) {
+    .NavbarItems {
+        position: relative;
+    }
+
     .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+        /* Fit content */
+        max-height: 90vh;
+        overflow-y: auto;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        background-color: #fff;
+        z-index: 1000;
+        padding: 30px 0;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        /* Uniform shadow */
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -50%) scale(1);
+        z-index: 1002;
+    }
+
+    .nav-item {
+        height: auto;
+        width: 100%;
+        text-align: center;
+        /* Ensure text center */
+    }
+
+    .nav-links {
+        text-align: center;
+        padding: 1.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        color: #333;
+    }
+
+    .nav-links:hover {
+        background-color: #f7fff9;
+        /* Lighter green hint */
+        color: #64A926;
+        transition: all 0.3s ease;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        z-index: 1003;
+        /* Above the menu */
+    }
+
+    .nav-button {
         display: none;
-        /* Hidden on mobile for now - strict requirement was 'exact same', assuming desktop first */
+    }
+
+    .nav-item-mobile {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .nav-links-mobile {
+        display: block;
+        text-align: center;
+        margin: 0 auto 40px;
+        /* Spacing at bottom */
+        border-radius: 50px;
+        /* Pill shape */
+        width: 60%;
+        /* Not too wide */
+        text-decoration: none;
+        font-size: 1rem;
+        background-color: #64A926;
+        color: #fff;
+        padding: 12px 20px;
+        border: 2px solid #64A926;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        font-family: 'Jost', sans-serif;
+    }
+
+    .nav-links-mobile:hover {
+        background-color: transparent;
+        color: #64A926;
     }
 }

@@ -1,0 +1,265 @@
+:root {
+  --primary: #64A926;
+  --bg: #f4f7f4;
+  --muted: #6b6b6b;
+  --sidebar-width: 260px;
+}
+
+.student-sidebar {
+  width: var(--sidebar-width);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #f6fff1 100%);
+  padding: 28px 22px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 2px 10px 30px rgba(12, 30, 12, 0.06);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.brand-title {
+  font-family: 'Jost', sans-serif;
+  color: var(--primary);
+  font-weight: 700;
+  margin: 0;
+  font-size: 20px;
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: var(--muted)
+}
+
+.nav {
+  margin-top: 6px
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0
+}
+
+.nav li {
+  margin-bottom: 10px
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #2b2b2b;
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 10px;
+  gap: 12px;
+  transition: all 140ms ease
+}
+
+.nav-link .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(22, 36, 22, 0.9)
+}
+
+.nav-link .label {
+  font-weight: 600;
+  color: #23302a
+}
+
+.nav-link:hover {
+  transform: translateX(6px);
+  background: rgba(100, 169, 38, 0.06);
+  color: var(--primary)
+}
+
+.nav li.active .nav-link {
+  background: linear-gradient(90deg, var(--primary), #4f8e1e);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(100, 169, 38, 0.14)
+}
+
+/* Center actions */
+.sidebar-center {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.center-actions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.center-btn {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #2b2b2b;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: all 0.2s;
+  font-weight: 600;
+  font-size: 15px;
+  /* Match nav link size */
+}
+
+.center-btn:hover {
+  background: rgba(100, 169, 38, 0.06);
+  color: var(--primary);
+  transform: translateX(6px);
+}
+
+.cicon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  /* Inherit from parent hover state */
+  font-size: 18px;
+  width: auto;
+  height: auto;
+  background: none;
+  /* Remove background box */
+}
+
+.ctext {
+  color: inherit;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Footer signout */
+.sidebar-footer {
+  padding: 20px 0 0 0;
+  display: flex;
+  justify-content: flex-start;
+  /* Align left to match others */
+  align-items: center;
+  margin-top: auto;
+  /* Push to bottom */
+}
+
+.signout {
+  background: transparent;
+  color: #e74c3c;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  width: 100%;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.signout:hover {
+  background: #fff5f5;
+  transform: translateX(6px);
+}
+
+.signout-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #d25b5b
+}
+
+/* Mobile Toggle Button */
+/* Mobile Toggle Button */
+.mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  z-index: 9999;
+  background: #64A926;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.mobile-toggle:hover {
+  background: #4E8B1E;
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 40;
+  backdrop-filter: blur(2px);
+}
+
+@media (max-width: 900px) {
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    /* Darker overlay */
+    z-index: 9998;
+    backdrop-filter: blur(4px);
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+  }
+
+  .student-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    /* Ensure it is above the overlay (9998) and toggle (9999) */
+  }
+
+  .student-sidebar.open {
+    transform: translateX(0);
+  }
+}

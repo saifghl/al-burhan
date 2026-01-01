@@ -15,6 +15,10 @@
   --font-title: 'Jost', sans-serif;
   --font-subtitle: 'Cherry Swash', cursive;
   --font-body: 'Inter', sans-serif;
+
+  /* Compatibility with Remote */
+  --primary: #64A926;
+  --muted: #6b6b6b;
 }
 
 body {
@@ -25,11 +29,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-light);
+  color: #222;
+}
+
+/* Headings and special fonts */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Jost', sans-serif
+}
+
+.sub-title {
+  font-family: 'Cherry Swash', cursive
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 /* --- Shared Global Components --- */

@@ -1,0 +1,510 @@
+/* ParentProgress.css */
+.parent-progress-page {
+    font-family: 'Inter', sans-serif;
+    background-color: #F9FAFB;
+    /* Slightly lighter bg */
+    min-height: 100vh;
+    padding-bottom: 100px;
+    color: #1F2937;
+}
+
+.pp-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.pp-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.pp-title-row h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 2rem;
+    color: #111827;
+    margin: 0 0 10px;
+}
+
+.pp-title-row p {
+    color: #6B7280;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.download-btn {
+    background: #64A926;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.download-btn:hover {
+    background: #558b2f;
+}
+
+/* Stats Grid */
+.pp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.pp-stat-card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.pp-stat-card.mint {
+    border-left: 4px solid #A7F3D0;
+}
+
+.pp-stat-card.blue {
+    border-left: 4px solid #BFDBFE;
+}
+
+.pp-stat-card.yellow {
+    border-left: 4px solid #FDE68A;
+}
+
+.stat-icon-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.pp-stat-card.mint .stat-icon-dot {
+    background: #D1FAE5;
+}
+
+.pp-stat-card.blue .stat-icon-dot {
+    background: #DBEAFE;
+}
+
+.pp-stat-card.yellow .stat-icon-dot {
+    background: #FEF3C7;
+}
+
+.stat-label {
+    display: block;
+    color: #6B7280;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    font-family: 'Jost', sans-serif;
+    line-height: 1.2;
+}
+
+.stat-trend {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.stat-trend.success {
+    color: #059669;
+}
+
+.stat-sub {
+    font-size: 0.85rem;
+    color: #9CA3AF;
+    margin-top: 5px;
+}
+
+/* Main Grid */
+.pp-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.25rem;
+    margin: 0;
+    color: #111827;
+}
+
+.view-link {
+    color: #64A926;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Subject Cards */
+.subject-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.subject-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    border: 1px solid #F3F4F6;
+}
+
+.sc-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.sc-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sc-title h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #111827;
+}
+
+.grade-badge {
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.grade-badge.mint {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+.sc-score {
+    margin-bottom: 10px;
+}
+
+.sc-score strong {
+    font-size: 1.8rem;
+    color: #111827;
+    font-family: 'Jost', sans-serif;
+}
+
+.sc-score span {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+.progress-track {
+    height: 6px;
+    background: #E5E7EB;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-fill.mint-fill {
+    background: #64A926;
+}
+
+/* Using brand green or design mint */
+.progress-fill.yellow-fill {
+    background: #FBBF24;
+}
+
+.progress-fill.orange-fill {
+    background: #F97316;
+}
+
+.sc-feedback {
+    font-size: 0.8rem;
+    color: #6B7280;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.mt-4 {
+    margin-top: 30px;
+}
+
+/* Awards */
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.award-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.award-card h3 {
+    margin: 0 0 5px;
+    font-size: 1rem;
+    color: #111827;
+}
+
+.award-card p {
+    margin: 0 0 15px;
+    font-size: 0.85rem;
+    color: #9CA3AF;
+}
+
+.award-card a {
+    color: #64A926;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Sidebar */
+.mini-stats-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.mini-stat {
+    flex: 1;
+    background: #fff;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.ms-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #6B7280;
+    margin-bottom: 5px;
+}
+
+.ms-val strong {
+    font-size: 1.8rem;
+    display: block;
+    color: #111827;
+    margin-bottom: 2px;
+}
+
+.badge-green {
+    background: #D1FAE5;
+    color: #065F46;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.sub {
+    font-size: 0.8rem;
+    color: #9CA3AF;
+}
+
+.sidebar-section {
+    margin-bottom: 30px;
+}
+
+.sidebar-section h3 {
+    font-size: 1rem;
+    color: #111827;
+    margin: 0 0 15px;
+    font-family: 'Jost', sans-serif;
+}
+
+.competition-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #E5E7EB;
+}
+
+.comp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.comp-header h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+.badge-green-solid {
+    background: #10B981;
+    color: #fff;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.badge-orange-solid {
+    background: #F59E0B;
+    color: #fff;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.comp-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #6B7280;
+    margin-bottom: 8px;
+}
+
+.browse-btn {
+    width: 100%;
+    background: #E5E7EB;
+    color: #374151;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.timeline-list {
+    background: #fff;
+    padding: 15px;
+    border-radius: 16px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.dot.mint {
+    background: #10B981;
+}
+
+.dot.blue {
+    background: #3B82F6;
+}
+
+.dot.purple {
+    background: #8B5CF6;
+}
+
+.tl-content h4 {
+    margin: 0 0 2px;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+.tl-content p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #9CA3AF;
+}
+
+.tl-time {
+    font-size: 0.7rem;
+    color: #9CA3AF;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.tl-time.success {
+    color: #10B981;
+}
+
+.passed-badge {
+    background: #D1FAE5;
+    color: #065F46;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.view-history-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.view-history-link a {
+    color: #9CA3AF;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 960px) {
+    .pp-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pp-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .pp-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subject-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pp-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .pp-title-row h1 {
+        font-size: 1.5rem;
+    }
+
+    .awards-grid {
+        grid-template-columns: 1fr;
+    }
+}

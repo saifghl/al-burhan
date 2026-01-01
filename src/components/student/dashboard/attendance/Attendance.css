@@ -1,0 +1,611 @@
+.attendance-page {
+    padding: 30px;
+    background-color: #f7fbf7;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.page-header {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.page-header h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    color: #1a1a1a;
+    margin: 0px 0px 0px 0px;
+}
+
+.page-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.breadcrumbs {
+    font-size: 13px;
+    color: #888;
+}
+
+.breadcrumbs span {
+    color: #64A926;
+    font-weight: 500;
+}
+
+/* Toggle */
+.dashboard-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.toggle-container {
+    background: #fff;
+    padding: 5px;
+    border-radius: 12px;
+    display: inline-flex;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.toggle-btn {
+    border: none;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggle-btn.active {
+    background-color: #64A926;
+    color: #fff;
+}
+
+/* Grid Layout */
+.attendance-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+/* Overview Section */
+.subjects-overview,
+.namaz-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.overall-stats-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overall-stats-card h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.overall-stats-card p {
+    color: #888;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.overall-circle {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.attendance-circular-chart {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 250px;
+}
+
+.attendance-circle-bg {
+    fill: none;
+    stroke: #f0f0f0;
+    stroke-width: 3.5;
+}
+
+.attendance-circle-fg {
+    fill: none;
+    transition: stroke-dashoffset 1s ease-out;
+}
+
+.percentage {
+    fill: #333;
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    font-size: 0.5em;
+    /* relative to viewbox */
+    text-anchor: middle;
+    font-weight: 800;
+}
+
+/* Subject List */
+.subject-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.subject-list h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.subject-attendance-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 5px solid transparent;
+    /* Highlight on hover */
+}
+
+.subject-attendance-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+.sac-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.sac-header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.sac-percent {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.sac-progress {
+    height: 8px;
+    background: #f1f1f1;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.sac-fill {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.sac-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #777;
+    align-items: center;
+}
+
+.view-details {
+    color: #64A926;
+    font-weight: 600;
+    transition: margin-right 0.2s;
+}
+
+.subject-attendance-card:hover .view-details {
+    margin-right: -5px;
+    /* Subtle movement */
+}
+
+
+/* Calendar Card (Reused) */
+.calendar-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.cal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.cal-header h3 {
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+}
+
+.cal-nav button {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: #666;
+}
+
+.cal-grid-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 600;
+    color: #64A926;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.cal-day {
+    aspect-ratio: 1;
+    background: #f9f9f9;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-weight: 500;
+    font-size: 14px;
+    color: #444;
+}
+
+.cal-day.empty {
+    background: transparent;
+}
+
+.cal-day.present {
+    background-color: #f0fdf0;
+    color: #1a1a1a;
+}
+
+.cal-day.present .mark {
+    color: #64A926;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.cal-day.absent {
+    background-color: #fff5f5;
+}
+
+.cal-day.absent .mark {
+    color: #e74c3c;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.cal-day.today {
+    background-color: #64A926;
+    color: #fff !important;
+}
+
+.cal-day.today .mark {
+    display: none;
+    /* Hide mark on today if we show label */
+}
+
+.today-label {
+    font-size: 9px;
+    margin-top: 2px;
+}
+
+.cal-footer {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-size: 13px;
+    color: #666;
+}
+
+/* Sidebar Widgets */
+.summary-widget {
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    margin-bottom: 25px;
+}
+
+.summary-widget h3 {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    color: #1a1a1a;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #fcfcfc;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.stat-row.present .icon-box {
+    color: #64A926;
+    background: #eef7e9;
+}
+
+.stat-row.absent .icon-box {
+    color: #e74c3c;
+    background: #ffebeb;
+}
+
+.stat-row.rate .icon-box {
+    color: #3498db;
+    background: #eef8ff;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-info .label {
+    font-size: 12px;
+    color: #888;
+}
+
+.stat-info .value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* Namaz Widget */
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-badge {
+    color: #64A926;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.widget-sub {
+    font-size: 12px;
+    color: #888;
+    margin: 5px 0 20px 0;
+}
+
+.namaz-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+}
+
+.namaz-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    transition: all 0.2s;
+}
+
+.namaz-item:hover {
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+    border-color: #64A926;
+}
+
+.namaz-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.n-icon {
+    color: #f39c12;
+}
+
+.n-icon.morning {
+    color: #f39c12;
+}
+
+.status-box {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+}
+
+.status-box.present {
+    background: #64A926;
+}
+
+.status-box.absent {
+    background: #e74c3c;
+}
+
+.status-box.empty {
+    border: 2px solid #eee;
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Namaz Interactive */
+.namaz-status.clickable {
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.namaz-status.clickable:active {
+    transform: scale(0.95);
+}
+
+/* Weekly Consistency Graph */
+.graph-widget {
+    margin-top: 25px;
+}
+
+.bar-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100px;
+    /* Reduced height */
+    padding-top: 15px;
+    padding-bottom: 5px;
+    gap: 6px;
+}
+
+.bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.bar-track {
+    width: 12px;
+    /* Slightly wider */
+    height: 100%;
+    background: #f1f8f1;
+    /* Subtle track background */
+    display: flex;
+    align-items: flex-end;
+    border-radius: 20px;
+    overflow: hidden;
+    /* Ensure fill stays inside rounded corners */
+}
+
+.bar-fill {
+    width: 100%;
+    background: linear-gradient(180deg, #64A926 0%, #8BC34A 100%);
+    /* Gradient for premium look */
+    border-radius: 20px;
+    transition: height 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy animation */
+}
+
+.bar-col:hover .bar-fill {
+    background: linear-gradient(180deg, #4e8b1e 0%, #64A926 100%);
+    filter: brightness(1.1);
+}
+
+.bar-label {
+    font-size: 11px;
+    color: #888;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .attendance-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .attendance-page {
+        padding: 55px;
+    }
+
+    /* Side-by-side layout for Namaz and Graph on mobile */
+    .side-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .side-content>.summary-widget:first-child {
+        grid-column: 1 / -1;
+        /* Make the Monthly Summary full width */
+    }
+}
+
+@media (max-width: 600px) {
+    .attendance-page {
+        padding: 20px;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+    }
+
+    .dashboard-controls {
+        justify-content: flex-start;
+    }
+
+    .side-content {
+        grid-template-columns: 1fr;
+    }
+
+    .overall-stats-card {
+        padding: 20px;
+    }
+
+    .namaz-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cal-grid-header,
+    .cal-grid {
+        gap: 5px;
+    }
+
+    .cal-day {
+        font-size: 12px;
+        border-radius: 6px;
+    }
+}

@@ -1,0 +1,407 @@
+/* UrgentAppealPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+.ua-layout-standalone {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    /* Consistent Font */
+    width: 100%;
+    position: relative;
+    padding-bottom: 80px;
+    /* Space for fixed footer */
+}
+
+.ua-main.full-width {
+    margin-left: 0 !important;
+    width: 100%;
+    margin-top: 0;
+}
+
+.ua-header-standalone {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.user-avatar-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.ua-content-container {
+    padding: 30px;
+    width: 100%;
+    overflow: hidden;
+    /* Hide scrollbar of parent if any */
+}
+
+.ua-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 30px;
+    padding-bottom: 20px;
+    /* Space for scrollbar */
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    justify-content: center;
+    /* Center the single card */
+}
+
+/* Main Card */
+.ua-card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+    min-width: 600px;
+    /* Fixed width for horizontal items */
+    max-width: 600px;
+    flex-shrink: 0;
+}
+
+/* Campaign Head */
+.ua-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.ua-campaign-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.ua-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #f3f4f6;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ua-avatar-check {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 18px;
+    height: 18px;
+    background: #10b981;
+    /* Green */
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.ua-meta h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.ua-meta p {
+    margin: 2px 0 0 0;
+    font-size: 12px;
+    color: #888;
+}
+
+.ua-options-btn {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+}
+
+/* Breadcrumbs & Header */
+.ua-breadcrumbs {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    /* Center the breadcrumbs */
+    align-items: center;
+}
+
+/* Tags & Title */
+.ua-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.ua-tag {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.ua-tag.urgent {
+    background-color: #ffebee;
+    color: #d32f2f;
+    /* Red/Orange for Urgent */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.ua-tag.fundraiser {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+.ua-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+/* Content Body */
+.ua-body {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin-bottom: 30px;
+}
+
+.ua-body p {
+    margin-bottom: 15px;
+}
+
+.ua-body strong {
+    color: #111827;
+}
+
+.ua-target-list {
+    margin: 15px 0;
+    padding-left: 20px;
+    color: #4b5563;
+}
+
+.ua-target-list li {
+    margin-bottom: 8px;
+}
+
+.ua-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Campaign Images */
+.ua-images-grid {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.ua-img-box {
+    flex: 1;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.ua-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Attachments */
+.ua-attachment-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.ua-att-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ua-pdf-icon {
+    width: 36px;
+    height: 36px;
+    background: #fee2e2;
+    color: #ef4444;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ua-att-info h4 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.ua-att-info p {
+    margin: 2px 0 0 0;
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.ua-download-btn {
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+/* Card Footer (Moved inside card) */
+.ua-card-footer {
+    width: 100%;
+    background: white;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+}
+
+.ua-progress-section {
+    flex: 1;
+    max-width: 300px;
+    margin-right: 20px;
+}
+
+.ua-progress-bar {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.ua-progress-fill {
+    height: 100%;
+    background: #65a30d;
+    /* Brand Green */
+    border-radius: 4px;
+}
+
+.ua-progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ua-raised {
+    color: #65a30d;
+}
+
+.ua-goal {
+    color: #9ca3af;
+}
+
+.ua-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.ua-share-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ua-share-btn:hover {
+    background: #f9fafb;
+}
+
+.ua-donate-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #65a30d;
+    border: 1px solid #65a30d;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(101, 163, 13, 0.2);
+    transition: all 0.2s;
+}
+
+.ua-donate-btn:hover {
+    background: #4d7c0f;
+    box-shadow: 0 4px 12px rgba(101, 163, 13, 0.3);
+}
+
+.bottom-signout-row-ua {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    z-index: 10;
+}
+
+.signout-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background: none;
+    color: #ef4444;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ua-card {
+        min-width: 85vw;
+        /* Almost full width on mobile */
+        max-width: 85vw;
+    }
+}
