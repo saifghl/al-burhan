@@ -17,6 +17,7 @@ import AssignedClasses from './components/Teacher/AssignedClasses';
 import DraftReportSubmission from './components/Teacher/DraftReportSubmission';
 import EditProfileTeacher from './components/Teacher/EditProfile';
 import Inbox from './components/Teacher/Inbox';
+import TeacherLogout from './components/Teacher/Logout';
 
 /* Donor Components */
 import Dashboard from './components/Donar/Dashboard';
@@ -112,6 +113,7 @@ function App() {
             <Route path="/draft-reports" element={<DraftReportSubmission />} />
             <Route path="/teacher-edit-profile" element={<EditProfileTeacher />} />
             <Route path="/inbox" element={<Inbox />} />
+            <Route path="/teacher-logout" element={<TeacherLogout />} />
 
 
             {/* Auth Routes (Integrated from Stash) */}
@@ -264,7 +266,8 @@ function ConditionalLayout({ children }) {
     '/classes',
     '/draft-reports',
     '/teacher-edit-profile',
-    '/inbox'
+    '/inbox',
+    '/teacher-logout'
   ];
 
   const isStudent = location.pathname.startsWith('/student');
