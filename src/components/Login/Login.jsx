@@ -33,7 +33,7 @@ const Login = () => {
         } else if (selectedRole === 'Donor') {
             navigate('/dashboard');
         } else {
-            alert('Teacher dashboard coming soon!');
+            navigate('/teacher');
         }
     };
 
