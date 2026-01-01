@@ -223,65 +223,68 @@ function StudentLayout() {
           <Outlet />
         </main>
       </div>
+    </div>
+  );
+}
 
 /* ConditionalLayout hides Navbar & Footer on /student routes AND dashboard routes AND auth routes AND teacher routes */
-      function ConditionalLayout({children}) {
+function ConditionalLayout({ children }) {
   const location = useLocation();
-      const dashboardRoutes = [
-      '/dashboard',
-      // '/donation', // Public route
-      '/make-donation',
-      '/donation-amount',
-      '/donation-history',
-      '/tax-documents',
-      '/utilization-report',
-      '/donation-details',
-      '/donation-payment',
-      '/review-donation',
-      '/payment-success',
-      '/notifications',
-      '/urgent-appeal',
-      '/profile',
-      '/settings',
-      '/parent-dashboard'
-      ];
+  const dashboardRoutes = [
+    '/dashboard',
+    // '/donation', // Public route
+    '/make-donation',
+    '/donation-amount',
+    '/donation-history',
+    '/tax-documents',
+    '/utilization-report',
+    '/donation-details',
+    '/donation-payment',
+    '/review-donation',
+    '/payment-success',
+    '/notifications',
+    '/urgent-appeal',
+    '/profile',
+    '/settings',
+    '/parent-dashboard'
+  ];
 
-      const authRoutes = ['/login', '/signup', '/forgot-password', '/verify-otp'];
+  const authRoutes = ['/login', '/signup', '/forgot-password', '/verify-otp'];
 
-      // Teacher routes that hide the global navbar
-      const teacherRoutes = [
-      '/teacher', // Assuming teacher home is here
-      '/namaz-attendance',
-      '/create-assignment',
-      '/review-submissions',
-      '/students',
-      '/student-profile',
-      '/weekly-report',
-      '/submit-report',
-      '/exam-tasks',
-      '/results-entry',
-      '/classes',
-      '/draft-reports',
-      '/teacher-edit-profile',
-      '/inbox',
-      '/teacher-logout'
-      ];
+  // Teacher routes that hide the global navbar
+  const teacherRoutes = [
+    '/teacher', // Assuming teacher home is here
+    '/namaz-attendance',
+    '/create-assignment',
+    '/review-submissions',
+    '/students',
+    '/student-profile',
+    '/weekly-report',
+    '/submit-report',
+    '/exam-tasks',
+    '/results-entry',
+    '/classes',
+    '/draft-reports',
+    '/teacher-edit-profile',
+    '/inbox',
+    '/teacher-logout'
+  ];
 
-      const isStudent = location.pathname.startsWith('/student');
+  const isStudent = location.pathname.startsWith('/student');
   const isDashboardRoute = dashboardRoutes.some(route => location.pathname === route || location.pathname.startsWith(route + '/'));
   const isAuthRoute = authRoutes.some(route => location.pathname === route);
   const isTeacherRoute = teacherRoutes.some(route => location.pathname === route || location.pathname.startsWith(route + '/'));
 
-      // Logic: Hide Global Navbar/Footer if it's any of these specific dashboard/app sections
-      const shouldHideNavbarAndFooter = isStudent || isDashboardRoute || isAuthRoute || isTeacherRoute;
+  // Logic: Hide Global Navbar/Footer if it's any of these specific dashboard/app sections
+  const shouldHideNavbarAndFooter = isStudent || isDashboardRoute || isAuthRoute || isTeacherRoute;
 
-      return (
-      <>
-        {!shouldHideNavbarAndFooter && <Navbar />}
-        {children}
-        {!shouldHideNavbarAndFooter && <Footer />}
-      </>
-      );
+  return (
+    <>
+      {!shouldHideNavbarAndFooter && <Navbar />}
+      {children}
+      {!shouldHideNavbarAndFooter && <Footer />}
+    </>
+  );
 }
 
-      export default App;
+export default App;
