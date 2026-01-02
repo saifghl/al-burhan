@@ -24,13 +24,13 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     );
 
     const menuItems = [
-        { path: '/', label: 'Home', icon: icons.dashboard },
+        { path: '/teacher', label: 'Home', icon: icons.dashboard },
         { path: '/students', label: 'Students', icon: icons.students },
         { path: '/classes', label: 'Classes', icon: icons.classes },
         { path: '/exam-tasks', label: 'Exams', icon: icons.exams },
         { path: '/review-submissions', label: 'Reports', icon: icons.reports },
-        { path: '/curriculum', label: 'Curriculum', icon: icons.curriculum },
-        { path: '/settings', label: 'Settings', icon: icons.settings },
+        { path: '/syllabus', label: 'Curriculum', icon: icons.curriculum },
+        { path: '/teacher-edit-profile', label: 'Settings', icon: icons.settings },
     ];
 
     return (
