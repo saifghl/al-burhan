@@ -86,6 +86,13 @@ import RequestDetails from './components/Admin/PublicRequests/RequestDetails';
 import StudentRegistrationForm from './components/Admin/PublicRequests/StudentRegistrationForm';
 import MadarsaIdGeneration from './components/Admin/PublicRequests/MadarsaIdGeneration';
 import RegistrationSuccess from './components/Admin/PublicRequests/RegistrationSuccess';
+import FundAllocation from './components/Admin/AdminDonation/FundAllocation';
+import UtilizationHistory from './components/Admin/AdminDonation/UtilizationHistory';
+import GenerateReceipt from './components/Admin/AdminDonation/GenerateReceipt';
+import TransparencyReport from './components/Admin/AdminDonation/TransparencyReport';
+import PublishManager from './components/Admin/PublicManager/PublishManager';
+import ContentApprovalQueue from './components/Admin/PublicManager/ContentApprovalQueue';
+import ReviewContent from './components/Admin/PublicManager/ReviewContent';
 import './App.css';
 import { FaBell } from 'react-icons/fa'; // Import bell icon for header
 
@@ -181,6 +188,10 @@ function App() {
               <Route index element={<AdminDashboard />} />
               <Route path="dashboard" element={<AdminDashboard />} />
               <Route path="public-content" element={<PublicContentManager />} />
+              <Route path="donations" element={<FundAllocation />} />
+              <Route path="utilization-history" element={<UtilizationHistory />} />
+              <Route path="generate-receipt" element={<GenerateReceipt />} />
+              <Route path="transparency-report" element={<TransparencyReport />} />
 
               {/* Public Requests (Admissions) Routes */}
               <Route path="public-requests" element={<AdmissionRequests />} />
@@ -188,6 +199,12 @@ function App() {
               <Route path="public-requests/:id/register" element={<StudentRegistrationForm />} />
               <Route path="public-requests/:id/generate-id" element={<MadarsaIdGeneration />} />
               <Route path="public-requests/:id/success" element={<RegistrationSuccess />} />
+              <Route path="public-requests/:id/success" element={<RegistrationSuccess />} />
+
+              {/* Publish Manager Route */}
+              <Route path="publish" element={<PublishManager />} />
+              <Route path="content-approval" element={<ContentApprovalQueue />} />
+              <Route path="content-review" element={<ReviewContent />} />
             </Route>
           </Routes>
         </ConditionalLayout>

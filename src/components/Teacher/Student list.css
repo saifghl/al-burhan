@@ -481,14 +481,16 @@ tr:nth-child(5) .avatar-initials {
     letter-spacing: 2px;
 }
 
-.main-content {
-    margin-left: 0;
-}
+@media (max-width: 1024px) {
+    .main-content {
+        margin-left: 0;
+    }
 
-.top-header,
-.content-body.container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    .top-header,
+    .content-body.container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }
 
 @media (max-width: 768px) {
