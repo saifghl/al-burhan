@@ -78,6 +78,14 @@ import ParentFees from './components/ParentDashboard/ParentFees';
 import ParentProfile from './components/ParentDashboard/ParentProfile';
 import ParentSettings from './components/ParentDashboard/ParentSettings';
 import ParentNotifications from './components/ParentDashboard/ParentNotifications';
+import AdminLayout from './components/Admin/AdminLayout';
+import AdminDashboard from './components/Admin/AdminDashboard';
+import PublicContentManager from './components/Admin/PublicContent/PublicContentManager';
+import AdmissionRequests from './components/Admin/PublicRequests/AdmissionRequests';
+import RequestDetails from './components/Admin/PublicRequests/RequestDetails';
+import StudentRegistrationForm from './components/Admin/PublicRequests/StudentRegistrationForm';
+import MadarsaIdGeneration from './components/Admin/PublicRequests/MadarsaIdGeneration';
+import RegistrationSuccess from './components/Admin/PublicRequests/RegistrationSuccess';
 import './App.css';
 import { FaBell } from 'react-icons/fa'; // Import bell icon for header
 
@@ -167,6 +175,20 @@ function App() {
             <Route path="/parent-dashboard/profile" element={<ParentProfile />} />
             <Route path="/parent-dashboard/settings" element={<ParentSettings />} />
             <Route path="/parent-dashboard/notifications" element={<ParentNotifications />} />
+
+            {/* Admin Portal Routes */}
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route index element={<AdminDashboard />} />
+              <Route path="dashboard" element={<AdminDashboard />} />
+              <Route path="public-content" element={<PublicContentManager />} />
+
+              {/* Public Requests (Admissions) Routes */}
+              <Route path="public-requests" element={<AdmissionRequests />} />
+              <Route path="public-requests/:id" element={<RequestDetails />} />
+              <Route path="public-requests/:id/register" element={<StudentRegistrationForm />} />
+              <Route path="public-requests/:id/generate-id" element={<MadarsaIdGeneration />} />
+              <Route path="public-requests/:id/success" element={<RegistrationSuccess />} />
+            </Route>
           </Routes>
         </ConditionalLayout>
       </div>
@@ -270,13 +292,14 @@ function ConditionalLayout({ children }) {
     '/teacher-logout'
   ];
 
+  const isAdmin = location.pathname.startsWith('/admin');
   const isStudent = location.pathname.startsWith('/student');
   const isDashboardRoute = dashboardRoutes.some(route => location.pathname === route || location.pathname.startsWith(route + '/'));
   const isAuthRoute = authRoutes.some(route => location.pathname === route);
   const isTeacherRoute = teacherRoutes.some(route => location.pathname === route || location.pathname.startsWith(route + '/'));
 
   // Logic: Hide Global Navbar/Footer if it's any of these specific dashboard/app sections
-  const shouldHideNavbarAndFooter = isStudent || isDashboardRoute || isAuthRoute || isTeacherRoute;
+  const shouldHideNavbarAndFooter = isAdmin || isStudent || isDashboardRoute || isAuthRoute || isTeacherRoute;
 
   return (
     <>
