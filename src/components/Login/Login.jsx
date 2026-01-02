@@ -145,13 +145,7 @@ const Login = () => {
 
                         <button className="btn-login-submit" onClick={handleLogin}>Log In</button>
 
-                        <div className="divider-row">
-                            <span className="divider-line"></span>
-                            <span className="divider-text">OR</span>
-                            <span className="divider-line"></span>
-                        </div>
 
-                        <button className="btn-otp-login">Log In via OTP</button>
                     </div>
 
                     <div className="login-footer-links">
