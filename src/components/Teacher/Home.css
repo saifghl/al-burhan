@@ -35,6 +35,9 @@ body {
     flex: 1;
     padding: 2rem;
     overflow-y: auto;
+    margin-left: 240px;
+    /* Width of the sidebar */
+    transition: margin-left 0.3s ease;
 }
 
 /* Header */
@@ -455,7 +458,7 @@ body {
     color: var(--text-gray);
 }
 
-/* Mobile Toggle */
+/* Mobile Toggle - Styles used in pages */
 .mobile-toggle {
     display: none;
     font-size: 1.5rem;
@@ -480,17 +483,19 @@ body {
         gap: 1.5rem;
     }
 
+    .main-content {
+        margin-left: 0;
+        /* Sidebar becomes hidden/overlay */
+        padding-top: 4rem;
+        /* More space for header/toggle */
+    }
+
     /* Moved Sidebar/Toggle logic to Sidebar.css, but fixing main content padding here */
     .mobile-toggle {
         display: block;
     }
 
-    .main-content {
-        padding: 1rem;
-        padding-top: 4rem;
-        /* space for toggle */
-    }
-
+    /* Adjust header for mobile */
     .dashboard-header {
         flex-direction: column;
         align-items: flex-start;
@@ -505,5 +510,14 @@ body {
 
     .welcome-text h1 {
         font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Further adjustments for smaller screens if needed */
+    .main-content {
+        padding: 1rem;
+        padding-top: 4rem;
     }
 }

@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'; // Import Link for navigation
 import Sidebar from './Sidebar'; // Import the shared Sidebar component
 import { FaCheckCircle, FaPlus, FaFileAlt } from 'react-icons/fa'; // Import icons for quick actions
 import './Home.css';
+// import Sidebar from './Sidebar'; // Removed duplicate
 import profilePic from '../../assets/Picture16.png';
+import { FaBars } from 'react-icons/fa'; // Standard icon for menu toggle if needed, or use SVG
 
 const Home = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -33,7 +35,7 @@ const Home = () => {
         briefcase: "M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z",
         calendar: "M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z",
         info: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z",
-        check: "M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" // Simple check for notifications
+        check: "M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",
     };
 
     return (

@@ -18,6 +18,10 @@ import DraftReportSubmission from './components/Teacher/DraftReportSubmission';
 import EditProfileTeacher from './components/Teacher/EditProfile';
 import Inbox from './components/Teacher/Inbox';
 import TeacherLogout from './components/Teacher/Logout';
+// import AllTeachers from './components/Admin/Teachers/AllTeachers';
+import AllTeachers from './components/Admin/TeacherControl/AllTeachers';
+import TeacherProfile from './components/Admin/TeacherControl/TeacherProfile';
+
 
 /* Donor Components */
 import Dashboard from './components/Donar/Dashboard';
@@ -123,6 +127,10 @@ function App() {
             <Route path="/inbox" element={<Inbox />} />
             <Route path="/teacher-logout" element={<TeacherLogout />} />
 
+            {/* Admin Routes */}
+            {/* <Route path="/admin/teacher-control" element={<AllTeachers />} /> */}
+
+
 
             {/* Auth Routes (Integrated from Stash) */}
             <Route path="/login" element={<AuthWrapper component={DonorLogin} />} />
@@ -181,6 +189,7 @@ function App() {
               <Route index element={<AdminDashboard />} />
               <Route path="dashboard" element={<AdminDashboard />} />
               <Route path="public-content" element={<PublicContentManager />} />
+              <Route path="teachers" element={<AllTeachers />} />
 
               {/* Public Requests (Admissions) Routes */}
               <Route path="public-requests" element={<AdmissionRequests />} />
@@ -188,6 +197,7 @@ function App() {
               <Route path="public-requests/:id/register" element={<StudentRegistrationForm />} />
               <Route path="public-requests/:id/generate-id" element={<MadarsaIdGeneration />} />
               <Route path="public-requests/:id/success" element={<RegistrationSuccess />} />
+              <Route path="teacher-profile" element={<TeacherProfile />} />
             </Route>
           </Routes>
         </ConditionalLayout>
@@ -297,6 +307,7 @@ function ConditionalLayout({ children }) {
   const isDashboardRoute = dashboardRoutes.some(route => location.pathname === route || location.pathname.startsWith(route + '/'));
   const isAuthRoute = authRoutes.some(route => location.pathname === route);
   const isTeacherRoute = teacherRoutes.some(route => location.pathname === route || location.pathname.startsWith(route + '/'));
+  const isAdminRoute = location.pathname.startsWith('/admin');
 
   // Logic: Hide Global Navbar/Footer if it's any of these specific dashboard/app sections
   const shouldHideNavbarAndFooter = isAdmin || isStudent || isDashboardRoute || isAuthRoute || isTeacherRoute;
