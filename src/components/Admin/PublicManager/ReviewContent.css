@@ -1,0 +1,488 @@
+.review-content-container {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    color: #0f172a;
+    padding-bottom: 40px;
+}
+
+/* Header */
+.rc-header {
+    margin-bottom: 24px;
+}
+
+.rc-breadcrumb {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.rc-breadcrumb span {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.rc-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.rc-page-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+}
+
+.rc-meta {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+}
+
+.rc-status-badge {
+    background: #ffedd5;
+    color: #c2410c;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rc-dot {
+    width: 8px;
+    height: 8px;
+    background: #ea580c;
+    border-radius: 50%;
+}
+
+/* Layout */
+.rc-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+/* Left Column - Preview */
+.preview-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.preview-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0d9488;
+    /* Teal */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.preview-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.preview-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot-red {
+    background: #ff5f56;
+}
+
+.dot-yellow {
+    background: #ffbd2e;
+}
+
+.dot-green {
+    background: #27c93f;
+}
+
+.preview-body {
+    padding: 32px;
+}
+
+.preview-image-container {
+    width: 100%;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.img-placeholder-quran {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('https://img.freepik.com/free-photo/open-quran-book-arrangement_23-2149122390.jpg?w=1060&t=st=1698240000~exp=1698240600~hmac=abc');
+    /* Using a reliable placeholder or just color */
+    background: #1e293b;
+    /* Fallback dark bg */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+}
+
+.img-overlay-text {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.preview-text-content {
+    color: #334155;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.preview-text-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 24px 0 12px 0;
+}
+
+.preview-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.preview-list li {
+    margin-bottom: 8px;
+}
+
+.event-details-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 16px;
+}
+
+.detail-box {
+    background: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #f1f5f9;
+    flex: 1;
+}
+
+.detail-label {
+    display: block;
+    font-size: 11px;
+    color: #0d9488;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.detail-value {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* Right Column - Sidebar */
+.rc-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.rc-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.rc-card-header {
+    margin-bottom: 16px;
+}
+
+.rc-card-header h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.file-item:last-child {
+    margin-bottom: 0;
+}
+
+.file-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.file-icon.pdf {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.file-icon.img {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+.file-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.file-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #0f172a;
+}
+
+.file-size {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.btn-download {
+    background: none;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.btn-download:hover {
+    color: #0f172a;
+}
+
+/* Portals List */
+.portal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.portal-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.portal-item::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.portal-item.active::before {
+    background: #cbd5e1;
+    /* Grey circle per image */
+}
+
+.portal-item.inactive {
+    opacity: 0.5;
+}
+
+.portal-item.inactive::before {
+    background: #e2e8f0;
+    /* Lighter grey outline? Image lacks detail, assuming plain text style */
+    display: none;
+    /* Just text for staff intranet? Image shows 'Staff Intranet' as faded text */
+}
+
+.portal-item.inactive .portal-name {
+    color: #94a3b8;
+    /* Faded */
+    margin-left: 24px;
+    /* Indent to match others */
+}
+
+
+.portal-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.portal-badge-primary {
+    background: #dcfce7;
+    color: #166534;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Actions Card */
+.actions-card {
+    padding: 24px;
+}
+
+.info-banner {
+    background: #eff6ff;
+    padding: 12px;
+    border-radius: 6px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.info-icon {
+    color: #2563eb;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.info-banner p {
+    margin: 0;
+    font-size: 12px;
+    color: #1e40af;
+    line-height: 1.4;
+}
+
+.btn-approve {
+    width: 100%;
+    background: #65a30d;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background 0.2s;
+}
+
+.btn-approve:hover {
+    background: #4d7c0f;
+}
+
+.secondary-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 24px;
+}
+
+.btn-text-action {
+    background: none;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.btn-reject {
+    background: none;
+    border: none;
+    width: 100%;
+    color: #ef4444;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.btn-reject:hover {
+    color: #dc2626;
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .rc-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .rc-right-col {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .rc-card {
+        flex: 1;
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rc-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .rc-page-title {
+        font-size: 22px;
+    }
+
+    .preview-header {
+        padding: 12px 16px;
+    }
+
+    .preview-body {
+        padding: 16px;
+    }
+
+    .img-placeholder-quran {
+        height: 200px;
+    }
+
+    .event-details-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .rc-right-col {
+        flex-direction: column;
+    }
+}

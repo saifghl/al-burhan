@@ -1,0 +1,383 @@
+.utilization-history-container {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+}
+
+.history-header {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.history-breadcrumb {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.history-breadcrumb span {
+    color: #64A926;
+    /* Using brand green based on previous page or just dark? Image has 'History' bold black/dark. Dashboard > Financials is grey. */
+    color: #0f172a;
+    /* Match previous page style logic */
+    font-weight: 500;
+}
+
+/* Actually image shows: Dashboard / Financials / *History* (bold black) */
+
+.history-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.history-page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.history-subtitle {
+    font-size: 14px;
+    color: #5bb2b8;
+    /* It's a tealish blue in the image 'Track and verify...' */
+    color: #64748b;
+    /* Fallback to slate if not sure, but image looks teal-ish. Let's stick to slate for consistency or match image. */
+    color: #4b8ba2;
+    /* Closer to image */
+    margin-top: 4px;
+}
+
+.history-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-csv {
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-csv:hover {
+    background: #f8fafc;
+}
+
+.btn-add-record {
+    background: #65a30d;
+    /* Brand green */
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-add-record:hover {
+    background: #4d7c0f;
+}
+
+/* Filters */
+.filters-bar {
+    background: white;
+    padding: 16px;
+    /* The image shows filters just sitting there, maybe not in a white card but they look cleaner that way? 
+       Actually image background is light grey, filters bar looks 'floating' or part of page. 
+       Let's keep it simple. */
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filter-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.search-wrapper {
+    flex: 1;
+    /* Takes available space */
+    min-width: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.filter-search-input {
+    width: 100%;
+    padding: 10px 10px 10px 36px;
+    background: #f8fafc;
+    border: 1px solid #f8fafc;
+    /* invisible border usually */
+    border-radius: 6px;
+    font-size: 14px;
+    color: #0f172a;
+}
+
+.filter-search-input:focus {
+    background: white;
+    border-color: #e2e8f0;
+    outline: none;
+}
+
+.search-icon-inside {
+    position: absolute;
+    left: 12px;
+    color: #94a3b8;
+}
+
+.filter-select {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: white;
+    font-size: 14px;
+    color: #334155;
+    cursor: pointer;
+}
+
+.filter-date-wrapper {
+    position: relative;
+    width: 200px;
+}
+
+/* Clear filters */
+.clear-filters-btn {
+    background: none;
+    border: none;
+    color: #64748b;
+    /* or teal from image? */
+    color: #58aab0;
+    font-weight: 500;
+    font-size: 14px;
+    padding-bottom: 10px;
+    /* alignments */
+    cursor: pointer;
+}
+
+.clear-filters-btn:hover {
+    text-decoration: underline;
+}
+
+/* Table */
+.table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    /* For rounded corners */
+    overflow-x: auto;
+    /* For responsive scroll */
+}
+
+.utilization-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+    /* Ensure it doesn't squish too much */
+}
+
+.utilization-table thead {
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.utilization-table th {
+    text-align: left;
+    padding: 16px 24px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    /* Light grey headers */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.utilization-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #334155;
+}
+
+.id-cell {
+    font-weight: 600;
+    color: #334155;
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.badge-medical {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+/* Blue */
+.badge-logistics {
+    background: #fff7ed;
+    color: #f97316;
+}
+
+/* Orange */
+.badge-food {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+/* Green */
+.badge-shelter {
+    background: #fdf4ff;
+    color: #d946ef;
+}
+
+/* Purple/Pink */
+
+.amount-cell {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.date-cell {
+    color: #0d9488;
+    /* Teal */
+    font-weight: 500;
+}
+
+.proof-btn {
+    background: none;
+    border: none;
+    color: #0d9488;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.proof-btn:hover {
+    color: #0f766e;
+}
+
+/* Pagination */
+.pagination-footer {
+    display: flex;
+    justify-content: flex-end;
+    /* 'Rows per page' and nav on right */
+    align-items: center;
+    padding: 16px 24px;
+    gap: 24px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.rows-per-page {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+}
+
+.nav-arrow:hover {
+    color: #0f172a;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .filters-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-select,
+    .filter-date-wrapper,
+    .search-wrapper {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .history-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-csv,
+    .btn-add-record {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .history-actions {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .history-page-title {
+        font-size: 24px;
+    }
+
+    .history-actions {
+        flex-direction: column;
+    }
+
+    .pagination-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .utilization-table th,
+    .utilization-table td {
+        padding: 12px 16px;
+    }
+}
