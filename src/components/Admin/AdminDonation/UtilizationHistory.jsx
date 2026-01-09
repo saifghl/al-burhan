@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
     FaSearch,
     FaPlus,
@@ -12,6 +13,7 @@ import AdminMobileNav from './AdminMobileNav';
 import './UtilizationHistory.css';
 
 const UtilizationHistory = () => {
+    const navigate = useNavigate();
     // Mock Data based on image
     const utilizationData = [
         { id: '#AL-9382', category: 'Medical', amount: '$5,200.00', description: 'Bulk purchase of antibiotics and first aid kits...', date: 'Oct 24, 2023' },
@@ -118,7 +120,7 @@ const UtilizationHistory = () => {
                                 <td>{row.description}</td>
                                 <td className="date-cell">{row.date}</td>
                                 <td>
-                                    <button className="proof-btn" onClick={() => alert(`Viewing proof for transaction ${row.id}`)}>
+                                    <button className="proof-btn" onClick={() => navigate('/admin/generate-receipt')}>
                                         <FaEye />
                                     </button>
                                 </td>

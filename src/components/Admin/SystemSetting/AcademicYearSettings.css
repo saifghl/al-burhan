@@ -1,0 +1,546 @@
+.ays-container {
+    height: calc(100vh - 60px);
+    /* 100vh minus AdminLayout padding (30px * 2) */
+    overflow: hidden;
+    /* Prevent body scroll */
+    background-color: transparent;
+    /* Use parent background */
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.ays-left-col::-webkit-scrollbar,
+.years-table-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.ays-left-col,
+.years-table-container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Header */
+.ays-header {
+    margin-bottom: 24px;
+    flex-shrink: 0;
+}
+
+.ays-breadcrumb {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.ays-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 16px;
+    width: 100%;
+}
+
+.ays-title h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 8px 0;
+}
+
+.ays-title p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+.btn-create-year {
+    background: #64A926;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(100, 169, 38, 0.3);
+    margin-left: auto;
+    /* Force right alignment */
+    flex-shrink: 0;
+}
+
+/* ... existing styles ... */
+
+.btn-create-year:hover {
+    background: #538d1f;
+    box-shadow: 0 6px 8px -1px rgba(100, 169, 38, 0.4);
+}
+
+/* Layout Grid */
+.ays-content-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 20px;
+    align-items: stretch;
+    /* Stretch to fill height */
+    flex-grow: 1;
+    /* Take remaining height */
+    overflow: hidden;
+    /* Prevent grid blowout */
+    min-height: 0;
+    /* Crucial for nested flex/grid scroll */
+}
+
+/* Left Column */
+.ays-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-y: auto;
+    /* Scroll if content is too tall */
+    padding-right: 4px;
+    /* Space for scrollbar */
+}
+
+/* Active Session Card */
+.active-session-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.live-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #dcfce7;
+    color: #16a34a;
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.live-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #16a34a;
+    border-radius: 50%;
+}
+
+.current-year-display {
+    background: #f1f5f9;
+    background: linear-gradient(135deg, #f0fdf4 0%, #e2e8f0 100%);
+    /* Subtle green tint */
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 24px;
+    border: 1px solid #e2e8f0;
+}
+
+.cyd-icon {
+    font-size: 32px;
+    color: #64A926;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.cyd-year {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.cyd-label {
+    font-size: 12px;
+    color: #64A926;
+    font-weight: 600;
+}
+
+.date-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.field-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.field-group input {
+    width: 100%;
+    padding: 10px 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #64748b;
+    box-sizing: border-box;
+    cursor: default;
+    /* Read-only look */
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.last-updated {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.edit-link {
+    font-size: 13px;
+    color: #64A926;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Session Breakdown Card */
+.breakdown-stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-item {
+    text-align: left;
+    padding-right: 16px;
+    border-right: 1px solid #f1f5f9;
+    flex: 1;
+}
+
+.stat-item:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.stat-value {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: #64748b;
+}
+
+/* Right Column - Year List */
+.years-list-card {
+    background: white;
+    border-radius: 12px;
+    padding: 0;
+    /* Removing padding for table fit */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    overflow: hidden;
+    height: 100%;
+    /* Fill height */
+    display: flex;
+    flex-direction: column;
+}
+
+.years-table-container {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.list-header {
+    padding: 24px;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.list-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+}
+
+.list-header p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+}
+
+.search-filter {
+    display: flex;
+    gap: 8px;
+}
+
+.search-box {
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 13px;
+    width: 200px;
+    background: #f8fafc;
+}
+
+.filter-btn {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.years-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.years-table th {
+    text-align: left;
+    padding: 12px 24px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64A926;
+    /* Green headers per design */
+    background: #fcfdfa;
+    /* Very light background */
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.years-table td {
+    padding: 20px 24px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.year-info-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.year-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #f8fafc;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.year-icon.active-icon {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.year-text-group h4 {
+    margin: 0 0 2px 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.year-subtext {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.year-subtext.active {
+    color: #16a34a;
+}
+
+.year-subtext.upcoming {
+    color: #3b82f6;
+}
+
+.duration-text {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status-badge.active {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.status-badge.upcoming {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+.status-badge.archived {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.list-footer {
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 16px;
+}
+
+.page-btn {
+    background: none;
+    border: none;
+    color: #64748b;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.page-btn:hover {
+    color: #64A926;
+}
+
+.page-btn.disabled {
+    color: #cbd5e1;
+    cursor: default;
+}
+
+.action-btn-icon {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.action-btn-icon:hover {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+
+/* Responsive */
+/* Responsive */
+@media (max-width: 900px) {
+
+    /* Stack only on smaller tablets/mobile */
+    .ays-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .active-session-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .ays-container {
+        height: auto;
+        /* Allow full scroll on mobile */
+        overflow: visible;
+        padding-bottom: 80px;
+        /* Space for bottom content */
+    }
+
+    .ays-content-grid {
+        display: flex;
+        /* Switch to flex column */
+        flex-direction: column;
+        overflow: visible;
+        height: auto;
+    }
+
+    .years-list-card {
+        height: auto;
+        min-height: 400px;
+        /* Ensure visible height */
+    }
+
+    .ays-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-create-year {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        /* Reset auto margin */
+        margin-top: 12px;
+    }
+
+    .years-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .year-info-cell {
+        min-width: 200px;
+    }
+}

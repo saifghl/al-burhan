@@ -1,0 +1,435 @@
+.par-container {
+    height: calc(100vh - 60px);
+    overflow: hidden;
+    background-color: transparent;
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.par-header {
+    margin-bottom: 32px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.par-breadcrumb {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.par-title h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 8px 0;
+}
+
+.par-title p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+    max-width: 600px;
+}
+
+.par-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-discard {
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-discard:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.btn-save-rules {
+    background: #64A926;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px -1px rgba(100, 169, 38, 0.4);
+    transition: all 0.2s;
+}
+
+.btn-save-rules:hover {
+    background: #538d1f;
+}
+
+/* Scrollable Content Area */
+.par-content-scroll {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-bottom: 40px;
+}
+
+.par-content-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.par-content-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+/* Matrix Card */
+.par-matrix-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    padding: 32px;
+    margin-bottom: 32px;
+    overflow: visible;
+    /* Using wrapper for scroll */
+}
+
+.matrix-legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.matrix-legend h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.legend-items {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.legend-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.dot-green {
+    background: #16a34a;
+}
+
+.dot-gray {
+    background: #cbd5e1;
+}
+
+
+/* Matrix Table */
+.par-matrix-wrapper {
+    overflow-x: auto;
+}
+
+.par-matrix-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 800px;
+    /* Force minimum width for scroll */
+}
+
+.par-matrix-table th {
+    text-align: center;
+    padding: 16px;
+    border-bottom: 1px solid #f1f5f9;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.par-matrix-table th.col-permission {
+    text-align: left;
+    min-width: 250px;
+    color: #64A926;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.role-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.role-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.role-badge {
+    font-size: 10px;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 500;
+}
+
+/* Rows/Cells */
+.category-row td {
+    padding: 24px 16px 12px 16px;
+    color: #64A926;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.permission-row td {
+    padding: 16px;
+    border-bottom: 1px solid #f8fafc;
+    vertical-align: middle;
+}
+
+.permission-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.perm-icon-wrapper {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.permission-text h4 {
+    margin: 0 0 2px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.permission-text p {
+    margin: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.cell-center {
+    text-align: center;
+}
+
+/* Status Indicators */
+.status-check {
+    color: #16a34a;
+    font-size: 16px;
+}
+
+.status-dot-cell {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    display: inline-block;
+}
+
+.status-active-badge {
+    background: #dcfce7;
+    color: #16a34a;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Admin Lock */
+.admin-lock {
+    font-size: 12px;
+    color: #64748b;
+}
+
+
+/* Danger Card */
+.danger-zone-card {
+    background: #fffafa;
+    /* Very light red */
+    border: 1px solid #fef2f2;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.danger-info {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.alert-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #fee2e2;
+    color: #dc2626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.danger-text h4 {
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.danger-text p {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+.btn-reset-default {
+    background: white;
+    border: 1px solid #fee2e2;
+    color: #dc2626;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(220, 38, 38, 0.05);
+}
+
+.btn-reset-default:hover {
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+/* Reusing Toggle Switch from PasswordPolicy css or duplicating here for isolation */
+.par-switch {
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.par-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.par-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.par-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.par-switch input:checked+.par-slider {
+    background-color: #64A926;
+}
+
+.par-switch input:checked+.par-slider:before {
+    transform: translateX(20px);
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+    .danger-zone-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .btn-reset-default {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .par-container {
+        height: auto;
+        overflow: visible;
+        padding-bottom: 80px;
+    }
+
+    .par-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .par-header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .par-matrix-card {
+        padding: 16px;
+    }
+}

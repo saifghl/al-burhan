@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaToggleOn, FaToggleOff, FaInfoCircle, FaSave, FaPlus, FaTrash } from 'react-icons/fa';
+import { FaInfoCircle, FaSave, FaPlus, FaTrash } from 'react-icons/fa';
+import ToggleSwitch from './ToggleSwitch';
 import './PublicContent.css';
 
 const FooterEditor = () => {
@@ -70,12 +71,11 @@ const FooterEditor = () => {
                     <div className="editor-card">
                         <div className="card-title">
                             About Short Text
-                            <div
-                                className={`toggle-switch ${isAboutVisible ? 'toggle-on' : 'toggle-off'}`}
-                                onClick={() => setIsAboutVisible(!isAboutVisible)}
-                                title="Toggle Visibility"
-                            >
-                                {isAboutVisible ? <FaToggleOn /> : <FaToggleOff />}
+                            <div title="Toggle Visibility">
+                                <ToggleSwitch
+                                    checked={isAboutVisible}
+                                    onChange={(val) => setIsAboutVisible(val)}
+                                />
                             </div>
                         </div>
 

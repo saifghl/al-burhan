@@ -114,6 +114,27 @@ import NoticesAndActivities from './components/Admin/Notification Activities/Not
 import CreateNotice from './components/Admin/Notification Activities/CreateNotice';
 import UploadActivity from './components/Admin/UploadActivity/UploadActivity';
 import SendNotification from './components/Admin/SendNotification/SendNotification';
+import DraftManagement from './components/Admin/PublicManager/DraftManagement';
+import PublishedContent from './components/Admin/PublicManager/PublishedContent';
+import ArchiveRepository from './components/Admin/PublicManager/ArchiveRepository';
+import RejectionHistory from './components/Admin/PublicManager/RejectionHistory';
+import ApprovalRules from './components/Admin/PublicManager/ApprovalRules';
+import SystemControlCenter from './components/Admin/SystemSetting/SystemControlCenter';
+import AcademicYearSettings from './components/Admin/SystemSetting/AcademicYearSettings';
+import PasswordPolicySettings from './components/Admin/SystemSetting/PasswordPolicySettings';
+import NotificationTemplates from './components/Admin/SystemSetting/NotificationTemplates';
+import PortalAccessRules from './components/Admin/SystemSetting/PortalAccessRules';
+import SystemActivityLogs from './components/Admin/SystemSetting/SystemActivityLogs';
+import AdminDonationDashboard from './components/Admin/AdminDonation/AdminDonationDashboard';
+import DonorManagement from './components/Admin/AdminDonation/DonorManagement';
+import DonationRecords from './components/Admin/AdminDonation/DonationRecords';
+import DonorDetails from './components/Admin/AdminDonation/DonorDetails';
+import UserAccounts from './components/Admin/UserAccounts/UserAccounts';
+import CreateUser from './components/Admin/UserAccounts/CreateUser';
+import RolesPermissions from './components/Admin/UserAccounts/RolesPermissions';
+import UserDetails from './components/Admin/UserAccounts/UserDetails';
+import AdminStudentList from './components/Admin/StudentRecords/StudentList';
+import AdminStudentProfile from './components/Admin/StudentRecords/StudentProfile';
 import './App.css';
 import { FaBell } from 'react-icons/fa'; // Import bell icon for header
 
@@ -218,8 +239,14 @@ function App() {
               <Route path="dashboard" element={<AdminDashboard />} />
               <Route path="public-content" element={<PublicContentManager />} />
               <Route path="teachers" element={<AllTeachers />} />
-              <Route path="donations" element={<FundAllocation />} />
+              <Route path="donation-dashboard" element={<AdminDonationDashboard />} />
+              <Route path="donors" element={<DonorManagement />} />
+              <Route path="donors/:id" element={<DonorDetails />} />
+              <Route path="donations" element={<DonationRecords />} />
               <Route path="utilization-history" element={<UtilizationHistory />} />
+              <Route path="fund-allocation" element={<FundAllocation />} />
+              {/* ... other admin routes ... */}
+
               <Route path="generate-receipt" element={<GenerateReceipt />} />
               <Route path="transparency-report" element={<TransparencyReport />} />
 
@@ -250,11 +277,33 @@ function App() {
               <Route path="publish" element={<PublishManager />} />
               <Route path="content-approval" element={<ContentApprovalQueue />} />
               <Route path="content-review" element={<ReviewContent />} />
-            </Route>
-          </Routes>
-        </ConditionalLayout>
-      </div>
-    </Router>
+              <Route path="drafts" element={<DraftManagement />} />
+              <Route path="published-content" element={<PublishedContent />} />
+              <Route path="archive-repository" element={<ArchiveRepository />} />
+              <Route path="rejection-history" element={<RejectionHistory />} />
+              <Route path="approval-rules" element={<ApprovalRules />} />
+              <Route path="settings" element={<SystemControlCenter />} />
+              <Route path="settings/academic-year" element={<AcademicYearSettings />} />
+              <Route path="settings/password-policy" element={<PasswordPolicySettings />} />
+              <Route path="settings/notification-templates" element={<NotificationTemplates />} />
+              <Route path="settings/portal-access" element={<PortalAccessRules />} />
+              <Route path="settings/activity-logs" element={<SystemActivityLogs />} />
+
+              {/* User Accounts */}
+              <Route path="user-accounts" element={<UserAccounts />} />
+              <Route path="user-accounts/create" element={<CreateUser />} />
+              <Route path="user-accounts/permissions" element={<RolesPermissions />} />
+              <Route path="user-accounts/:userId" element={<UserDetails />} />
+
+              {/* Student Records */}
+              <Route path="student-records" element={<AdminStudentList />} />
+              <Route path="student-records/:studentId" element={<AdminStudentProfile />} />
+
+            </Route >
+          </Routes >
+        </ConditionalLayout >
+      </div >
+    </Router >
   );
 }
 

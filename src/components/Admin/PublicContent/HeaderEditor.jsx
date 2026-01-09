@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaToggleOn, FaToggleOff, FaTrash, FaMdDragIndicator, FaPlus, FaInfoCircle } from 'react-icons/fa';
+import { FaTrash, FaMdDragIndicator, FaPlus, FaInfoCircle } from 'react-icons/fa';
+import ToggleSwitch from './ToggleSwitch';
 import logo from '../../../assets/logo.png'; // Using small logo for preview
 import './PublicContent.css';
 
@@ -128,11 +129,11 @@ const HeaderEditor = () => {
                                         <span style={{ color: '#64748b', fontSize: '13px' }}>{item.slug}</span>
                                     </td>
                                     <td style={{ textAlign: 'center' }}>
-                                        <div
-                                            className={`toggle-switch ${item.visible ? 'toggle-on' : 'toggle-off'}`}
-                                            onClick={() => toggleVisibility(item.id)}
-                                        >
-                                            {item.visible ? <FaToggleOn /> : <FaToggleOff />}
+                                        <div>
+                                            <ToggleSwitch
+                                                checked={item.visible}
+                                                onChange={() => toggleVisibility(item.id)}
+                                            />
                                         </div>
                                     </td>
                                     <td style={{ textAlign: 'center' }}>

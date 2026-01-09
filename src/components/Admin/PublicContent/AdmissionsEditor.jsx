@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaToggleOn, FaToggleOff, FaCheckCircle, FaFileAlt, FaPlus, FaImage, FaCircle } from 'react-icons/fa';
+import { FaCheckCircle, FaFileAlt, FaPlus, FaImage, FaCircle } from 'react-icons/fa';
+import ToggleSwitch from './ToggleSwitch';
 import './PublicContent.css';
 
 const AdmissionsEditor = () => {
@@ -54,13 +55,12 @@ const AdmissionsEditor = () => {
             <div className="editor-card full-width" style={{ marginTop: '0' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                     <h3 className="card-title" style={{ margin: 0 }}>General Information & Banner</h3>
-                    <div
-                        className={`toggle-switch ${headerStatus ? 'toggle-on' : 'toggle-off'}`}
-                        style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', cursor: 'pointer' }}
-                        onClick={() => setHeaderStatus(!headerStatus)}
-                    >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', cursor: 'pointer' }}>
                         <span style={{ color: '#64748b' }}>Status: {headerStatus ? <b>Published</b> : 'Hidden'}</span>
-                        {headerStatus ? <FaToggleOn style={{ fontSize: '24px' }} /> : <FaToggleOff style={{ fontSize: '24px' }} />}
+                        <ToggleSwitch
+                            checked={headerStatus}
+                            onChange={(val) => setHeaderStatus(val)}
+                        />
                     </div>
                 </div>
 

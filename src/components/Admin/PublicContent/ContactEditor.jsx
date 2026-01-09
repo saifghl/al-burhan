@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaToggleOn, FaToggleOff, FaInfoCircle, FaPhone, FaEnvelope, FaMapMarkerAlt, FaLink, FaCopy } from 'react-icons/fa';
+import { FaInfoCircle, FaPhone, FaEnvelope, FaMapMarkerAlt, FaLink, FaCopy } from 'react-icons/fa';
+import ToggleSwitch from './ToggleSwitch';
 import './PublicContent.css';
 
 const ContactEditor = () => {
@@ -21,13 +22,12 @@ const ContactEditor = () => {
                     <span>Last edited: 2 hours ago by Admin</span>
                 </div>
                 <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                    <div
-                        className={`toggle-switch ${isVisible ? 'toggle-on' : 'toggle-off'}`}
-                        style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', cursor: 'pointer' }}
-                        onClick={() => setIsVisible(!isVisible)}
-                    >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', cursor: 'pointer' }}>
                         <span style={{ color: '#64748b', fontSize: '12px', fontWeight: '600' }}>Visibility</span>
-                        {isVisible ? <FaToggleOn style={{ fontSize: '24px' }} /> : <FaToggleOff style={{ fontSize: '24px' }} />}
+                        <ToggleSwitch
+                            checked={isVisible}
+                            onChange={(val) => setIsVisible(val)}
+                        />
                     </div>
                     <span style={{ color: '#e2e8f0' }}>|</span>
                     <button className="btn-secondary-action" style={{ border: 'none' }}>Draft</button>

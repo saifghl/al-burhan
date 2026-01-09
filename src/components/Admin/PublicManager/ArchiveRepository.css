@@ -1,0 +1,348 @@
+.archive-repository-container {
+    padding: 24px;
+    background-color: #f8fafc;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header Section */
+.ar-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.ar-breadcrumb {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.ar-page-title h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 8px 0;
+}
+
+.ar-page-title p {
+    color: #64748b;
+    font-size: 14px;
+    margin: 0;
+    max-width: 600px;
+}
+
+.read-only-text {
+    color: #f97316;
+    font-weight: 500;
+}
+
+.btn-export-log {
+    background-color: white;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-export-log:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+/* Filters Bar */
+.ar-filters-bar {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.ar-search-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.ar-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64A926;
+    font-size: 14px;
+}
+
+.ar-search-input {
+    width: 100%;
+    padding: 10px 10px 10px 36px;
+    border: none;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    color: #334155;
+}
+
+.ar-search-input::placeholder {
+    color: #94a3b8;
+}
+
+.ar-dropdown-filter {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #f0fdf4;
+    /* Match light green bg in image for filter */
+    font-size: 14px;
+    color: #1e293b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 140px;
+    justify-content: space-between;
+}
+
+.ar-date-filter {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #f0fdf4;
+    /* Match light green bg in image for filter */
+    font-size: 14px;
+    color: #1e293b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+    min-width: 140px;
+}
+
+/* Table */
+.ar-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+    padding: 8px;
+}
+
+.ar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ar-table th {
+    text-align: left;
+    padding: 16px 24px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #64A926;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: none;
+}
+
+.ar-table td {
+    padding: 20px 24px;
+    border-bottom: 1px solid #f8fafc;
+    font-size: 14px;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.ar-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Title Column */
+.archive-item-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.archive-icon-box {
+    width: 36px;
+    height: 36px;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 16px;
+}
+
+.archive-title h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* Module Tags */
+.module-pill {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.pill-finance {
+    background-color: #f0fdf4;
+    color: #16a34a;
+}
+
+.pill-admissions {
+    background-color: #f3e8ff;
+    color: #9333ea;
+}
+
+.pill-academics {
+    background-color: #eff6ff;
+    color: #3b82f6;
+}
+
+.pill-events {
+    background-color: #fff7ed;
+    color: #f97316;
+}
+
+/* Date */
+.date-text {
+    color: #64A926;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Reason */
+.reason-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* Actions */
+.action-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-end;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    width: max-content;
+}
+
+.btn-icon-action {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.action-view {
+    color: #64A926;
+}
+
+.action-history {
+    color: #64A926;
+}
+
+/* Pagination */
+.ar-pagination {
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.showing-result {
+    font-size: 13px;
+    color: #64A926;
+}
+
+.showing-result strong {
+    color: #334155;
+    font-weight: 600;
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.pg-nav {
+    background: none;
+    border: none;
+    color: #64A926;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.pg-num {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #64748b;
+}
+
+.pg-num.active {
+    background-color: #64A926;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ar-header-section {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .ar-filters-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ar-dropdown-filter,
+    .ar-date-filter {
+        width: 100%;
+    }
+
+    .ar-table-container {
+        overflow-x: auto;
+    }
+}
