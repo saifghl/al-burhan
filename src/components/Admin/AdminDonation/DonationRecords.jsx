@@ -8,11 +8,11 @@ const DonationRecords = () => {
 
     // Mock Data based on the image
     const donations = [
-        { id: '#DN-8492', donor: 'Sarah Jenkins', avatar: 'SJ', amount: '$500.00', method: 'Credit Card (Stripe)', date: 'Oct 24, 2023', category: 'Education Fund', status: 'Allocated' },
-        { id: '#DN-8491', donor: 'Michael Chen', avatar: 'MC', amount: '$1,200.00', method: 'Bank Transfer', date: 'Oct 23, 2023', category: '-', status: 'Pending' },
-        { id: '#DN-8490', donor: 'Alice Larson', avatar: 'AL', amount: '$250.00', method: 'PayPal', date: 'Oct 23, 2023', category: 'Medical Relief', status: 'Allocated' },
-        { id: '#DN-8489', donor: 'Robert King', avatar: 'RK', amount: '$5,000.00', method: 'Wire Transfer', date: 'Oct 22, 2023', category: 'Infrastructure', status: 'Allocated' },
-        { id: '#DN-8488', donor: 'Emily Miller', avatar: 'EM', amount: '$100.00', method: 'Credit Card', date: 'Oct 22, 2023', category: '-', status: 'Pending' },
+        { id: '#DN-8492', donor: 'Sarah Jenkins', avatar: 'SJ', amount: '₹500.00', method: 'Credit Card (Stripe)', date: 'Oct 24, 2023', category: 'Education Fund', status: 'Allocated' },
+        { id: '#DN-8491', donor: 'Michael Chen', avatar: 'MC', amount: '₹1,200.00', method: 'Bank Transfer', date: 'Oct 23, 2023', category: '-', status: 'Pending' },
+        { id: '#DN-8490', donor: 'Alice Larson', avatar: 'AL', amount: '₹250.00', method: 'PayPal', date: 'Oct 23, 2023', category: 'Medical Relief', status: 'Allocated' },
+        { id: '#DN-8489', donor: 'Robert King', avatar: 'RK', amount: '₹5,000.00', method: 'Wire Transfer', date: 'Oct 22, 2023', category: 'Infrastructure', status: 'Allocated' },
+        { id: '#DN-8488', donor: 'Emily Miller', avatar: 'EM', amount: '₹100.00', method: 'Credit Card', date: 'Oct 22, 2023', category: '-', status: 'Pending' },
     ];
 
     const handleViewDonor = () => {
@@ -45,15 +45,15 @@ const DonationRecords = () => {
             <div className="dr-stats-row">
                 <div className="dr-stat-card">
                     <span className="dr-stat-label">Total Donations (YTD)</span>
-                    <h2>$1,245,890.00</h2>
+                    <h2>₹1,245,890.00</h2>
                 </div>
                 <div className="dr-stat-card">
                     <span className="dr-stat-label">Pending Allocation</span>
-                    <h2 className="text-orange">$45,200.00</h2>
+                    <h2 className="text-orange">₹45,200.00</h2>
                 </div>
                 <div className="dr-stat-card">
                     <span className="dr-stat-label">Avg. Donation</span>
-                    <h2 className="text-green">$325.00</h2>
+                    <h2 className="text-green">₹325.00</h2>
                 </div>
             </div>
 

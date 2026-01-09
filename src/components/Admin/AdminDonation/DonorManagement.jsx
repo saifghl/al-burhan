@@ -6,17 +6,17 @@ const DonorManagement = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const donors = [
-        { id: 1, name: 'Sarah Jenkins', email: 'sarah.j@example.com', phone: '+1 (555) 012-3456', date: 'Oct 24, 2023', total: '$1,250.00', status: 'Active', avatar: 'SJ', color: '#e2e8f0' },
-        { id: 2, name: 'Michael Chen', email: 'm.chen88@gmail.com', phone: '+1 (555) 987-6543', date: 'Nov 02, 2023', total: '$850.00', status: 'Active', avatar: 'MC', color: '#e2e8f0' },
-        { id: 3, name: 'Emma Roberts', email: 'emma.r@workmail.com', phone: '+44 20 7123 4567', date: 'Dec 15, 2023', total: '$2,100.00', status: 'Disabled', avatar: 'ER', color: '#f1f5f9' },
-        { id: 4, name: 'David Kim', email: 'david.kim@studio.co', phone: '+1 (555) 333-2222', date: 'Jan 10, 2024', total: '$5,000.00', status: 'Active', avatar: 'DK', color: '#e2e8f0' },
-        { id: 5, name: 'Lisa Martinez', email: 'lisa.m@example.org', phone: '+1 (555) 777-8888', date: 'Feb 05, 2024', total: '$325.00', status: 'Active', avatar: 'LM', color: '#f3e8ff', textColor: '#9333ea' },
+        { id: 1, name: 'Sarah Jenkins', email: 'sarah.j@example.com', phone: '+1 (555) 012-3456', date: 'Oct 24, 2023', total: '₹1,250.00', status: 'Active', avatar: 'SJ', color: '#e2e8f0' },
+        { id: 2, name: 'Michael Chen', email: 'm.chen88@gmail.com', phone: '+1 (555) 987-6543', date: 'Nov 02, 2023', total: '₹850.00', status: 'Active', avatar: 'MC', color: '#e2e8f0' },
+        { id: 3, name: 'Emma Roberts', email: 'emma.r@workmail.com', phone: '+44 20 7123 4567', date: 'Dec 15, 2023', total: '₹2,100.00', status: 'Disabled', avatar: 'ER', color: '#f1f5f9' },
+        { id: 4, name: 'David Kim', email: 'david.kim@studio.co', phone: '+1 (555) 333-2222', date: 'Jan 10, 2024', total: '₹5,000.00', status: 'Active', avatar: 'DK', color: '#e2e8f0' },
+        { id: 5, name: 'Lisa Martinez', email: 'lisa.m@example.org', phone: '+1 (555) 777-8888', date: 'Feb 05, 2024', total: '₹325.00', status: 'Active', avatar: 'LM', color: '#f3e8ff', textColor: '#9333ea' },
     ];
 
     const stats = [
         { title: 'Total Donors', value: '1,248', trend: '+12%', icon: <FaUserFriends />, type: 'users' },
         { title: 'Active Donors', value: '1,102', trend: '+5%', icon: <FaUserCheck />, type: 'active' },
-        { title: 'Total Revenue', value: '$452,000', trend: '+22%', icon: <FaMoneyBillWave />, type: 'revenue' },
+        { title: 'Total Revenue', value: '₹452,000', trend: '+22%', icon: <FaMoneyBillWave />, type: 'revenue' },
     ];
 
     return (
