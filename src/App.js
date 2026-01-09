@@ -93,6 +93,7 @@ import TransparencyReport from './components/Admin/AdminDonation/TransparencyRep
 import PublishManager from './components/Admin/PublicManager/PublishManager';
 import ContentApprovalQueue from './components/Admin/PublicManager/ContentApprovalQueue';
 import ReviewContent from './components/Admin/PublicManager/ReviewContent';
+<<<<<<< Updated upstream
 import DraftManagement from './components/Admin/PublicManager/DraftManagement';
 import PublishedContent from './components/Admin/PublicManager/PublishedContent';
 import ArchiveRepository from './components/Admin/PublicManager/ArchiveRepository';
@@ -108,6 +109,14 @@ import AdminDonationDashboard from './components/Admin/AdminDonation/AdminDonati
 import DonorManagement from './components/Admin/AdminDonation/DonorManagement';
 import DonationRecords from './components/Admin/AdminDonation/DonationRecords';
 import DonorDetails from './components/Admin/AdminDonation/DonorDetails';
+=======
+import UserAccounts from './components/Admin/UserAccounts/UserAccounts';
+import CreateUser from './components/Admin/UserAccounts/CreateUser';
+import RolesPermissions from './components/Admin/UserAccounts/RolesPermissions';
+import UserDetails from './components/Admin/UserAccounts/UserDetails';
+import AdminStudentList from './components/Admin/StudentRecords/StudentList';
+import AdminStudentProfile from './components/Admin/StudentRecords/StudentProfile';
+>>>>>>> Stashed changes
 import './App.css';
 import { FaBell } from 'react-icons/fa'; // Import bell icon for header
 
@@ -146,6 +155,7 @@ function App() {
               <Route path="publish" element={<PublishManager />} />
               <Route path="content-approval" element={<ContentApprovalQueue />} />
               <Route path="content-review" element={<ReviewContent />} />
+<<<<<<< Updated upstream
               <Route path="drafts" element={<DraftManagement />} />
               <Route path="published-content" element={<PublishedContent />} />
               <Route path="archive-repository" element={<ArchiveRepository />} />
@@ -157,6 +167,18 @@ function App() {
               <Route path="settings/notification-templates" element={<NotificationTemplates />} />
               <Route path="settings/portal-access" element={<PortalAccessRules />} />
               <Route path="settings/activity-logs" element={<SystemActivityLogs />} />
+=======
+
+              {/* User Accounts */}
+              <Route path="user-accounts" element={<UserAccounts />} />
+              <Route path="user-accounts/create" element={<CreateUser />} />
+              <Route path="user-accounts/permissions" element={<RolesPermissions />} />
+              <Route path="user-accounts/:userId" element={<UserDetails />} />
+
+              {/* Student Records */}
+              <Route path="student-records" element={<AdminStudentList />} />
+              <Route path="student-records/:studentId" element={<AdminStudentProfile />} />
+>>>>>>> Stashed changes
             </Route>
           </Routes>
         </ConditionalLayout>

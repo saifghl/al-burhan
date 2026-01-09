@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaToggleOn, FaToggleOff, FaInfoCircle, FaImage, FaChevronDown, FaChevronUp, FaPlus, FaGraduationCap, FaFlask, FaBookOpen } from 'react-icons/fa';
+import { FaInfoCircle, FaImage, FaChevronDown, FaChevronUp, FaPlus, FaGraduationCap, FaFlask, FaBookOpen } from 'react-icons/fa';
+import ToggleSwitch from './ToggleSwitch';
 import './PublicContent.css';
 
 const HomepageEditor = () => {
@@ -54,11 +55,12 @@ const HomepageEditor = () => {
                 <div className="editor-card full-width">
                     <div className="card-title">
                         Hero Section
-                        <div
-                            className={`toggle-switch ${sections.hero ? 'toggle-on' : 'toggle-off'}`}
-                            onClick={() => toggleSection('hero')}
-                        >
-                            {sections.hero ? <FaToggleOn /> : <FaToggleOff />} <span style={{ fontSize: '13px', color: '#64748b', verticalAlign: 'middle', marginLeft: '5px' }}>Visible</span>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <ToggleSwitch
+                                checked={sections.hero}
+                                onChange={() => toggleSection('hero')}
+                            />
+                            <span style={{ fontSize: '13px', color: '#64748b', verticalAlign: 'middle', marginLeft: '5px' }}>Visible</span>
                         </div>
                     </div>
 
@@ -134,104 +136,110 @@ const HomepageEditor = () => {
                 <div className="editor-card full-width" style={{ padding: '15px 24px' }}>
                     <div className="card-title" style={{ margin: 0 }}>
                         <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                            <FaToggleOn className="toggle-switch toggle-on" /> Statistics Counters
+                            <ToggleSwitch checked={sections.stats} onChange={() => { }} /> Statistics Counters
                         </span>
-                        <div className={`toggle-switch ${sections.stats ? 'toggle-on' : 'toggle-off'}`} onClick={() => toggleSection('stats')}>
-                            {sections.stats ? <FaToggleOn /> : <FaToggleOff />} <span style={{ fontSize: '13px', color: '#64748b', verticalAlign: 'middle', marginLeft: '5px' }}>Visible</span> <FaChevronDown style={{ fontSize: '14px', marginLeft: '10px', color: '#94a3b8' }} />
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <ToggleSwitch checked={sections.stats} onChange={() => toggleSection('stats')} />
+                            <span style={{ fontSize: '13px', color: '#64748b', verticalAlign: 'middle', marginLeft: '5px' }}>Visible</span> <FaChevronDown style={{ fontSize: '14px', marginLeft: '10px', color: '#94a3b8' }} />
                         </div>
                     </div>
                 </div>
-
-                <div className="editor-card full-width" style={{ padding: '15px 24px' }}>
-                    <div className="card-title" style={{ margin: 0 }}>
-                        <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                            <FaToggleOn className="toggle-switch toggle-on" /> About Preview Text
-                        </span>
-                        <div className={`toggle-switch ${sections.about ? 'toggle-on' : 'toggle-off'}`} onClick={() => toggleSection('about')}>
-                            {sections.about ? <FaToggleOn /> : <FaToggleOff />} <span style={{ fontSize: '13px', color: '#64748b', verticalAlign: 'middle', marginLeft: '5px' }}>Visible</span> <FaChevronDown style={{ fontSize: '14px', marginLeft: '10px', color: '#94a3b8' }} />
-                        </div>
-                    </div>
-                </div>
-
-                {/* Programs Overview */}
-                <div className="editor-card full-width">
-                    <div className="card-title">
-                        Programs Overview
-                        <div>
-                            <button className="btn-secondary-action" style={{ display: 'inline-flex', marginRight: '15px' }}>
-                                <FaPlus /> Add Card
-                            </button>
-                            <div
-                                className={`toggle-switch ${sections.programs ? 'toggle-on' : 'toggle-off'}`}
-                                onClick={() => toggleSection('programs')}
-                                style={{ display: 'inline-block' }}
-                            >
-                                {sections.programs ? <FaToggleOn /> : <FaToggleOff />} <span style={{ fontSize: '13px', color: '#64748b', verticalAlign: 'middle', marginLeft: '5px' }}>Visible</span>
-                            </div>
-                        </div>
-                    </div>
-                    {sections.programs && (
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
-                            {programCards.map(card => (
-                                <div key={card.id} style={{ background: '#f8fafc', padding: '20px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                                    <div style={{ width: '40px', height: '40px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px', fontSize: '18px' }}>
-                                        {card.icon}
-                                    </div>
-                                    <h5 style={{ margin: '0 0 8px 0', fontSize: '15px', color: '#1e293b' }}>{card.title}</h5>
-                                    <p style={{ margin: 0, fontSize: '13px', color: '#64748b', lineHeight: '1.4' }}>{card.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                </div>
-
-                {/* Bottom CTA */}
-                <div className="editor-card full-width">
-                    <div className="card-title">
-                        Bottom CTA Message
-                        <div
-                            className={`toggle-switch ${sections.bottomCta ? 'toggle-on' : 'toggle-off'}`}
-                            onClick={() => toggleSection('bottomCta')}
-                        >
-                            {sections.bottomCta ? <FaToggleOn /> : <FaToggleOff />} <span style={{ fontSize: '13px', color: '#64748b', verticalAlign: 'middle', marginLeft: '5px' }}>Visible</span> <FaChevronUp style={{ fontSize: '14px', marginLeft: '10px', color: '#94a3b8' }} />
-                        </div>
-                    </div>
-                    {sections.bottomCta && (
-                        <div>
-                            <div className="editor-grid-2" style={{ gridTemplateColumns: '1fr 1fr' }}>
-                                <div className="form-group">
-                                    <label className="form-label">Message Heading</label>
-                                    <input
-                                        type="text"
-                                        className="form-input"
-                                        value={ctaData.heading}
-                                        onChange={(e) => setCtaData({ ...ctaData, heading: e.target.value })}
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <label className="form-label">Button Label</label>
-                                    <input
-                                        type="text"
-                                        className="form-input"
-                                        value={ctaData.buttonLabel}
-                                        onChange={(e) => setCtaData({ ...ctaData, buttonLabel: e.target.value })}
-                                    />
-                                </div>
-                            </div>
-                            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
-                                <button className="btn-primary-action" style={{ fontSize: '13px', padding: '8px 16px' }}>Update CTA</button>
-                            </div>
-                        </div>
-                    )}
-                </div>
-
-                <div style={{ textAlign: 'center', marginTop: '10px' }}>
-                    <button style={{ background: 'white', border: '1px dashed #cbd5e1', padding: '12px 24px', borderRadius: '8px', color: '#64A926', fontWeight: '600', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                        <FaPlus /> Add New Homepage Section
-                    </button>
-                </div>
-
             </div>
+
+            <div className="editor-card full-width" style={{ padding: '15px 24px' }}>
+                <div className="card-title" style={{ margin: 0 }}>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <ToggleSwitch checked={sections.about} onChange={() => { }} /> About Preview Text
+                    </span>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <ToggleSwitch
+                            checked={sections.about}
+                            onChange={() => toggleSection('about')}
+                        />
+                        <span style={{ fontSize: '13px', color: '#64748b', verticalAlign: 'middle', marginLeft: '5px' }}>Visible</span> <FaChevronDown style={{ fontSize: '14px', marginLeft: '10px', color: '#94a3b8' }} />
+                    </div>
+                </div>
+            </div>
+
+            {/* Programs Overview */}
+            <div className="editor-card full-width">
+                <div className="card-title">
+                    Programs Overview
+                    <div>
+                        <button className="btn-secondary-action" style={{ display: 'inline-flex', marginRight: '15px' }}>
+                            <FaPlus /> Add Card
+                        </button>
+                        <div style={{ display: 'inline-flex', verticalAlign: 'middle', alignItems: 'center' }}>
+                            <ToggleSwitch
+                                checked={sections.programs}
+                                onChange={() => toggleSection('programs')}
+                            />
+                            <span style={{ fontSize: '13px', color: '#64748b', marginLeft: '5px' }}>Visible</span>
+                        </div>
+                    </div>
+                </div>
+                {sections.programs && (
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+                        {programCards.map(card => (
+                            <div key={card.id} style={{ background: '#f8fafc', padding: '20px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                                <div style={{ width: '40px', height: '40px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px', fontSize: '18px' }}>
+                                    {card.icon}
+                                </div>
+                                <h5 style={{ margin: '0 0 8px 0', fontSize: '15px', color: '#1e293b' }}>{card.title}</h5>
+                                <p style={{ margin: 0, fontSize: '13px', color: '#64748b', lineHeight: '1.4' }}>{card.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="editor-card full-width">
+                <div className="card-title">
+                    Bottom CTA Message
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <ToggleSwitch
+                            checked={sections.bottomCta}
+                            onChange={() => toggleSection('bottomCta')}
+                        />
+                        <span style={{ fontSize: '13px', color: '#64748b', verticalAlign: 'middle', marginLeft: '5px' }}>Visible</span> <FaChevronUp style={{ fontSize: '14px', marginLeft: '10px', color: '#94a3b8' }} />
+                    </div>
+                </div>
+                {sections.bottomCta && (
+                    <div>
+                        <div className="editor-grid-2" style={{ gridTemplateColumns: '1fr 1fr' }}>
+                            <div className="form-group">
+                                <label className="form-label">Message Heading</label>
+                                <input
+                                    type="text"
+                                    className="form-input"
+                                    value={ctaData.heading}
+                                    onChange={(e) => setCtaData({ ...ctaData, heading: e.target.value })}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label className="form-label">Button Label</label>
+                                <input
+                                    type="text"
+                                    className="form-input"
+                                    value={ctaData.buttonLabel}
+                                    onChange={(e) => setCtaData({ ...ctaData, buttonLabel: e.target.value })}
+                                />
+                            </div>
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
+                            <button className="btn-primary-action" style={{ fontSize: '13px', padding: '8px 16px' }}>Update CTA</button>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: '10px' }}>
+                <button style={{ background: 'white', border: '1px dashed #cbd5e1', padding: '12px 24px', borderRadius: '8px', color: '#64A926', fontWeight: '600', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    <FaPlus /> Add New Homepage Section
+                </button>
+            </div>
+
         </div>
     );
 };

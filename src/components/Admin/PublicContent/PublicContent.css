@@ -236,18 +236,66 @@
 }
 
 /* Toggles and Icons */
-.toggle-switch {
-    font-size: 24px;
-    cursor: pointer;
+/* Custom Toggle Switch Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    margin-right: 8px;
     vertical-align: middle;
 }
 
-.toggle-on {
-    color: #64A926;
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-.toggle-off {
-    color: #cbd5e1;
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    /* Grey when off */
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+input:checked+.slider {
+    background-color: #64A926;
+    /* Green when on */
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #64A926;
+}
+
+input:checked+.slider:before {
+    transform: translateX(24px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
 
 .action-icon {

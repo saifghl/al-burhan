@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaInfoCircle, FaPlus, FaSearch, FaSort, FaToggleOn, FaToggleOff } from 'react-icons/fa';
+import { FaInfoCircle, FaPlus, FaSearch, FaSort } from 'react-icons/fa';
+import ToggleSwitch from './ToggleSwitch';
 import './PublicContent.css';
 
 const SubjectsEditor = () => {
@@ -97,17 +98,16 @@ const SubjectsEditor = () => {
                                     </span>
                                 </td>
                                 <td>
-                                    <div
-                                        className={`toggle-switch ${subject.visible ? 'toggle-on' : 'toggle-off'}`}
-                                        style={{ fontSize: '28px', cursor: 'pointer' }}
-                                        onClick={() => {
-                                            const updatedSubjects = subjects.map(s =>
-                                                s.id === subject.id ? { ...s, visible: !s.visible } : s
-                                            );
-                                            setSubjects(updatedSubjects);
-                                        }}
-                                    >
-                                        {subject.visible ? <FaToggleOn /> : <FaToggleOff />}
+                                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                                        <ToggleSwitch
+                                            checked={subject.visible}
+                                            onChange={(newValue) => {
+                                                const updatedSubjects = subjects.map(s =>
+                                                    s.id === subject.id ? { ...s, visible: newValue } : s
+                                                );
+                                                setSubjects(updatedSubjects);
+                                            }}
+                                        />
                                     </div>
                                 </td>
                                 <td>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaInfoCircle, FaPlus, FaPen, FaTrash, FaToggleOn, FaToggleOff } from 'react-icons/fa';
+import { FaInfoCircle, FaPlus, FaPen, FaTrash } from 'react-icons/fa';
+import ToggleSwitch from './ToggleSwitch';
 import './PublicContent.css';
 
 const AdministrationEditor = () => {
@@ -104,7 +105,10 @@ const AdministrationEditor = () => {
                                     <span>Office Hours: Mon-Fri, 9AM - 4PM</span>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }} onClick={() => toggleMemberVisibility(member.id)}>
                                         <span>Public Visibility</span>
-                                        {member.visible ? <FaToggleOn style={{ color: '#64A926', fontSize: '20px' }} /> : <FaToggleOff style={{ color: '#94a3b8', fontSize: '20px' }} />}
+                                        <ToggleSwitch
+                                            checked={member.visible}
+                                            onChange={() => toggleMemberVisibility(member.id)}
+                                        />
                                     </div>
                                 </div>
                             </div>
