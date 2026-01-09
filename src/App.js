@@ -93,6 +93,21 @@ import TransparencyReport from './components/Admin/AdminDonation/TransparencyRep
 import PublishManager from './components/Admin/PublicManager/PublishManager';
 import ContentApprovalQueue from './components/Admin/PublicManager/ContentApprovalQueue';
 import ReviewContent from './components/Admin/PublicManager/ReviewContent';
+import DraftManagement from './components/Admin/PublicManager/DraftManagement';
+import PublishedContent from './components/Admin/PublicManager/PublishedContent';
+import ArchiveRepository from './components/Admin/PublicManager/ArchiveRepository';
+import RejectionHistory from './components/Admin/PublicManager/RejectionHistory';
+import ApprovalRules from './components/Admin/PublicManager/ApprovalRules';
+import SystemControlCenter from './components/Admin/SystemSetting/SystemControlCenter';
+import AcademicYearSettings from './components/Admin/SystemSetting/AcademicYearSettings';
+import PasswordPolicySettings from './components/Admin/SystemSetting/PasswordPolicySettings';
+import NotificationTemplates from './components/Admin/SystemSetting/NotificationTemplates';
+import PortalAccessRules from './components/Admin/SystemSetting/PortalAccessRules';
+import SystemActivityLogs from './components/Admin/SystemSetting/SystemActivityLogs';
+import AdminDonationDashboard from './components/Admin/AdminDonation/AdminDonationDashboard';
+import DonorManagement from './components/Admin/AdminDonation/DonorManagement';
+import DonationRecords from './components/Admin/AdminDonation/DonationRecords';
+import DonorDetails from './components/Admin/AdminDonation/DonorDetails';
 import './App.css';
 import { FaBell } from 'react-icons/fa'; // Import bell icon for header
 
@@ -103,93 +118,19 @@ function App() {
         <ScrollToTop />
         <ConditionalLayout>
           <Routes>
-            {/* Public Routes */}
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/administration" element={<Administration />} />
-            <Route path="/academics" element={<Academics />} />
-            <Route path="/syllabus" element={<Syllabus />} />
-            <Route path="/admission" element={<Admission />} />
-            <Route path="/donation" element={<Donation />} />
-            <Route path="/contact" element={<Contact />} />
-
-            {/* Teacher Routes - Mapped to their own paths */}
-            <Route path="/teacher" element={<TeacherHome />} />
-            <Route path="/namaz-attendance" element={<NamazAttendance />} />
-            <Route path="/create-assignment" element={<CreateAssignment />} />
-            <Route path="/review-submissions" element={<ReviewSubmissions />} />
-            <Route path="/students" element={<StudentList />} />
-            <Route path="/student-profile" element={<StudentProfile />} />
-            <Route path="/weekly-report" element={<WeeklyReportHistory />} />
-            <Route path="/submit-report" element={<WeeklyReportSubmission />} />
-            <Route path="/exam-tasks" element={<ExamTasks />} />
-            <Route path="/results-entry" element={<ResultsEntry />} />
-            <Route path="/classes" element={<AssignedClasses />} />
-            <Route path="/draft-reports" element={<DraftReportSubmission />} />
-            <Route path="/teacher-edit-profile" element={<EditProfileTeacher />} />
-            <Route path="/inbox" element={<Inbox />} />
-            <Route path="/teacher-logout" element={<TeacherLogout />} />
-
-
-            {/* Auth Routes (Integrated from Stash) */}
-            <Route path="/login" element={<AuthWrapper component={DonorLogin} />} />
-            {/* <Route path="/signup" element={<DonorSignup />} /> */}
-            <Route path="/forgot-password" element={<DonorForgotPassword />} />
-            <Route path="/verify-otp" element={<DonorVerifyOtp />} />
-
-            {/* Donor Dashboard Routes */}
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/make-donation" element={<DonorDonationPage />} />
-            <Route path="/donation-amount" element={<DonationAmountPage />} />
-            <Route path="/review-donation" element={<ReviewDonationPage />} />
-            <Route path="/donation-payment" element={<DonationPaymentPage />} />
-            <Route path="/payment-success" element={<PaymentSuccessPage />} />
-            <Route path="/donation-history" element={<DonationHistory />} />
-            <Route path="/tax-documents" element={<TaxDocumentsPage />} />
-            <Route path="/utilization-report" element={<UtilizationReportPage />} />
-            <Route path="/donation-details" element={<DonationDetailsPage />} />
-            <Route path="/notifications" element={<NotificationsPage />} />
-            <Route path="/urgent-appeal" element={<UrgentAppealPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/settings" element={<SettingsPage />} />
-
-            {/* Student area */}
-            <Route path="/student" element={<StudentLayout />}>
-              <Route index element={<StudentHome />} />
-              <Route path="home" element={<StudentHome />} />
-              <Route path="learning" element={<Learnings />} />
-              <Route path="learning/study-material" element={<StudyMaterial />} />
-              <Route path="learning/:subjectId" element={<SubjectDetail />} />
-              <Route path="attendance" element={<Attendance />} />
-              <Route path="attendance/subject/:subjectId" element={<SubjectAttendance />} />
-              <Route path="results" element={<Results />} />
-              <Route path="profile" element={<Profile />} />
-              <Route path="profile/edit" element={<EditProfile />} />
-              <Route path="fees" element={<Fees />} />
-              <Route path="settings" element={<Settings />} />
-              <Route path="settings/faq" element={<FAQ />} />
-              <Route path="notifications" element={<Notifications />} />
-              <Route path="activities" element={<Activities />} />
-
-              <Route path="logout" element={<Logout />} />
-            </Route>
-
-            {/* Parent Dashboard Routes */}
-            <Route path="/parent-dashboard" element={<ParentDashboard />} />
-            <Route path="/parent-dashboard/attendance" element={<ParentAttendance />} />
-            <Route path="/parent-dashboard/progress" element={<ParentProgress />} />
-            <Route path="/parent-dashboard/fees" element={<ParentFees />} />
-            <Route path="/parent-dashboard/profile" element={<ParentProfile />} />
-            <Route path="/parent-dashboard/settings" element={<ParentSettings />} />
-            <Route path="/parent-dashboard/notifications" element={<ParentNotifications />} />
-
-            {/* Admin Portal Routes */}
+            {/* ... other routes ... */}
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<AdminDashboard />} />
               <Route path="dashboard" element={<AdminDashboard />} />
               <Route path="public-content" element={<PublicContentManager />} />
-              <Route path="donations" element={<FundAllocation />} />
+              <Route path="donation-dashboard" element={<AdminDonationDashboard />} />
+              <Route path="donors" element={<DonorManagement />} />
+              <Route path="donors/:id" element={<DonorDetails />} />
+              <Route path="donations" element={<DonationRecords />} />
               <Route path="utilization-history" element={<UtilizationHistory />} />
+              <Route path="fund-allocation" element={<FundAllocation />} />
+              {/* ... other admin routes ... */}
+
               <Route path="generate-receipt" element={<GenerateReceipt />} />
               <Route path="transparency-report" element={<TransparencyReport />} />
 
@@ -205,6 +146,17 @@ function App() {
               <Route path="publish" element={<PublishManager />} />
               <Route path="content-approval" element={<ContentApprovalQueue />} />
               <Route path="content-review" element={<ReviewContent />} />
+              <Route path="drafts" element={<DraftManagement />} />
+              <Route path="published-content" element={<PublishedContent />} />
+              <Route path="archive-repository" element={<ArchiveRepository />} />
+              <Route path="rejection-history" element={<RejectionHistory />} />
+              <Route path="approval-rules" element={<ApprovalRules />} />
+              <Route path="settings" element={<SystemControlCenter />} />
+              <Route path="settings/academic-year" element={<AcademicYearSettings />} />
+              <Route path="settings/password-policy" element={<PasswordPolicySettings />} />
+              <Route path="settings/notification-templates" element={<NotificationTemplates />} />
+              <Route path="settings/portal-access" element={<PortalAccessRules />} />
+              <Route path="settings/activity-logs" element={<SystemActivityLogs />} />
             </Route>
           </Routes>
         </ConditionalLayout>

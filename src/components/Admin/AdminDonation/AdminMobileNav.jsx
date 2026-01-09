@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { NavLink } from 'react-router-dom';
 import {
     FaBars,
@@ -36,17 +37,8 @@ const AdminMobileNav = () => {
         { name: 'Visit Website', path: '/', icon: <FaExternalLinkAlt /> },
     ];
 
-    return (
+    const sidebarContent = (
         <>
-            <div className="mobile-nav-header">
-                <div className="mobile-nav-brand">
-                    <span>Al Burhan Admin</span>
-                </div>
-                <button className="mobile-nav-toggle" onClick={() => setIsOpen(true)}>
-                    <FaBars />
-                </button>
-            </div>
-
             {isOpen && (
                 <div className="mobile-nav-overlay" onClick={() => setIsOpen(false)}></div>
             )}
@@ -73,6 +65,20 @@ const AdminMobileNav = () => {
                     ))}
                 </ul>
             </div>
+        </>
+    );
+
+    return (
+        <>
+            <div className="mobile-nav-header">
+                <button className="mobile-nav-toggle" onClick={() => setIsOpen(true)}>
+                    <FaBars />
+                </button>
+                <div className="mobile-nav-brand">
+                    <span>Al Burhan Admin</span>
+                </div>
+            </div>
+            {createPortal(sidebarContent, document.body)}
         </>
     );
 };

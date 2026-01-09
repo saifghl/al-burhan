@@ -1,0 +1,547 @@
+/* DonorDetails.css */
+.donor-details-page {
+    font-family: 'Inter', sans-serif;
+    color: #334155;
+    padding-bottom: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Breadcrumbs */
+.dd-breadcrumbs {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+}
+
+.dd-breadcrumbs a {
+    color: #94a3b8;
+    text-decoration: none;
+}
+
+.dd-breadcrumbs .current {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* Header Card */
+.dd-header-card {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.dd-profile-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.dd-avatar-lg {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f1f5f9;
+}
+
+.dd-name-row h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 0.5rem 0;
+}
+
+.dd-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #64748b;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.dd-meta-row .dot {
+    color: #cbd5e1;
+}
+
+.dd-status-badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.dd-status-badge.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.dd-header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-outline,
+.btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-outline {
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+}
+
+.btn-outline:hover {
+    background: #f8fafc;
+}
+
+.btn-primary {
+    background: #64A926;
+    border: 1px solid #64A926;
+    color: white;
+    box-shadow: 0 2px 4px rgba(100, 169, 38, 0.2);
+}
+
+.btn-primary:hover {
+    background: #538d20;
+}
+
+/* Stats Row */
+.dd-stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.dd-stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.dd-stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.dd-stat-icon.green-bg {
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+.dd-stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dd-stat-label {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.2rem;
+}
+
+.dd-stat-value-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.dd-stat-content h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}
+
+.dd-trend.positive {
+    color: #16a34a;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.dd-stat-sub {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 0.2rem;
+}
+
+/* Content Grid */
+.dd-content-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 1.5rem;
+}
+
+.dd-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    /* For stacked views */
+}
+
+/* Sidebar Styling */
+/* Sidebar Styling */
+.contact-card {
+    background: white;
+    /* Clean white card, borderless or minimal shadow as per image */
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    padding: 1.5rem;
+    /* Vertical layout (default div block) */
+}
+
+.contact-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 1.5rem 0;
+    /* Space below title */
+}
+
+.contact-list {
+    /* No special flex properties needed for vertical stack */
+}
+
+.contact-item {
+    margin-bottom: 1.5rem;
+    /* Restore spacing */
+}
+
+/* Specific overrides for other sidebar cards to keep them vertical */
+.danger-card h3,
+.history-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 1.5rem 0;
+}
+
+.contact-item {
+    margin-bottom: 0;
+    /* Remove bottom margin in flex list */
+}
+
+.contact-item label {
+    display: block;
+    font-size: 0.75rem;
+    color: #64748b;
+    /* Slate 500 */
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    /* Regular/Medium, not Bold */
+}
+
+.contact-item a {
+    color: #65a30d;
+    /* Lime 600 - brighter green from image */
+    text-decoration: none;
+    font-weight: 400;
+    /* Normal weight */
+    font-size: 0.9rem;
+}
+
+.contact-item p {
+    color: #334155;
+    /* Slate 700 */
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 400;
+    /* Normal weight */
+    font-size: 0.9rem;
+}
+
+.pref-tags {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: #f1f5f9;
+    padding: 4px 12px;
+    /* Slightly compact */
+    border-radius: 4px;
+    /* Square-ish rounded */
+    font-size: 0.8rem;
+    color: #334155;
+    font-weight: 500;
+}
+
+.danger-card {
+    background: #FFF5F5;
+    /* Pink background */
+    border: none;
+    /* Clean pink card */
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.danger-text {
+    color: #C02E3E !important;
+    /* Deep Red Title */
+    margin-bottom: 1rem !important;
+}
+
+.danger-card p {
+    color: #E17783;
+    /* Soft red text */
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.btn-danger-outline {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    background: white;
+    border: 1px solid #FCA5A5;
+    color: #EF4444;
+    /* Bright Red Text */
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-danger-outline:hover {
+    background: #FEF2F2;
+    border-color: #EF4444;
+}
+
+/* History Grid */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: #64748b;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on mobile */
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    /* Optional: matches card */
+}
+
+.dd-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    /* Force scroll on small screens if needed */
+}
+
+.dd-table th {
+    text-align: left;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.dd-table td {
+    padding: 1rem 0;
+    border-bottom: 1px solid #f8fafc;
+    vertical-align: middle;
+}
+
+.cell-id-date,
+.cell-purpose {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.fw-bold {
+    font-weight: 600;
+    color: #0f172a;
+    font-size: 0.9rem;
+}
+
+.text-muted {
+    color: #94a3b8;
+    font-size: 0.8rem;
+}
+
+.small {
+    font-size: 0.75rem;
+}
+
+.dd-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.dd-badge.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.dd-badge.failed {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.receipt-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px;
+}
+
+.dd-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* RESPONSIVE */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .dd-content-grid {
+        grid-template-columns: 1fr;
+        /* Stack sidebar and content */
+    }
+
+    .dd-sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .dd-card {
+        height: 100%;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .dd-header-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dd-header-actions {
+        width: 100%;
+    }
+
+    .btn-outline,
+    .btn-primary {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .dd-stats-row {
+        grid-template-columns: 1fr;
+    }
+
+    .dd-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    /* Table to Cards for Mobile */
+    .dd-table thead {
+        display: none;
+    }
+
+    .dd-table tr {
+        display: block;
+        border: 1px solid #f1f5f9;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .dd-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f8fafc;
+        padding: 0.6rem 0;
+    }
+
+    .dd-table td:last-child {
+        border-bottom: none;
+    }
+
+    .dd-table td::before {
+        content: attr(data-label);
+        /* Requires data-label in JSX */
+        font-weight: 600;
+        color: #94a3b8;
+        font-size: 0.8rem;
+    }
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
     FaSearch,
     FaGraduationCap,
@@ -18,6 +19,7 @@ const FundAllocation = () => {
     // State management for form interactions could go here
     // For now, static structure to match the UI
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const navigate = useNavigate();
 
     const categories = [
         { id: 'student', name: 'Student Aid', icon: <FaGraduationCap /> },
@@ -159,7 +161,7 @@ const FundAllocation = () => {
                             </div>
                             <div className="summary-row total">
                                 <span>Remaining Balance</span>
-                                <span className="value">₹3,800.00</span>
+                                <span>₹3,800.00</span>
                             </div>
                         </div>
 
@@ -173,7 +175,7 @@ const FundAllocation = () => {
                             </div>
                         </div>
 
-                        <button className="confirm-btn" onClick={() => alert('Allocating Funds...')}>
+                        <button className="confirm-btn" onClick={() => navigate('/admin/utilization-history')}>
                             <FaCheck /> Confirm Allocation
                         </button>
                         <button className="save-draft-btn" onClick={() => alert('Draft Saved!')}>

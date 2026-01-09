@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
     FaCloudUploadAlt,
     FaPlus,
@@ -17,12 +18,15 @@ import {
     FaHandHoldingHeart,
     FaGraduationCap,
     FaArrowUp,
-    FaArrowDown
+    FaArrowDown,
+    FaEye,
+    FaTrashAlt
 } from 'react-icons/fa';
 import AdminMobileNav from '../AdminDonation/AdminMobileNav';
 import './PublishManager.css';
 
 const PublishManager = () => {
+    const navigate = useNavigate();
     return (
         <div className="publish-manager-container">
             <AdminMobileNav />
@@ -45,7 +49,7 @@ const PublishManager = () => {
 
             {/* Stats Grid */}
             <div className="pm-stats-grid">
-                <div className="pm-stat-card card-draft" onClick={() => alert('Filtering by Draft items')}>
+                <div className="pm-stat-card card-draft" onClick={() => navigate('/admin/drafts')}>
                     <div className="pm-stat-header">
                         <span className="pm-stat-label">Draft Items</span>
                         <div className="pm-stat-icon"><FaEdit /></div>
@@ -53,7 +57,7 @@ const PublishManager = () => {
                     <span className="pm-stat-value">12</span>
                 </div>
 
-                <div className="pm-stat-card card-pending" onClick={() => alert('Filtering by Pending items')}>
+                <div className="pm-stat-card card-pending" onClick={() => navigate('/admin/content-approval', { state: { activeTab: 'Needs' } })}>
                     <div className="pm-stat-header">
                         <span className="pm-stat-label">Pending Approval</span>
                         <div className="pm-stat-icon"><FaFileAlt /></div>
@@ -62,7 +66,7 @@ const PublishManager = () => {
                     <span className="pm-stat-subtext">Requires attention</span>
                 </div>
 
-                <div className="pm-stat-card card-published" onClick={() => alert('Filtering by Published content')}>
+                <div className="pm-stat-card card-published" onClick={() => navigate('/admin/published-content')}>
                     <div className="pm-stat-header">
                         <span className="pm-stat-label">Published Content</span>
                         <div className="pm-stat-icon"><FaCheckCircle /></div>
@@ -70,13 +74,15 @@ const PublishManager = () => {
                     <span className="pm-stat-value">142</span>
                 </div>
 
-                <div className="pm-stat-card card-archived" onClick={() => alert('Filtering by Archived content')}>
+                <div className="pm-stat-card card-archived" onClick={() => navigate('/admin/archive-repository')}>
                     <div className="pm-stat-header">
                         <span className="pm-stat-label">Archived Content</span>
                         <div className="pm-stat-icon"><FaArchive /></div>
                     </div>
                     <span className="pm-stat-value">890</span>
                 </div>
+
+
             </div>
 
             {/* Alerts Grid */}
@@ -88,7 +94,7 @@ const PublishManager = () => {
                     <div className="alert-content">
                         <h4>Approval Required</h4>
                         <p>5 exam results are awaiting final sign-off before they can be released to the Student Portal.</p>
-                        <a href="#" className="alert-action-link link-approval" onClick={(e) => { e.preventDefault(); alert('Navigating to Approval Queue...'); }}>Review Items</a>
+                        <a href="#" className="alert-action-link link-approval" onClick={(e) => { e.preventDefault(); navigate('/admin/content-approval', { state: { activeTab: 'Needs' } }); }}>Review Items</a>
                     </div>
                 </div>
 
@@ -168,7 +174,7 @@ const PublishManager = () => {
                             </td>
                             <td>Oct 24, 2023</td>
                             <td style={{ textAlign: 'right' }}>
-                                <button className="action-menu-btn" onClick={() => alert('Opening actions for Match Results')}><FaEllipsisV /></button>
+                                <button className="action-menu-btn" onClick={() => navigate('/admin/content-approval', { state: { activeTab: 'Needs' } })}><FaEye /></button>
                             </td>
                         </tr>
 
@@ -193,7 +199,7 @@ const PublishManager = () => {
                             </td>
                             <td>Today, 5:00 PM</td>
                             <td style={{ textAlign: 'right' }}>
-                                <button className="action-menu-btn"><FaEllipsisV /></button>
+                                <button className="action-menu-btn" onClick={() => navigate('/admin/content-approval', { state: { activeTab: 'Needs' } })}><FaEye /></button>
                             </td>
                         </tr>
 
@@ -218,7 +224,7 @@ const PublishManager = () => {
                             </td>
                             <td>Oct 23, 2023</td>
                             <td style={{ textAlign: 'right' }}>
-                                <button className="action-menu-btn"><FaEllipsisV /></button>
+                                <button className="action-menu-btn" onClick={() => navigate('/admin/content-approval', { state: { activeTab: 'Drafts' } })}><FaEye /></button>
                             </td>
                         </tr>
 
@@ -243,7 +249,7 @@ const PublishManager = () => {
                             </td>
                             <td>Oct 20, 2023</td>
                             <td style={{ textAlign: 'right' }}>
-                                <button className="action-menu-btn"><FaEllipsisV /></button>
+                                <button className="action-menu-btn" onClick={() => navigate('/admin/content-approval', { state: { activeTab: 'Recently' } })}><FaEye /></button>
                             </td>
                         </tr>
                     </tbody>

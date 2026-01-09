@@ -1,0 +1,421 @@
+.approval-rules-container {
+    width: auto;
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: #f8fafc;
+    /* Light gray background */
+    padding: 24px 32px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    /* Removed padding-left/top offsets to fit in AdminLayout */
+}
+
+/* Hide Mobile Nav by default on Desktop */
+.mobile-nav-header {
+    display: none;
+}
+
+/* Header Section */
+.ar-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Align center */
+    margin-bottom: 32px;
+}
+
+.ar-page-title h1 {
+    font-size: 28px;
+    /* Match standard size */
+    font-weight: 800;
+    margin: 8px 0;
+    color: #0f172a;
+}
+
+.ar-breadcrumb {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.ar-page-title p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+.ar-header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-cancel {
+    padding: 10px 20px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 40px;
+    /* Consistent height */
+    display: flex;
+    align-items: center;
+}
+
+.btn-cancel:hover {
+    background: #f8fafc;
+    color: #475569;
+}
+
+.btn-save {
+    padding: 10px 24px;
+    background: #64A926;
+    /* Brand Green */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(100, 169, 38, 0.3);
+    height: 40px;
+    /* Consistent height */
+}
+
+.btn-save:hover {
+    background: #538d1f;
+    box-shadow: 0 6px 8px -1px rgba(100, 169, 38, 0.4);
+}
+
+/* Section Cards Generic */
+.ar-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+}
+
+.ar-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.ar-section-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.icon-privilege {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.icon-workflow {
+    background: #f3e8ff;
+    color: #9333ea;
+}
+
+.icon-lifecycle {
+    background: #d1fae5;
+    color: #047857;
+}
+
+.ar-card-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* Submission Privileges Section */
+.privilege-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.privilege-desc {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.privilege-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.role-card {
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #fafafa;
+}
+
+.role-card:hover {
+    border-color: #cbd5e1;
+}
+
+.role-card.active {
+    background: #ecfccb;
+    /* Very light green */
+    border-color: #bef264;
+}
+
+.role-card.active .role-name {
+    color: #365314;
+}
+
+.role-card.active .role-desc {
+    color: #4d7c0f;
+}
+
+.role-name {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.role-desc {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* Automation & Workflow Section */
+/* Automation & Workflow Section */
+.workflow-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #f8fafc;
+    gap: 24px;
+    /* Ensure sufficient gap */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.workflow-row:last-child {
+    border-bottom: none;
+}
+
+.workflow-info {
+    flex: 1;
+    /* Allow growing, pushing toggle to right */
+    min-width: 0;
+    /* Critical: allows text to shrink if needed */
+    margin-right: 0;
+}
+
+.workflow-info h4 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    /* Allow title to wrap on small screens */
+}
+
+.badge-locked {
+    background: #fff7ed;
+    color: #ea580c;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #ffedd5;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.workflow-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+    max-width: 600px;
+    /* Optional constraint */
+    line-height: 1.5;
+}
+
+/* Toggles */
+.toggle-switch {
+    display: flex;
+    /* Flex container */
+    align-items: center;
+    justify-content: flex-end;
+    /* Align right */
+    gap: 12px;
+    font-size: 14px;
+    color: #475569;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+    flex-shrink: 0;
+    /* NEVER shrink the toggle button */
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: auto !important;
+    /* Force width auto */
+    max-width: 100%;
+}
+
+.toggle-switch:hover {
+    color: #1e293b;
+}
+
+/* Label text specific styling */
+.toggle-switch span {
+    user-select: none;
+    white-space: nowrap;
+    /* Prevent wrapping inside the button */
+    display: inline-block;
+}
+
+.switch {
+    position: relative;
+    width: 44px;
+    /* Fixed width */
+    height: 24px;
+    /* Fixed height */
+    background: #e2e8f0;
+    border-radius: 99px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    flex-shrink: 0;
+    /* NEVER shrink the switch graphic */
+    display: block;
+}
+
+.switch::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-switch.active .switch {
+    background: #64A926;
+}
+
+/* Active state text styling removed per request */
+
+.toggle-switch.active .switch::after {
+    left: 22px;
+    /* Correct position for 44px width */
+}
+
+.toggle-switch.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(100%);
+}
+
+/* Lifecycle Section */
+.dropdown-select {
+    width: 200px;
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: white;
+    color: #1e293b;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .approval-rules-container {
+        padding: 80px 16px 24px 16px;
+        padding-left: 16px;
+        /* Reset padding */
+        width: 100%;
+        /* Ensure it fits within parent */
+        overflow-x: hidden;
+        /* Prevent horizontal scroll */
+    }
+
+    /* Show Mobile Nav on Mobile */
+    .mobile-nav-header {
+        display: flex;
+    }
+
+    .ar-header-actions {
+        width: 100%;
+        flex-direction: row;
+        /* Keep buttons side-by-side if possible */
+        gap: 8px;
+        /* Reduce gap */
+    }
+
+    .btn-cancel,
+    .btn-save {
+        flex: 1;
+        /* Make buttons grow to fill width equally */
+        justify-content: center;
+        padding: 10px 12px;
+        /* Reduce padding */
+    }
+
+    .privilege-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .toggle-switch {
+        width: auto;
+        /* Allow it to be only as wide as content */
+        justify-content: flex-start;
+        /* Keep text and switch together */
+    }
+
+    .dropdown-select {
+        width: 100%;
+        margin-top: 12px;
+    }
+}

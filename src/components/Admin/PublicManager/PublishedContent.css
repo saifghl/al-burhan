@@ -1,0 +1,357 @@
+.published-content-container {
+    padding: 24px;
+    background-color: #f8fafc;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header Section */
+.pc-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.pc-breadcrumb {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.pc-page-title h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 8px 0;
+}
+
+.pc-page-title p {
+    color: #64748b;
+    font-size: 14px;
+    margin: 0;
+}
+
+.btn-add-content {
+    background-color: #64A926;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+
+.btn-add-content:hover {
+    background-color: #528a1f;
+}
+
+/* Filters Bar */
+.pc-filters-bar {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.pc-search-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.pc-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64A926;
+    /* Green search icon per image */
+    font-size: 14px;
+}
+
+.pc-search-input {
+    width: 100%;
+    padding: 10px 10px 10px 36px;
+    border: none;
+    background-color: #f0fdf4;
+    /* Light green bg per image */
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    color: #334155;
+}
+
+.pc-search-input::placeholder {
+    color: #94a3b8;
+}
+
+.pc-dropdown-filter {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #f1f5f9;
+    font-size: 14px;
+    color: #1e293b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 140px;
+    justify-content: space-between;
+}
+
+.pc-date-filter {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #f8fafc;
+    /* Slightly lighter */
+    font-size: 14px;
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #f1f5f9;
+}
+
+/* Table */
+.pc-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+    padding: 8px;
+}
+
+.pc-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pc-table th {
+    text-align: left;
+    padding: 16px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #64A926;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: none;
+}
+
+.pc-table td {
+    padding: 16px 16px;
+    border-bottom: 1px solid #f8fafc;
+    font-size: 14px;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.pc-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Title Column */
+.title-cell h4 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.id-text {
+    font-size: 11px;
+    color: #64A926;
+    font-weight: 500;
+}
+
+/* Module Tags */
+.module-pill {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.pill-announcement {
+    background-color: #f3e8ff;
+    color: #9333ea;
+}
+
+.pill-academics {
+    background-color: #eff6ff;
+    color: #3b82f6;
+}
+
+.pill-curriculum {
+    background-color: #f0fdf4;
+    color: #16a34a;
+}
+
+.pill-gallery {
+    background-color: #fff7ed;
+    color: #f97316;
+}
+
+.pill-facilities {
+    background-color: #f1f5f9;
+    color: #475569;
+}
+
+/* Portals */
+.portal-tags {
+    display: flex;
+    gap: 6px;
+}
+
+.portal-tag {
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* Date */
+.date-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #334155;
+    font-weight: 500;
+}
+
+.dot-green {
+    width: 8px;
+    height: 8px;
+    background-color: #64A926;
+    border-radius: 50%;
+}
+
+/* Actions */
+.action-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    width: max-content;
+    /* Ensure it takes necessary width */
+}
+
+.btn-icon-action {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.btn-icon-action:hover {
+    opacity: 0.8;
+}
+
+.action-view {
+    color: #64A926;
+}
+
+.action-share {
+    color: #64A926;
+}
+
+/* Using brand green for other icons per design */
+.action-hide {
+    color: #64A926;
+}
+
+/* Pagination */
+.pc-pagination {
+    padding: 16px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.showing-result {
+    font-size: 13px;
+    color: #64A926;
+}
+
+.showing-result strong {
+    color: #334155;
+    font-weight: 600;
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.pg-text {
+    font-size: 13px;
+    color: #cbd5e1;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.pg-number {
+    border: none;
+    background: none;
+    font-size: 13px;
+    color: #64748b;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.pg-number.active {
+    background-color: #64A926;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pc-header-section {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .pc-filters-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pc-dropdown-filter {
+        width: 100%;
+    }
+
+    .pc-table-container {
+        overflow-x: auto;
+    }
+}

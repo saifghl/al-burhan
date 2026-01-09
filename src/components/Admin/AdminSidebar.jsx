@@ -11,17 +11,19 @@ import {
     FaBullhorn,
     FaHandHoldingHeart,
     FaCloudUploadAlt,
-    FaCog
+    FaCog,
+    FaUserFriends
 } from 'react-icons/fa';
 import logoText from '../../assets/logo-text.png';
 import './Admin.css';
 
-const AdminSidebar = () => {
+const AdminSidebar = ({ isOpen, onClose }) => {
     const menuItems = [
         { name: 'Dashboard', path: '/admin/dashboard', icon: <FaThLarge /> },
         { name: 'Public Content', path: '/admin/public-content', icon: <FaGlobe /> },
         { name: 'Public Requests', path: '/admin/public-requests', icon: <FaInbox /> },
         { name: 'User Accounts', path: '/admin/users', icon: <FaUsers /> },
+        { name: 'Donors', path: '/admin/donors', icon: <FaUserFriends /> },
         { name: 'Student Records', path: '/admin/students', icon: <FaUserGraduate /> },
         { name: 'Teacher Control', path: '/admin/teachers', icon: <FaChalkboardTeacher /> },
         { name: 'Attendance & Results', path: '/admin/academics', icon: <FaClipboardList /> },
@@ -32,7 +34,7 @@ const AdminSidebar = () => {
     ];
 
     return (
-        <div className="admin-sidebar">
+        <div className={`admin-sidebar ${isOpen ? 'open' : ''}`}>
             <div className="admin-logo">
                 <img src={logoText} alt="Al Burhan" style={{ height: '40px', width: 'auto' }} />
             </div>
@@ -42,6 +44,7 @@ const AdminSidebar = () => {
                         <NavLink
                             to={item.path}
                             className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}
+                            onClick={onClose}
                         >
                             {item.icon}
                             <span>{item.name}</span>
