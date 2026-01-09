@@ -12,7 +12,7 @@ import {
     FaHandHoldingHeart,
     FaCloudUploadAlt,
     FaCog,
-    FaUserFriends
+
 } from 'react-icons/fa';
 import logoText from '../../assets/logo-text.png';
 import './Admin.css';
@@ -23,7 +23,7 @@ const AdminSidebar = ({ isOpen, onClose }) => {
         { name: 'Public Content', path: '/admin/public-content', icon: <FaGlobe /> },
         { name: 'Public Requests', path: '/admin/public-requests', icon: <FaInbox /> },
         { name: 'User Accounts', path: '/admin/user-accounts', icon: <FaUsers /> },
-        { name: 'Donors', path: '/admin/donors', icon: <FaUserFriends /> },
+
         { name: 'Student Records', path: '/admin/student-records', icon: <FaUserGraduate /> },
         { name: 'Teacher Control', path: '/admin/teachers', icon: <FaChalkboardTeacher /> },
         { name: 'Attendance & Results', path: '/admin/attendance-results', icon: <FaClipboardList /> },

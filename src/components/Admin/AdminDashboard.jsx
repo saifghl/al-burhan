@@ -2,9 +2,9 @@ import React from 'react';
 import {
     FaUserPlus,
     FaCheckCircle,
-    FaFileUpload,
-    FaEdit,
-    FaCoins,
+    FaUpload,
+    FaPencilAlt,
+    FaDollarSign,
     FaUserGraduate,
     FaChalkboardTeacher,
     FaUserFriends,
@@ -33,11 +33,11 @@ const AdminDashboard = () => {
             {/* Quick Actions */}
             <div className="section-title">Quick Actions</div>
             <div className="quick-actions-grid">
-                <button className="action-btn primary"><FaUserPlus /> Create User</button>
-                <button className="action-btn"><FaCheckCircle /> Approve Admission</button>
-                <button className="action-btn"><FaFileUpload /> Publish Result</button>
-                <button className="action-btn"><FaEdit /> Update Page</button>
-                <button className="action-btn"><FaCoins /> Allocate Donation</button>
+                <button className="action-btn primary btn-create-user"><FaUserPlus /> Create User</button>
+                <button className="action-btn btn-approve"><FaCheckCircle /> Approve Admission</button>
+                <button className="action-btn btn-publish"><FaUpload /> Publish Result</button>
+                <button className="action-btn btn-update"><FaPencilAlt /> Update Page</button>
+                <button className="action-btn btn-allocate"><FaDollarSign /> Allocate Donation</button>
             </div>
 
             {/* Stats Cards */}
@@ -211,7 +211,7 @@ const AdminDashboard = () => {
                             <span className="donation-total">₹5,00,000</span> {/* RUPEE SYMBOL */}
                             <div style={{ fontSize: '12px', color: '#059669', marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                 <span>Goal: ₹8,00,000 (62%)</span>
-                                <div style={{ background: '#dcfce7', padding: '6px', borderRadius: '50%', color: '#059669' }}><FaCoins /></div>
+                                <div style={{ background: '#dcfce7', padding: '6px', borderRadius: '50%', color: '#059669' }}><FaDollarSign /></div>
                             </div>
 
                             <span style={{ fontSize: '13px', color: '#4b5563', fontWeight: '600' }}>Fund Allocation</span>

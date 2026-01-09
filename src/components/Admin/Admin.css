@@ -161,38 +161,68 @@
 .action-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
+    gap: 10px;
+    padding: 12px 24px;
     background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    border: none;
+    border-radius: 6px;
+    /* Rounded corners */
     font-weight: 600;
     font-size: 14px;
     color: #4a5568;
     cursor: pointer;
-    transition: all 0.2s;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    width: auto !important;
-    /* Force auto width */
-    flex: 0 0 auto;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow */
+    min-width: 160px;
+    flex: 1;
+    /* evenly spaced */
+    text-align: center;
+    justify-content: center;
+    /* Center content */
     white-space: nowrap;
+    max-width: 250px;
 }
 
 .action-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border-color: #cbd5e0;
 }
 
+.action-btn svg {
+    font-size: 16px;
+}
+
+/* Primary Button (Create User) - Green */
 .action-btn.primary {
     background-color: #64A926;
     color: white;
-    border: none;
     box-shadow: 0 4px 6px rgba(100, 169, 38, 0.25);
 }
 
 .action-btn.primary:hover {
     background-color: #528c1e;
+}
+
+/* Icon Colors for specific buttons */
+.btn-approve svg {
+    color: #10b981;
+    /* Green */
+}
+
+.btn-publish svg {
+    color: #8b5cf6;
+    /* Purple */
+}
+
+.btn-update svg {
+    color: #f97316;
+    /* Orange */
+}
+
+.btn-allocate svg {
+    color: #eab308;
+    /* Yellow/Gold */
 }
 
 /* Stats Cards */
@@ -480,6 +510,48 @@
 
     .sidebar-overlay.active {
         display: block;
+    }
+
+    /* Dashboard Mobile Fixes */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        /* Stack columns */
+        gap: 20px;
+    }
+
+    .academics-row {
+        grid-template-columns: 1fr;
+        /* Stack academics boxes */
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cols on tablet/large mobile */
+    }
+
+    .quick-actions-grid {
+        justify-content: stretch;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        /* 1 col on small mobile */
+    }
+
+    .action-btn {
+        width: 100%;
+        max-width: none;
+    }
+
+    .header-title h1 {
+        font-size: 22px;
+    }
+
+    .system-status {
+        display: none;
+        /* Hide on very small screens to save space */
     }
 }
 

@@ -3,13 +3,13 @@ import './PublicContent.css';
 
 const ToggleSwitch = ({ checked, onChange }) => {
     return (
-        <label className="switch">
+        <label className="pcm-switch">
             <input
                 type="checkbox"
                 checked={checked}
                 onChange={(e) => onChange(e.target.checked)}
             />
-            <span className="slider round"></span>
+            <span className="pcm-slider round"></span>
         </label>
     );
 };

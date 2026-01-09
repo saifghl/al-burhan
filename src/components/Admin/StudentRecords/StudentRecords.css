@@ -374,10 +374,11 @@
 .section-header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     margin-bottom: 25px;
     padding-bottom: 15px;
     border-bottom: 1px solid var(--border-color);
+    justify-content: flex-start;
 }
 
 .section-title {
@@ -394,17 +395,25 @@
     margin-bottom: 25px;
 }
 
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .info-item label {
     display: block;
     font-size: 12px;
     font-weight: 600;
     color: var(--text-light);
-    margin-bottom: 6px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .info-item .value {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
     color: var(--text-dark);
 }
 
