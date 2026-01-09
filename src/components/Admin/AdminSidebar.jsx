@@ -22,14 +22,9 @@ const AdminSidebar = ({ isOpen, onClose }) => {
         { name: 'Dashboard', path: '/admin/dashboard', icon: <FaThLarge /> },
         { name: 'Public Content', path: '/admin/public-content', icon: <FaGlobe /> },
         { name: 'Public Requests', path: '/admin/public-requests', icon: <FaInbox /> },
-<<<<<<< Updated upstream
-        { name: 'User Accounts', path: '/admin/users', icon: <FaUsers /> },
-        { name: 'Donors', path: '/admin/donors', icon: <FaUserFriends /> },
-        { name: 'Student Records', path: '/admin/students', icon: <FaUserGraduate /> },
-=======
         { name: 'User Accounts', path: '/admin/user-accounts', icon: <FaUsers /> },
+        { name: 'Donors', path: '/admin/donors', icon: <FaUserFriends /> },
         { name: 'Student Records', path: '/admin/student-records', icon: <FaUserGraduate /> },
->>>>>>> Stashed changes
         { name: 'Teacher Control', path: '/admin/teachers', icon: <FaChalkboardTeacher /> },
         { name: 'Attendance & Results', path: '/admin/academics', icon: <FaClipboardList /> },
         { name: 'Notices & Activities', path: '/admin/notices', icon: <FaBullhorn /> },
