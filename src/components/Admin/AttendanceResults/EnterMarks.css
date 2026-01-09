@@ -1,0 +1,472 @@
+/* Enter Marks Page Styles */
+.enter-marks-page {
+    min-height: 100vh;
+    background-color: #F8F9FA;
+    font-family: 'Inter', sans-serif;
+    padding: 30px 40px 100px 40px;
+    /* Extra bottom padding for sticky footer */
+    position: relative;
+}
+
+.em-breadcrumb {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.em-breadcrumb span {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Header */
+.em-header h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 5px 0;
+}
+
+.em-header p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Exam Details Card */
+.em-details-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    margin-bottom: 30px;
+}
+
+.em-details-content {
+    flex: 1;
+}
+
+.em-card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.em-details-grid {
+    display: flex;
+    gap: 50px;
+}
+
+.em-details-grid label {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.em-details-grid .val {
+    font-weight: 600;
+    color: #333;
+    font-size: 15px;
+}
+
+.em-card-graphic {
+    width: 150px;
+    height: 80px;
+    background: linear-gradient(135deg, #4AF2A1 0%, #64A926 100%);
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+/* Tabs */
+.em-tabs {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.em-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 10px;
+    color: #888;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+}
+
+.em-tab.active {
+    color: #64A926;
+}
+
+.em-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #64A926;
+}
+
+/* Controls */
+.em-controls-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.em-search-wrapper {
+    position: relative;
+    width: 350px;
+}
+
+.em-search-wrapper .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.em-search-wrapper input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #EEE;
+    border-radius: 8px;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.em-actions-right {
+    display: flex;
+    gap: 12px;
+}
+
+.em-btn-white {
+    background: white;
+    border: 1px solid #E0E0E0;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #333;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Table */
+.em-table-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.em-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.em-table th {
+    text-align: center;
+    padding: 15px 10px;
+    color: #888;
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    background: #FAFBFC;
+}
+
+.em-table td {
+    padding: 15px 10px;
+    vertical-align: middle;
+    text-align: center;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.em-student-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar-initials {
+    width: 32px;
+    height: 32px;
+    background: #E3F2FD;
+    color: #1565C0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.student-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.sid-cell {
+    color: #666;
+    font-size: 13px;
+}
+
+/* Marks Input */
+.em-marks-input {
+    width: 80px;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #333;
+    outline: none;
+}
+
+.em-marks-input:focus {
+    border-color: #64A926;
+    background: #F0FDF4;
+}
+
+/* Status Badges */
+.em-status {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.em-status.pass {
+    color: #64A926;
+    background: #E6FAE6;
+}
+
+.em-status.fail {
+    color: #D32F2F;
+    background: #FFEBEE;
+}
+
+.em-status.pending {
+    color: #757575;
+    background: #F5F5F5;
+}
+
+/* Remarks Input */
+.em-remarks-input {
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #555;
+    outline: none;
+}
+
+.em-remarks-input:focus {
+    border-color: #ddd;
+    background: #fff;
+}
+
+/* Pagination */
+.em-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.showing-text {
+    font-size: 12px;
+    color: #888;
+}
+
+.em-page-controls {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 13px;
+    color: #888;
+}
+
+.em-page-controls button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #555;
+}
+
+.em-page-controls button.active {
+    background: #64A926;
+    color: white;
+}
+
+.em-page-controls .prev,
+.em-page-controls .next {
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+/* Sticky Footer */
+.em-sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 280px;
+    /* Adjust based on sidebar width */
+    right: 0;
+    background: white;
+    padding: 15px 40px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.em-footer-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: #555;
+}
+
+.em-footer-stats span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.em-footer-stats strong {
+    color: #333;
+}
+
+.dot-blue::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2196F3;
+}
+
+.dot-green::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #64A926;
+}
+
+.dot-gray::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #9E9E9E;
+}
+
+.em-footer-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.em-btn-ghost {
+    background: transparent;
+    border: none;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.em-btn-save {
+    background: #64A926;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(100, 169, 38, 0.3);
+}
+
+/* Updates for mobile/tablet */
+@media (max-width: 1024px) {
+    .em-details-grid {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .enter-marks-page {
+        padding: 20px 20px 120px 20px;
+    }
+
+    .em-details-card {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .em-card-graphic {
+        width: 100%;
+        height: 60px;
+    }
+
+    .em-controls-bar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .em-search-wrapper {
+        width: 100%;
+    }
+
+    .em-table-container {
+        overflow-x: auto;
+    }
+
+    .em-table th,
+    .em-table td {
+        white-space: nowrap;
+        padding-right: 15px;
+    }
+
+    .em-sticky-footer {
+        left: 0;
+        /* Remove sidebar offset */
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .em-footer-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

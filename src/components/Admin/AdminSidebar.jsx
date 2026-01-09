@@ -24,7 +24,7 @@ const AdminSidebar = () => {
         { name: 'User Accounts', path: '/admin/users', icon: <FaUsers /> },
         { name: 'Student Records', path: '/admin/students', icon: <FaUserGraduate /> },
         { name: 'Teacher Control', path: '/admin/teachers', icon: <FaChalkboardTeacher /> },
-        { name: 'Attendance & Results', path: '/admin/academics', icon: <FaClipboardList /> },
+        { name: 'Attendance & Results', path: '/admin/attendance-results', icon: <FaClipboardList /> },
         { name: 'Notices & Activities', path: '/admin/notices', icon: <FaBullhorn /> },
         { name: 'Donations', path: '/admin/donations', icon: <FaHandHoldingHeart /> },
         { name: 'Publish Manager', path: '/admin/publish', icon: <FaCloudUploadAlt /> },

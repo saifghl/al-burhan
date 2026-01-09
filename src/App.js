@@ -21,6 +21,9 @@ import TeacherLogout from './components/Teacher/Logout';
 // import AllTeachers from './components/Admin/Teachers/AllTeachers';
 import AllTeachers from './components/Admin/TeacherControl/AllTeachers';
 import TeacherProfile from './components/Admin/TeacherControl/TeacherProfile';
+import AddTeacher from './components/Admin/TeacherControl/AddTeacher';
+import TeacherSubmissions from './components/Admin/TeacherControl/TeacherSubmissions';
+import ReviewTeacherSubmission from './components/Admin/TeacherControl/ReviewTeacherSubmission';
 
 
 /* Donor Components */
@@ -97,6 +100,20 @@ import TransparencyReport from './components/Admin/AdminDonation/TransparencyRep
 import PublishManager from './components/Admin/PublicManager/PublishManager';
 import ContentApprovalQueue from './components/Admin/PublicManager/ContentApprovalQueue';
 import ReviewContent from './components/Admin/PublicManager/ReviewContent';
+import AttendanceResults from './components/Admin/AttendanceResults/AttendanceResults';
+import ReviewAttendance from './components/Admin/AttendanceResults/ReviewAttendance';
+import ApprovedRecords from './components/Admin/AttendanceResults/ApprovedRecords';
+import MarkTeacherAttendance from './components/Admin/AttendanceResults/MarkTeacherAttendance';
+import ExamSchedules from './components/Admin/AttendanceResults/ExamSchedules';
+import CreateExam from './components/Admin/AttendanceResults/CreateExam';
+import EnterMarks from './components/Admin/AttendanceResults/EnterMarks';
+import PendingApprovals from './components/Admin/AttendanceResults/PendingApprovals';
+import ReviewExamResults from './components/Admin/AttendanceResults/ReviewExamResults';
+import PublishedResults from './components/Admin/AttendanceResults/PublishedResults';
+import NoticesAndActivities from './components/Admin/Notification Activities/NoticesAndActivities';
+import CreateNotice from './components/Admin/Notification Activities/CreateNotice';
+import UploadActivity from './components/Admin/UploadActivity/UploadActivity';
+import SendNotification from './components/Admin/SendNotification/SendNotification';
 import './App.css';
 import { FaBell } from 'react-icons/fa'; // Import bell icon for header
 
@@ -191,6 +208,10 @@ function App() {
             <Route path="/parent-dashboard/settings" element={<ParentSettings />} />
             <Route path="/parent-dashboard/notifications" element={<ParentNotifications />} />
 
+            {/* Standalone Admin Pages (No Sidebar) */}
+            <Route path="/admin/teacher-submissions/:id" element={<ReviewTeacherSubmission />} />
+            <Route path="/admin/review-exam-results" element={<ReviewExamResults />} />
+
             {/* Admin Portal Routes */}
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<AdminDashboard />} />
@@ -209,6 +230,21 @@ function App() {
               <Route path="public-requests/:id/generate-id" element={<MadarsaIdGeneration />} />
               <Route path="public-requests/:id/success" element={<RegistrationSuccess />} />
               <Route path="teacher-profile" element={<TeacherProfile />} />
+              <Route path="add-teacher" element={<AddTeacher />} />
+              <Route path="teacher-submissions" element={<TeacherSubmissions />} />
+              <Route path="attendance-results" element={<AttendanceResults />} />
+              <Route path="attendance-review/:id" element={<ReviewAttendance />} />
+              <Route path="approved-records" element={<ApprovedRecords />} />
+              <Route path="mark-attendance" element={<MarkTeacherAttendance />} />
+              <Route path="exam-schedules" element={<ExamSchedules />} />
+              <Route path="create-exam" element={<CreateExam />} />
+              <Route path="enter-marks" element={<EnterMarks />} />
+              <Route path="pending-approvals" element={<PendingApprovals />} />
+              <Route path="published-results" element={<PublishedResults />} />
+              <Route path="notices" element={<NoticesAndActivities />} />
+              <Route path="create-notice" element={<CreateNotice />} />
+              <Route path="upload-activity" element={<UploadActivity />} />
+              <Route path="send-notification" element={<SendNotification />} />
 
               {/* Publish Manager Route */}
               <Route path="publish" element={<PublishManager />} />

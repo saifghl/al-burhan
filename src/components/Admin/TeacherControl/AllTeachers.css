@@ -1,0 +1,434 @@
+/* AllTeachers.css */
+.all-teachers-container {
+    padding: 30px;
+    font-family: 'Inter', sans-serif;
+    color: #4a5568;
+    background-color: #ffffff;
+    min-height: calc(100vh - 64px);
+}
+
+/* Header Section */
+.teachers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.title-section h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 5px 0;
+}
+
+.breadcrumbs {
+    font-size: 12px;
+    color: #a0aec0;
+    margin-bottom: 5px;
+}
+
+.breadcrumbs span {
+    margin: 0 5px;
+}
+
+.breadcrumbs strong {
+    color: #4a5568;
+    font-weight: 600;
+}
+
+.subtitle-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #718096;
+    margin: 0;
+}
+
+.add-btn {
+    background-color: #64A926;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s;
+    box-shadow: 0 4px 6px rgba(100, 169, 38, 0.2);
+}
+
+.add-btn:hover {
+    background-color: #528c1e;
+}
+
+/* Filter Section */
+.filter-bar {
+    background: white;
+    padding: 20px;
+    border: 1px solid #edf2f7;
+    border-radius: 12px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.search-wrapper {
+    flex: 2;
+    /* Takes more space */
+    position: relative;
+    min-width: 250px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0aec0;
+}
+
+.search-input {
+    width: 100%;
+    height: 48px;
+    /* Consistent Height */
+    padding: 0 12px 0 40px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    color: #4a5568;
+    box-sizing: border-box;
+}
+
+.search-input:focus {
+    border-color: #64A926;
+    box-shadow: 0 0 0 3px rgba(100, 169, 38, 0.1);
+}
+
+.filter-select {
+    height: 48px;
+    /* Match Search Height */
+    padding: 0 35px 0 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #718096;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    min-width: 140px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23a0aec0' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.clear-btn {
+    height: 48px;
+    /* Match Height */
+    padding: 0 20px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    border-radius: 8px;
+    color: #718096;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.clear-btn:hover {
+    border-color: #cbd5e0;
+    background-color: #f7fafc;
+}
+
+/* Table Section */
+.table-container {
+    background: white;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+.teachers-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 900px;
+}
+
+.teachers-table th {
+    text-align: left;
+    padding: 20px 25px;
+    border-bottom: 1px solid #edf2f7;
+    color: #a0aec0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.teachers-table td {
+    padding: 20px 25px;
+    border-bottom: 1px solid #edf2f7;
+    /* Very light border */
+    vertical-align: middle;
+    font-size: 14px;
+    color: #2d3748;
+}
+
+.teachers-table tr:hover td {
+    background-color: #fafbfc;
+}
+
+/* Table Content Styling */
+.teacher-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #718096;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.avatar-circle.am {
+    background-color: #bee3f8;
+    color: #3182ce;
+}
+
+.t-details h4 {
+    margin: 0;
+    font-size: 15px;
+    color: #1a202c;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+.t-details span {
+    font-size: 13px;
+    color: #718096;
+    display: block;
+    margin-top: 4px;
+}
+
+.classes-wrapper {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.class-tag {
+    background: #f7fafc;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-badge.active {
+    background-color: #f0fdf4;
+    color: #64A926;
+}
+
+.status-badge.active .status-dot {
+    background-color: #64A926;
+}
+
+.status-badge.inactive {
+    background-color: #edf2f7;
+    color: #718096;
+}
+
+.status-badge.inactive .status-dot {
+    background-color: #a0aec0;
+}
+
+.status-badge.on-leave {
+    background-color: #fffaf0;
+    color: #d69e2e;
+}
+
+.status-badge.on-leave .status-dot {
+    background-color: #ed8936;
+}
+
+.view-btn {
+    color: #3182ce;
+    /* Blue for view action */
+    background: none;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.view-btn:hover {
+    text-decoration: underline;
+}
+
+/* Footer / Pagination */
+.pagination-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.showing-text {
+    font-size: 14px;
+    color: #a0aec0;
+}
+
+.page-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.page-btn {
+    border: none;
+    background: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #718096;
+    /* Corrected color */
+    cursor: pointer;
+    border-radius: 50%;
+    /* Rounded circle */
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.page-btn:first-child,
+.page-btn:last-child {
+    width: auto;
+    padding: 0 15px;
+    border-radius: 6px;
+    /* Pill shape */
+    color: #a0aec0;
+    /* Match image text color */
+    font-size: 13px;
+}
+
+.page-btn.active {
+    background-color: #64A926;
+    color: white;
+    font-weight: 600;
+}
+
+.page-btn:hover:not(.active) {
+    background-color: #f7fafc;
+    color: #2d3748;
+}
+
+.view-submission-btn {
+    border: 1px solid #e2e8f0;
+    background: white;
+    color: #718096;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.view-submission-btn:hover {
+    background-color: #f7fafc;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .teachers-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .add-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .search-wrapper,
+    .filter-select,
+    .clear-btn {
+        width: 100%;
+        height: 48px;
+    }
+
+    .pagination {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .page-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

@@ -29,7 +29,7 @@ const Sidebar = () => {
         { path: '/admin/public-requests', label: 'Public Requests', icon: <FaInbox /> },
         { path: '/admin/user-accounts', label: 'User Accounts', icon: <FaUsers /> },
         { path: '/admin/student-records', label: 'Student Records', icon: <FaGraduationCap /> },
-        { path: '/admin/teacher-control', label: 'Teacher Control', icon: <FaChalkboardTeacher /> }, // This matches the "Faculty Management" context
+        { path: '/admin/teachers', label: 'Teacher Control', icon: <FaChalkboardTeacher /> }, // This matches the "Faculty Management" context
         { path: '/admin/attendance-results', label: 'Attendance & Results', icon: <FaClipboardList /> },
         { path: '/admin/notices', label: 'Notices & Activities', icon: <FaBullhorn /> },
         { path: '/admin/donations', label: 'Donations', icon: <FaHandHoldingHeart /> },

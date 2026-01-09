@@ -1,0 +1,215 @@
+/* Create Exam Page Styles */
+.create-exam-page {
+    min-height: 100vh;
+    background-color: #F8F9FA;
+    font-family: 'Inter', sans-serif;
+    padding: 30px 40px;
+}
+
+.ce-breadcrumb {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.ce-breadcrumb span {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Header */
+.ce-header {
+    margin-bottom: 30px;
+}
+
+.ce-header h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 8px 0;
+}
+
+.ce-header p {
+    color: #666;
+    font-size: 14px;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+/* Form Card */
+.ce-form-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    max-width: 900px;
+}
+
+.ce-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.ce-header-icon {
+    color: #64A926;
+    font-size: 14px;
+}
+
+.ce-card-header h2 {
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111;
+    margin: 0;
+}
+
+/* Form Styles */
+.ce-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.ce-form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.ce-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ce-form-group.full-width {
+    width: 100%;
+}
+
+.ce-form-group.half-width {
+    flex: 1;
+}
+
+.ce-form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.ce-form-group input,
+.ce-form-group select {
+    padding: 12px 15px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s;
+    background: white;
+}
+
+.ce-form-group input:focus,
+.ce-form-group select:focus {
+    border-color: #64A926;
+}
+
+.ce-form-group input::placeholder,
+.ce-form-group select option[disabled] {
+    color: #aaa;
+}
+
+/* Input Suffix */
+.ce-input-suffix-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.ce-input-suffix-wrapper input {
+    width: 100%;
+    padding-right: 60px;
+    /* Space for suffix */
+}
+
+.ce-input-suffix-wrapper .suffix {
+    position: absolute;
+    right: 15px;
+    color: #aaa;
+    font-size: 13px;
+    pointer-events: none;
+}
+
+.ce-helper-text {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}
+
+/* Actions */
+.ce-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.ce-btn-ghost {
+    background: transparent;
+    border: none;
+    color: #555;
+    font-weight: 600;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.ce-btn-ghost:hover {
+    color: #111;
+}
+
+.ce-btn-green {
+    background: #64A926;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 10px rgba(100, 169, 38, 0.2);
+}
+
+.ce-btn-green:hover {
+    background: #569220;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .create-exam-page {
+        padding: 20px;
+    }
+
+    .ce-form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ce-form-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .ce-btn-ghost,
+    .ce-btn-green {
+        width: 100%;
+        justify-content: center;
+    }
+}

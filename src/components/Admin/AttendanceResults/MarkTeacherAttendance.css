@@ -1,0 +1,475 @@
+/* Mark Teacher Attendance Page Styles */
+.mark-attendance-page {
+    padding: 30px 40px;
+    background-color: #F8F9FA;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.ma-breadcrumb {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.ma-breadcrumb span {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Header */
+.ma-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.ma-header-left h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 8px 0;
+}
+
+.ma-header-left p {
+    font-size: 14px;
+    color: #666;
+}
+
+.ma-history-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid #E0E0E0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #555;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Stats Row */
+.ma-stats-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.ma-stat-card {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.bg-green-light {
+    background-color: #F6FFF0;
+    /* Very light green hint */
+}
+
+.stat-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-family: 'Jost', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-sub {
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.warn {
+    color: #FF9800;
+}
+
+.text-green {
+    color: #64A926;
+}
+
+.text-red {
+    color: #D32F2F;
+}
+
+.col-green {
+    color: #64A926;
+}
+
+.col-red {
+    color: #D32F2F;
+}
+
+/* Filter Bar */
+.ma-filters-bar {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.ma-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.ma-filter-group.wide {
+    flex: 2;
+}
+
+.ma-filter-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+}
+
+.ma-filter-group input[type="date"],
+.ma-filter-group select,
+.ma-search-wrapper {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    padding: 0 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    background: white;
+}
+
+.ma-search-wrapper {
+    position: relative;
+    padding: 0;
+}
+
+.ma-search-wrapper .search-icon {
+    position: absolute;
+    left: 12px;
+    color: #aaa;
+}
+
+.ma-search-wrapper input {
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding-left: 35px;
+    outline: none;
+    border-radius: 6px;
+}
+
+.ma-filter-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 40px;
+}
+
+.clear-link {
+    font-size: 13px;
+    color: #888;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.apply-btn {
+    background-color: #64A926;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    height: 40px;
+    border-radius: 6px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+/* Table */
+.ma-table-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.ma-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.ma-table th {
+    text-align: center;
+    padding: 15px 10px;
+    color: #888;
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+}
+
+.ma-table td {
+    padding: 15px 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f9f9f9;
+    text-align: center;
+}
+
+/* Teacher Info */
+.teacher-cell {
+    text-align: left !important;
+}
+
+.teacher-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar-circle {
+    width: 36px;
+    height: 36px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.teacher-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.teacher-meta {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Status toggles */
+.status-toggle-group {
+    display: inline-flex;
+    background: #f5f5f5;
+    padding: 3px;
+    border-radius: 6px;
+}
+
+.status-toggle {
+    border: none;
+    background: transparent;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #888;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.status-toggle.active-present {
+    background: #E6FAE6;
+    color: #64A926;
+    font-weight: 600;
+}
+
+.status-toggle.active-absent {
+    background: #FFEBEE;
+    color: #D32F2F;
+    font-weight: 600;
+}
+
+.status-toggle.active-leave {
+    background: #FFF8E1;
+    color: #FFB300;
+    font-weight: 600;
+}
+
+/* Remarks & Time */
+.time-cell {
+    font-family: 'Inter', sans-serif;
+    color: #555;
+    font-size: 13px;
+}
+
+.remark-input {
+    border: 1px solid transparent;
+    background: transparent;
+    width: 100%;
+    padding: 6px;
+    font-size: 13px;
+    color: #555;
+}
+
+.remark-input:hover,
+.remark-input:focus {
+    border-color: #ddd;
+    background: #fff;
+    border-radius: 4px;
+    outline: none;
+}
+
+.badge-pending {
+    background: #FFF3E0;
+    color: #E65100;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.text-orange {
+    color: #FF9800;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.text-muted {
+    color: #999;
+    font-weight: 400;
+}
+
+.icon-btn-gray {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+}
+
+/* Footer Actions */
+.ma-footer-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.selection-info {
+    font-size: 14px;
+    color: #333;
+}
+
+.select-all-Link {
+    color: #64A926;
+    font-weight: 600;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.ma-footer-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.ma-btn-ghost,
+.ma-btn-white,
+.ma-btn-green {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+}
+
+.ma-btn-ghost {
+    background: transparent;
+    border: none;
+    color: #666;
+}
+
+.ma-btn-white {
+    background: white;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+.ma-btn-green {
+    background: #64A926;
+    border: none;
+    color: white;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .ma-filters-bar {
+        flex-wrap: wrap;
+    }
+
+    .ma-filter-group,
+    .ma-filter-actions {
+        min-width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .mark-attendance-page {
+        padding: 20px;
+    }
+
+    .ma-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .ma-stats-row {
+        flex-wrap: wrap;
+    }
+
+    .ma-stat-card {
+        min-width: 45%;
+    }
+
+    .ma-filters-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ma-filter-group,
+    .ma-filter-actions {
+        width: 100%;
+    }
+
+    .ma-table-container {
+        overflow-x: auto;
+    }
+
+    .ma-footer-actions {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .ma-footer-buttons {
+        flex-direction: column;
+    }
+
+    .ma-btn-ghost,
+    .ma-btn-white,
+    .ma-btn-green {
+        justify-content: center;
+    }
+}
