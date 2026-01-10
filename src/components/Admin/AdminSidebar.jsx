@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import {
     FaThLarge,
     FaGlobe,
@@ -18,6 +18,7 @@ import logoText from '../../assets/logo-text.png';
 import './Admin.css';
 
 const AdminSidebar = ({ isOpen, onClose }) => {
+    const location = useLocation();
     const menuItems = [
         { name: 'Dashboard', path: '/admin/dashboard', icon: <FaThLarge /> },
         { name: 'Public Content', path: '/admin/public-content', icon: <FaGlobe /> },
@@ -43,7 +44,13 @@ const AdminSidebar = ({ isOpen, onClose }) => {
                     <li key={index} className="sidebar-item">
                         <NavLink
                             to={item.path}
-                            className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}
+                            className={({ isActive }) => {
+                                // Special case for Dashboard: match both /admin/dashboard and exact /admin
+                                if (item.path === '/admin/dashboard' && (location.pathname === '/admin' || location.pathname === '/admin/')) {
+                                    return "sidebar-link active";
+                                }
+                                return isActive ? "sidebar-link active" : "sidebar-link";
+                            }}
                             onClick={onClose}
                         >
                             {item.icon}

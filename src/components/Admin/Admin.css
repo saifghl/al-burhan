@@ -165,8 +165,7 @@
     padding: 12px 24px;
     background: white;
     border: none;
-    border-radius: 6px;
-    /* Rounded corners */
+    border-radius: 8px !important;
     font-weight: 600;
     font-size: 14px;
     color: #4a5568;
@@ -174,7 +173,7 @@
     transition: all 0.2s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     /* Subtle shadow */
-    min-width: 160px;
+    min-width: 140px;
     flex: 1;
     /* evenly spaced */
     text-align: center;
@@ -205,6 +204,7 @@
 }
 
 /* Icon Colors for specific buttons */
+/* Icon Colors for specific buttons */
 .btn-approve svg {
     color: #10b981;
     /* Green */
@@ -223,6 +223,38 @@
 .btn-allocate svg {
     color: #eab308;
     /* Yellow/Gold */
+}
+
+/* Specific Fix for Quick Action Buttons to prevent oval shape */
+.quick-action-btn {
+    border-radius: 8px !important;
+    min-width: 140px !important;
+    padding: 12px 20px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    height: auto !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+    /* Prevent floating margin issues */
+    /* Ensure only primary button has green background */
+}
+
+/* Reset hover for non-primary quick actions */
+.quick-action-btn:not(.primary):hover {
+    background-color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.quick-action-btn.primary {
+    background-color: #64A926 !important;
+    color: white !important;
+}
+
+.quick-action-btn.primary:hover {
+    background-color: #528c1e !important;
 }
 
 /* Stats Cards */

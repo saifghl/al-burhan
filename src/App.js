@@ -403,7 +403,8 @@ function ConditionalLayout({ children }) {
     '/teacher-logout'
   ];
 
-  const isAdmin = location.pathname.startsWith('/admin');
+  /* Fix: Avoid matching '/administration' as an admin route */
+  const isAdmin = location.pathname === '/admin' || location.pathname.startsWith('/admin/');
   const isStudent = location.pathname.startsWith('/student');
   const isDashboardRoute = dashboardRoutes.some(route => location.pathname === route || location.pathname.startsWith(route + '/'));
   const isAuthRoute = authRoutes.some(route => location.pathname === route);
@@ -423,3 +424,4 @@ function ConditionalLayout({ children }) {
 }
 
 export default App;
+// Force Rebuild 1234

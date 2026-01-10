@@ -93,10 +93,12 @@ const HeaderEditor = () => {
                 {/* Navigation Menu Section */}
                 <div className="editor-card">
                     <div className="card-title">
-                        Navigation Menu
-                        <button className="btn-secondary-action" onClick={addLink}>
-                            <FaPlus /> Add Link
-                        </button>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+                            <h3 className="section-title" style={{ margin: 0 }}>Navigation Menu</h3>
+                            <button className="btn-secondary-action" onClick={addLink}>
+                                <FaPlus /> Add Link
+                            </button>
+                        </div>
                     </div>
 
                     <table className="editor-table">

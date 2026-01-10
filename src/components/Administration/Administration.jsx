@@ -13,7 +13,7 @@ const Administration = () => {
 
             <div className="admin-content-container">
                 {/* Left Sidebar - Profile */}
-                <div className="admin-sidebar">
+                <div className="public-admin-sidebar">
                     <div className="profile-card">
                         <div className="profile-img-wrapper">
                             <img src={profileImg} alt="Maulana Muhammad Yusuf" className="profile-img" />

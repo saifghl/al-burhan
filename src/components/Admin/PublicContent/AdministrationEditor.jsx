@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaInfoCircle, FaPlus, FaPen, FaTrash } from 'react-icons/fa';
+import { FaInfoCircle, FaPlus, FaPen, FaTrash, FaArrowUp, FaArrowDown } from 'react-icons/fa';
 import ToggleSwitch from './ToggleSwitch';
 import './PublicContent.css';
 
@@ -14,11 +14,14 @@ const AdministrationEditor = () => {
     ]);
 
     const addMember = () => {
-        const name = prompt("Name:");
-        const role = prompt("Role:");
-        if (name && role) {
-            setMembers([...members, { id: Date.now(), name, role, quote: 'New member quote', image: 'user_placeholder', visible: true }]);
-        }
+        setMembers([...members, {
+            id: Date.now(),
+            name: 'New Member',
+            role: 'New Role',
+            quote: 'Inspirational quote goes here...',
+            image: 'user_placeholder',
+            visible: true
+        }]);
     };
 
     const deleteMember = (id) => {
@@ -64,9 +67,6 @@ const AdministrationEditor = () => {
                     <div className="card-title" style={{ marginBottom: '15px' }}>
                         Administration Members
                         <div style={{ display: 'flex', gap: '10px' }}>
-                            <button className="btn-secondary-action">
-                                Reorder Display
-                            </button>
                             <button className="btn-primary-action" onClick={addMember}>
                                 <FaPlus /> Add New Member
                             </button>
@@ -75,30 +75,80 @@ const AdministrationEditor = () => {
                     <div style={{ fontSize: '13px', color: '#64748b', marginBottom: '20px' }}>Manage the cards displayed on the administration page.</div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px' }}>
-                        {members.map(member => (
-                            <div key={member.id} style={{ background: 'white', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                        {members.map((member, index) => (
+                            <div key={member.id} style={{ background: 'white', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '15px', position: 'relative' }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                                    <div style={{ display: 'flex', gap: '15px' }}>
-                                        <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: '#e2e8f0', overflow: 'hidden' }}>
+                                    <div style={{ display: 'flex', gap: '15px', flex: 1 }}>
+                                        <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: '#e2e8f0', overflow: 'hidden', flexShrink: 0 }}>
                                             {/* Placeholder for avatar */}
                                             <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontWeight: 'bold', textTransform: 'uppercase' }}>
-                                                {member.name.split(' ').map(n => n[0]).join('')}
+                                                {member.name ? member.name.split(' ').map(n => n[0]).join('').substring(0, 2) : '?'}
                                             </div>
                                         </div>
-                                        <div>
-                                            <h4 style={{ margin: '0 0 4px 0', fontSize: '16px', color: '#1e293b' }}>{member.name}</h4>
-                                            <span style={{ fontSize: '13px', color: '#64A926', fontWeight: '600' }}>{member.role}</span>
-                                            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#64748b', lineHeight: '1.4', fontStyle: 'italic' }}>
-                                                "{member.quote}"
-                                            </p>
+                                        <div style={{ width: '100%' }}>
+                                            <input
+                                                type="text"
+                                                className="form-input"
+                                                value={member.name}
+                                                placeholder="Name"
+                                                onChange={(e) => setMembers(members.map(m => m.id === member.id ? { ...m, name: e.target.value } : m))}
+                                                style={{ marginBottom: '8px', fontWeight: '600', fontSize: '15px', width: '100%' }}
+                                            />
+                                            <input
+                                                type="text"
+                                                className="form-input"
+                                                value={member.role}
+                                                placeholder="Role"
+                                                onChange={(e) => setMembers(members.map(m => m.id === member.id ? { ...m, role: e.target.value } : m))}
+                                                style={{ marginBottom: '8px', fontSize: '13px', color: '#64A926', fontWeight: '600', width: '100%' }}
+                                            />
+                                            <textarea
+                                                className="form-input"
+                                                value={member.quote}
+                                                placeholder="Quote"
+                                                onChange={(e) => setMembers(members.map(m => m.id === member.id ? { ...m, quote: e.target.value } : m))}
+                                                style={{ width: '100%', fontSize: '13px', color: '#64748b', lineHeight: '1.4', fontStyle: 'italic', minHeight: '60px', resize: 'vertical' }}
+                                            />
                                         </div>
                                     </div>
-                                    <div style={{ display: 'flex', gap: '8px' }}>
-                                        <FaPen style={{ color: '#94a3b8', cursor: 'pointer', fontSize: '14px' }} />
-                                        <FaTrash
-                                            style={{ color: '#94a3b8', cursor: 'pointer', fontSize: '14px' }}
+                                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', marginLeft: '10px' }}>
+                                        <button
+                                            onClick={() => {
+                                                if (index > 0) {
+                                                    const newMembers = [...members];
+                                                    [newMembers[index], newMembers[index - 1]] = [newMembers[index - 1], newMembers[index]];
+                                                    setMembers(newMembers);
+                                                }
+                                            }}
+                                            disabled={index === 0}
+                                            style={{ background: 'none', border: 'none', cursor: index === 0 ? 'not-allowed' : 'pointer', color: index === 0 ? '#e2e8f0' : '#94a3b8' }}
+                                            title="Move Up"
+                                        >
+                                            <FaArrowUp />
+                                        </button>
+                                        <button
                                             onClick={() => deleteMember(member.id)}
-                                        />
+                                            style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#cbd5e1' }}
+                                            title="Delete"
+                                            onMouseOver={(e) => e.currentTarget.style.color = '#ef4444'}
+                                            onMouseOut={(e) => e.currentTarget.style.color = '#cbd5e1'}
+                                        >
+                                            <FaTrash />
+                                        </button>
+                                        <button
+                                            onClick={() => {
+                                                if (index < members.length - 1) {
+                                                    const newMembers = [...members];
+                                                    [newMembers[index], newMembers[index + 1]] = [newMembers[index + 1], newMembers[index]];
+                                                    setMembers(newMembers);
+                                                }
+                                            }}
+                                            disabled={index === members.length - 1}
+                                            style={{ background: 'none', border: 'none', cursor: index === members.length - 1 ? 'not-allowed' : 'pointer', color: index === members.length - 1 ? '#e2e8f0' : '#94a3b8' }}
+                                            title="Move Down"
+                                        >
+                                            <FaArrowDown />
+                                        </button>
                                     </div>
                                 </div>
                                 <div style={{ borderTop: '1px solid #f1f5f9', paddingTop: '15px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '12px', color: '#64748b' }}>

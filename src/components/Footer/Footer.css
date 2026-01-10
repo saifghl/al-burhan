@@ -6,12 +6,15 @@
     border-top: 1px solid #eee;
     font-family: 'Inter', sans-serif;
     color: #555;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 2fr 0.8fr 0.8fr 1.4fr;
+    /* 4 Columns: Logo (wide), Quick Links, Legal, Contact (wide) */
+    gap: 40px;
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
@@ -19,15 +22,11 @@
 }
 
 .footer-section {
-    flex: 1;
-    margin-bottom: 30px;
-    min-width: 200px;
+    margin-bottom: 0;
 }
 
 .logo-section {
-    flex: 1.5;
-    /* Give logo section a bit more space */
-    padding-right: 40px;
+    padding-right: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -35,7 +34,6 @@
 
 .footer-logo {
     height: 60px;
-    /* Adjust to match navbar */
     margin-bottom: 20px;
 }
 
@@ -43,73 +41,76 @@
     line-height: 1.6;
     font-size: 15px;
     color: #333;
+    max-width: 300px;
 }
 
 .footer-heading {
     font-size: 18px;
     font-weight: 600;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .footer-links {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* Force vertical stacking */
+    gap: 12px;
 }
 
 .footer-links li {
-    margin-bottom: 12px;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    /* Margin handled by gap */
 }
 
 .footer-links a {
     text-decoration: none;
     color: #666;
-    /* Light greyish text */
     font-size: 14px;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
     color: #64A926;
-    /* Match brand color on hover */
 }
 
 /* Contact Section */
 .contact-section {
-    padding-left: 20px;
-    /* Increase distance from Legal section */
     text-align: left;
 }
 
 .contact-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .contact-list li {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     font-size: 14px;
+    line-height: 1.5;
 }
 
 .contact-icon {
     color: #5d87ff;
-    /* Blue icon color as requested - similar to provided image */
     margin-right: 12px;
-    /* Increased gap between icon and text */
     font-size: 16px;
-    min-width: 20px;
-    /* Ensure alignment */
+    min-width: 18px;
     margin-top: 3px;
-    /* Align icon with the first line of text */
 }
 
 /* Footer Bottom */
 .footer-bottom {
     text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
+    margin-top: 60px;
+    padding-top: 25px;
     border-top: 1px solid #e0e0e0;
     font-size: 14px;
     color: #666;
@@ -117,12 +118,37 @@
 }
 
 /* Responsive */
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1200px) {
     .footer-content {
-        flex-direction: column;
+        grid-template-columns: 1fr 1fr;
+        /* Shrink to 2 columns on mid-sized screens */
+        gap: 30px;
     }
 
     .logo-section {
+        grid-column: 1 / -1;
+        /* Logo takes full width */
+        max-width: 100%;
         padding-right: 0;
+    }
+
+    .footer-description {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        /* Stack vertically on tablets and mobile used to be 1024px 2 col, now purely stacked for safety */
+        gap: 30px;
+    }
+
+    .logo-section {
+        grid-column: auto;
+    }
+
+    .links-section {
+        display: none;
     }
 }

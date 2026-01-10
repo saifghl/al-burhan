@@ -33,11 +33,11 @@ const AdminDashboard = () => {
             {/* Quick Actions */}
             <div className="section-title">Quick Actions</div>
             <div className="quick-actions-grid">
-                <button className="action-btn primary btn-create-user"><FaUserPlus /> Create User</button>
-                <button className="action-btn btn-approve"><FaCheckCircle /> Approve Admission</button>
-                <button className="action-btn btn-publish"><FaUpload /> Publish Result</button>
-                <button className="action-btn btn-update"><FaPencilAlt /> Update Page</button>
-                <button className="action-btn btn-allocate"><FaDollarSign /> Allocate Donation</button>
+                <button className="action-btn quick-action-btn primary btn-create-user"><FaUserPlus /> Create User</button>
+                <button className="action-btn quick-action-btn btn-approve"><FaCheckCircle /> Approve Admission</button>
+                <button className="action-btn quick-action-btn btn-publish"><FaUpload /> Publish Result</button>
+                <button className="action-btn quick-action-btn btn-update"><FaPencilAlt /> Update Page</button>
+                <button className="action-btn quick-action-btn btn-allocate"><FaDollarSign /> Allocate Donation</button>
             </div>
 
             {/* Stats Cards */}

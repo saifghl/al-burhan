@@ -60,8 +60,8 @@ const Academics = () => {
 
                     {/* Card 2 */}
                     <div className="academics-intro-card">
-                        <div className="academics-icon-circle blue-light-bg">
-                            <FaPenNib className="academics-icon blue-icon" />
+                        <div className="academics-icon-circle green-light-bg">
+                            <FaPenNib className="academics-icon green-icon" />
                         </div>
                         <h3 className="academics-card-title">Urdu Language</h3>
                         <p className="academics-card-desc">

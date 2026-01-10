@@ -37,7 +37,7 @@
 }
 
 /* --- Sidebar --- */
-.admin-sidebar {
+.public-admin-sidebar {
     width: 350px;
     flex-shrink: 0;
 }

@@ -25,7 +25,36 @@ const Login = () => {
         setSelectedRole(null);
     };
 
+    const [identifier, setIdentifier] = useState('');
+    const [error, setError] = useState('');
+
     const handleLogin = () => {
+        if (!identifier.trim()) {
+            setError('Please enter your email or mobile number.');
+            return;
+        }
+
+        // Simple Email Regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // Simple Phone Regex (10 digits)
+        const phoneRegex = /^\d{10}$/;
+
+        const isEmail = identifier.includes('@');
+
+        if (isEmail && !emailRegex.test(identifier)) {
+            setError('Please enter a valid email address.');
+            return;
+        }
+
+        if (!isEmail && !phoneRegex.test(identifier.replace(/\D/g, ''))) {
+            // Optional: strict mobile check or just allow non-email strings if not strict
+            // For now, let's enforce 10 digits if it's not an email to catch bad inputs
+            if (identifier.length < 10) {
+                setError('Please enter a valid mobile number.');
+                return;
+            }
+        }
+
         if (selectedRole === 'Parent') {
             navigate('/parent-dashboard');
         } else if (selectedRole === 'Student') {
@@ -122,7 +151,16 @@ const Login = () => {
                     <div className="login-form-box">
                         <div className="form-group">
                             <label>Email or Mobile Number</label>
-                            <input type="text" className="login-input" />
+                            <input
+                                type="text"
+                                className={`login-input ${error ? 'input-error' : ''}`}
+                                value={identifier}
+                                onChange={(e) => {
+                                    setIdentifier(e.target.value);
+                                    setError('');
+                                }}
+                            />
+                            {error && <span className="error-message" style={{ color: 'red', fontSize: '0.85rem', marginTop: '5px', display: 'block' }}>{error}</span>}
                         </div>
 
                         <div className="form-group">

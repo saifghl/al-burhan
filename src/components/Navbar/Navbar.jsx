@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo-text.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
@@ -32,26 +32,26 @@ const Navbar = () => {
         </div>
 
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={closeMobileMenu}>Home</Link>
+          <li className="navbar-item">
+            <NavLink to="/" className={({ isActive }) => isActive ? "navbar-links active" : "navbar-links"} onClick={closeMobileMenu}>Home</NavLink>
           </li>
-          <li className="nav-item">
-            <Link to="/about" className="nav-links" onClick={closeMobileMenu}>About us</Link>
+          <li className="navbar-item">
+            <NavLink to="/about" className={({ isActive }) => isActive ? "navbar-links active" : "navbar-links"} onClick={closeMobileMenu}>About us</NavLink>
           </li>
-          <li className="nav-item">
-            <Link to="/administration" className="nav-links" onClick={closeMobileMenu}>Administration</Link>
+          <li className="navbar-item">
+            <NavLink to="/administration" className={({ isActive }) => isActive ? "navbar-links active" : "navbar-links"} onClick={closeMobileMenu}>Administration</NavLink>
           </li>
-          <li className="nav-item">
-            <Link to="/academics" className="nav-links" onClick={closeMobileMenu}>Academics</Link>
+          <li className="navbar-item">
+            <NavLink to="/academics" className={({ isActive }) => isActive ? "navbar-links active" : "navbar-links"} onClick={closeMobileMenu}>Academics</NavLink>
           </li>
-          <li className="nav-item">
-            <Link to="/admission" className="nav-links" onClick={closeMobileMenu}>Admission</Link>
+          <li className="navbar-item">
+            <NavLink to="/admission" className={({ isActive }) => isActive ? "navbar-links active" : "navbar-links"} onClick={closeMobileMenu}>Admission</NavLink>
           </li>
-          <li className="nav-item">
-            <Link to="/donation" className="nav-links" onClick={closeMobileMenu}>Donation</Link>
+          <li className="navbar-item">
+            <NavLink to="/donation" className={({ isActive }) => isActive ? "navbar-links active" : "navbar-links"} onClick={closeMobileMenu}>Donation</NavLink>
           </li>
-          <li className="nav-item">
-            <Link to="/contact" className="nav-links" onClick={closeMobileMenu}>Contact</Link>
+          <li className="navbar-item">
+            <NavLink to="/contact" className={({ isActive }) => isActive ? "navbar-links active" : "navbar-links"} onClick={closeMobileMenu}>Contact</NavLink>
           </li>
           <li className="nav-item-mobile">
             <Link to="/login" className="nav-links-mobile" onClick={closeMobileMenu}>Login</Link>

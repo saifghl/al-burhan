@@ -69,7 +69,7 @@ const ContactEditor = () => {
                         <div className="form-group">
                             <label className="form-label">Physical Address</label>
                             <div style={{ position: 'relative' }}>
-                                <FaMapMarkerAlt style={{ position: 'absolute', left: '12px', top: '12px', color: '#94a3b8' }} />
+                                <FaMapMarkerAlt style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8', zIndex: 1 }} />
                                 <input type="text" className="form-input" defaultValue="123 green street, pune" style={{ paddingLeft: '35px' }} />
                             </div>
                         </div>
@@ -78,14 +78,14 @@ const ContactEditor = () => {
                             <div className="form-group">
                                 <label className="form-label">Main Phone</label>
                                 <div style={{ position: 'relative' }}>
-                                    <FaPhone style={{ position: 'absolute', left: '12px', top: '12px', color: '#94a3b8' }} />
+                                    <FaPhone style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%) scaleX(-1)', color: '#94a3b8', zIndex: 1 }} />
                                     <input type="text" className="form-input" defaultValue="+91 648429434" style={{ paddingLeft: '35px' }} />
                                 </div>
                             </div>
                             <div className="form-group">
                                 <label className="form-label">Admissions Phone</label>
                                 <div style={{ position: 'relative' }}>
-                                    <FaPhone style={{ position: 'absolute', left: '12px', top: '12px', color: '#94a3b8' }} />
+                                    <FaPhone style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%) scaleX(-1)', color: '#94a3b8', zIndex: 1 }} />
                                     <input type="text" className="form-input" defaultValue="+91 648429434" style={{ paddingLeft: '35px' }} />
                                 </div>
                             </div>
@@ -95,14 +95,14 @@ const ContactEditor = () => {
                             <div className="form-group">
                                 <label className="form-label">General Email</label>
                                 <div style={{ position: 'relative' }}>
-                                    <FaEnvelope style={{ position: 'absolute', left: '12px', top: '12px', color: '#94a3b8' }} />
+                                    <FaEnvelope style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8', zIndex: 1 }} />
                                     <input type="text" className="form-input" defaultValue="Sarah@example.com" style={{ paddingLeft: '35px' }} />
                                 </div>
                             </div>
                             <div className="form-group">
                                 <label className="form-label">Support Email</label>
                                 <div style={{ position: 'relative' }}>
-                                    <FaEnvelope style={{ position: 'absolute', left: '12px', top: '12px', color: '#94a3b8' }} />
+                                    <FaEnvelope style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8', zIndex: 1 }} />
                                     <input type="text" className="form-input" defaultValue="Sarah@example.com" style={{ paddingLeft: '35px' }} />
                                 </div>
                             </div>

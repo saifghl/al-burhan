@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaCheckCircle, FaFileAlt, FaPlus, FaImage, FaCircle } from 'react-icons/fa';
+import { FaCheckCircle, FaFileAlt, FaPlus, FaImage, FaCircle, FaTrash } from 'react-icons/fa';
 import ToggleSwitch from './ToggleSwitch';
 import './PublicContent.css';
 
@@ -33,21 +33,15 @@ const AdmissionsEditor = () => {
     ]);
 
     const addCriteria = () => {
-        const newCriteria = prompt("Enter new eligibility criteria:");
-        if (newCriteria) setCriteria([...criteria, newCriteria]);
+        setCriteria([...criteria, "New eligibility criteria..."]);
     };
 
     const addDoc = () => {
-        const newDoc = prompt("Enter new required document:");
-        if (newDoc) setDocs([...docs, newDoc]);
+        setDocs([...docs, "New required document..."]);
     };
 
     const addStep = () => {
-        const title = prompt("Enter Step Title:");
-        const desc = prompt("Enter Step Description:");
-        if (title && desc) {
-            setSteps([...steps, { id: steps.length + 1, title, desc }]);
-        }
+        setSteps([...steps, { id: steps.length + 1, title: 'New Step', desc: 'Description of the step...' }]);
     };
 
     return (
@@ -107,18 +101,33 @@ const AdmissionsEditor = () => {
 
             <div className="editor-grid-2">
                 {/* Eligibility Criteria */}
+                {/* Eligibility Criteria */}
                 <div className="editor-card">
-                    <div className="card-title">
+                    <div className="card-title" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         Eligibility Criteria
                         <FaPlus style={{ color: '#64A926', cursor: 'pointer', fontSize: '14px' }} onClick={addCriteria} />
                     </div>
-                    <p style={{ fontSize: '12px', color: '#94a3b8', margin: '-15px 0 15px 0' }}>Define what qualifies a student for admission.</p>
+                    <p style={{ fontSize: '12px', color: '#94a3b8', margin: '5px 0 15px 0' }}>Define what qualifies a student for admission.</p>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                         {criteria.map((item, i) => (
-                            <div key={i} style={{ background: '#f1f5f9', padding: '12px 15px', borderRadius: '6px', display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '13px', color: '#334155' }}>
+                            <div key={i} style={{ background: '#f1f5f9', padding: '12px 15px', borderRadius: '6px', display: 'flex', gap: '10px', alignItems: 'center', fontSize: '13px', color: '#334155' }}>
                                 <FaCheckCircle style={{ color: '#64748b', marginTop: '3px', flexShrink: 0 }} />
-                                <span>{item}</span>
+                                <input
+                                    type="text"
+                                    className="form-input"
+                                    value={item}
+                                    onChange={(e) => {
+                                        const newCriteria = [...criteria];
+                                        newCriteria[i] = e.target.value;
+                                        setCriteria(newCriteria);
+                                    }}
+                                    style={{ border: 'none', background: 'transparent', padding: 0, width: '100%', fontSize: '13px' }}
+                                />
+                                <FaTrash
+                                    style={{ color: '#94a3b8', cursor: 'pointer', fontSize: '12px', marginLeft: 'auto' }}
+                                    onClick={() => setCriteria(criteria.filter((_, idx) => idx !== i))}
+                                />
                             </div>
                         ))}
                     </div>
@@ -126,16 +135,30 @@ const AdmissionsEditor = () => {
 
                 {/* Required Docs */}
                 <div className="editor-card">
-                    <div className="card-title">
+                    <div className="card-title" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         Required Docs
-                        <span style={{ fontSize: '12px', color: '#64A926', cursor: 'pointer' }} onClick={addDoc}>Edit List</span>
+                        <span style={{ fontSize: '12px', color: '#64A926', cursor: 'pointer' }} onClick={addDoc}>+ Add Doc</span>
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                         {docs.map((doc, i) => (
-                            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#334155' }}>
+                            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#334155', background: '#f8fafc', padding: '8px 12px', borderRadius: '6px' }}>
                                 <FaFileAlt style={{ color: '#64748b' }} />
-                                {doc}
+                                <input
+                                    type="text"
+                                    className="form-input"
+                                    value={doc}
+                                    onChange={(e) => {
+                                        const newDocs = [...docs];
+                                        newDocs[i] = e.target.value;
+                                        setDocs(newDocs);
+                                    }}
+                                    style={{ border: 'none', background: 'transparent', padding: 0, width: '100%', fontSize: '13px' }}
+                                />
+                                <FaTrash
+                                    style={{ color: '#94a3b8', cursor: 'pointer', fontSize: '12px', marginLeft: 'auto' }}
+                                    onClick={() => setDocs(docs.filter((_, idx) => idx !== i))}
+                                />
                             </div>
                         ))}
                     </div>
@@ -144,13 +167,13 @@ const AdmissionsEditor = () => {
 
             {/* Admission Process Steps */}
             <div className="editor-card full-width">
-                <div className="card-title">
+                <div className="card-title" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     Admission Process Steps
                     <button className="btn-secondary-action" style={{ fontSize: '12px', padding: '4px 10px' }} onClick={addStep}>
                         <FaPlus /> Add Step
                     </button>
                 </div>
-                <p style={{ fontSize: '12px', color: '#94a3b8', margin: '-15px 0 20px 0' }}>The timeline displayed to parents.</p>
+                <p style={{ fontSize: '12px', color: '#94a3b8', margin: '5px 0 20px 0' }}>The timeline displayed to parents.</p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', paddingLeft: '10px' }}>
                     {steps.map((step, i) => (
@@ -165,9 +188,30 @@ const AdmissionsEditor = () => {
                                 </div>
                                 {i !== steps.length - 1 && <div style={{ width: '2px', height: '100%', background: '#e2e8f0', margin: '5px 0' }}></div>}
                             </div>
-                            <div style={{ paddingBottom: '10px' }}>
-                                <h5 style={{ margin: '0 0 5px 0', fontSize: '14px', color: '#1e293b' }}>{step.id}. {step.title}</h5>
-                                <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>{step.desc}</p>
+                            <div style={{ paddingBottom: '10px', width: '100%' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                    <input
+                                        type="text"
+                                        className="form-input"
+                                        value={step.title}
+                                        onChange={(e) => setSteps(steps.map(s => s.id === step.id ? { ...s, title: e.target.value } : s))}
+                                        style={{ marginBottom: '5px', fontSize: '14px', fontWeight: 'bold', color: '#1e293b', width: '100%' }}
+                                    />
+                                    <button
+                                        onClick={() => setSteps(steps.filter(s => s.id !== step.id))}
+                                        style={{ background: 'none', border: 'none', color: '#cbd5e1', cursor: 'pointer', marginLeft: '10px' }}
+                                        title="Delete Step"
+                                    >
+                                        <FaTrash />
+                                    </button>
+                                </div>
+                                <input
+                                    type="text"
+                                    className="form-input"
+                                    value={step.desc}
+                                    onChange={(e) => setSteps(steps.map(s => s.id === step.id ? { ...s, desc: e.target.value } : s))}
+                                    style={{ width: '100%', fontSize: '13px', color: '#64748b' }}
+                                />
                             </div>
                         </div>
                     ))}

@@ -35,7 +35,7 @@ const Home = () => {
                 <div className="vertical-divider"></div>
                 <div className="stat-item">
                     <h2 className="stat-number">500+</h2>
-                    <p className="stat-label">Total teacher</p>
+                    <p className="stat-label">Total Teachers</p>
                 </div>
                 <div className="vertical-divider"></div>
                 <div className="stat-item">
@@ -61,8 +61,8 @@ const Home = () => {
 
             {/* Our Programs Section */}
             <div className="programs-section">
-                <h3 className="section-title">Our Programs</h3>
-                <p className="section-subtitle">Comprehensive Islamic education tailored for different age groups and levels of understanding.</p>
+                <h3 className="home-programs-title">Our Programs</h3>
+                <p className="home-programs-subtitle">Comprehensive Islamic education tailored for different age groups and levels of understanding.</p>
                 <div className="programs-grid">
                     <div className="program-card">
                         <img src={logoIcon} alt="Program Icon" className="program-icon" />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaInfoCircle, FaImage, FaChevronDown, FaChevronUp, FaPlus, FaGraduationCap, FaFlask, FaBookOpen } from 'react-icons/fa';
+import { FaInfoCircle, FaImage, FaChevronDown, FaChevronUp, FaPlus, FaGraduationCap, FaFlask, FaBookOpen, FaTrash } from 'react-icons/fa';
 import ToggleSwitch from './ToggleSwitch';
 import './PublicContent.css';
 
@@ -26,12 +26,22 @@ const HomepageEditor = () => {
         ctaLink: '/admission'
     });
 
-    // Program Cards State (Simplified)
-    const [programCards] = useState([
+    // Program Cards State
+    const [programCards, setProgramCards] = useState([
         { id: 1, title: 'Early Learning', desc: 'Ages 3-5. Foundation for lifelong learning.', icon: <FaGraduationCap color="#3b82f6" /> },
         { id: 2, title: 'Primary School', desc: 'Grades 1-6. Developing core skills.', icon: <FaBookOpen color="#10b981" /> },
         { id: 3, title: 'High School', desc: 'Grades 7-12. Preparation for university.', icon: <FaFlask color="#a855f7" /> },
     ]);
+
+    const addCard = () => {
+        const newId = programCards.length > 0 ? Math.max(...programCards.map(c => c.id)) + 1 : 1;
+        setProgramCards([...programCards, {
+            id: newId,
+            title: 'New Program',
+            desc: 'Description for the new program.',
+            icon: <FaBookOpen color="#64748b" />
+        }]);
+    };
 
     // Bottom CTA State
     const [ctaData, setCtaData] = useState({
@@ -136,7 +146,7 @@ const HomepageEditor = () => {
                 <div className="editor-card full-width" style={{ padding: '15px 24px' }}>
                     <div className="card-title" style={{ margin: 0 }}>
                         <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                            <ToggleSwitch checked={sections.stats} onChange={() => { }} /> Statistics Counters
+                            Statistics Counters
                         </span>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <ToggleSwitch checked={sections.stats} onChange={() => toggleSection('stats')} />
@@ -149,7 +159,7 @@ const HomepageEditor = () => {
             <div className="editor-card full-width" style={{ padding: '15px 24px' }}>
                 <div className="card-title" style={{ margin: 0 }}>
                     <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <ToggleSwitch checked={sections.about} onChange={() => { }} /> About Preview Text
+                        About Preview Text
                     </span>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <ToggleSwitch
@@ -166,7 +176,7 @@ const HomepageEditor = () => {
                 <div className="card-title">
                     Programs Overview
                     <div>
-                        <button className="btn-secondary-action" style={{ display: 'inline-flex', marginRight: '15px' }}>
+                        <button className="btn-secondary-action" onClick={addCard} style={{ display: 'inline-flex', marginRight: '15px' }}>
                             <FaPlus /> Add Card
                         </button>
                         <div style={{ display: 'inline-flex', verticalAlign: 'middle', alignItems: 'center' }}>
@@ -181,12 +191,32 @@ const HomepageEditor = () => {
                 {sections.programs && (
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
                         {programCards.map(card => (
-                            <div key={card.id} style={{ background: '#f8fafc', padding: '20px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                            <div key={card.id} style={{ background: '#f8fafc', padding: '20px', borderRadius: '8px', border: '1px solid #e2e8f0', position: 'relative' }}>
+                                <button
+                                    onClick={() => setProgramCards(programCards.filter(c => c.id !== card.id))}
+                                    style={{ position: 'absolute', top: '10px', right: '10px', background: 'none', border: 'none', color: '#cbd5e1', cursor: 'pointer', transition: 'color 0.2s', fontSize: '14px' }}
+                                    title="Delete Card"
+                                    onMouseOver={(e) => e.currentTarget.style.color = '#ef4444'}
+                                    onMouseOut={(e) => e.currentTarget.style.color = '#cbd5e1'}
+                                >
+                                    <FaTrash />
+                                </button>
                                 <div style={{ width: '40px', height: '40px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px', fontSize: '18px' }}>
                                     {card.icon}
                                 </div>
-                                <h5 style={{ margin: '0 0 8px 0', fontSize: '15px', color: '#1e293b' }}>{card.title}</h5>
-                                <p style={{ margin: 0, fontSize: '13px', color: '#64748b', lineHeight: '1.4' }}>{card.desc}</p>
+                                <input
+                                    type="text"
+                                    className="form-input"
+                                    value={card.title}
+                                    onChange={(e) => setProgramCards(programCards.map(c => c.id === card.id ? { ...c, title: e.target.value } : c))}
+                                    style={{ marginBottom: '8px', fontWeight: '600', fontSize: '15px' }}
+                                />
+                                <textarea
+                                    className="form-input"
+                                    value={card.desc}
+                                    onChange={(e) => setProgramCards(programCards.map(c => c.id === card.id ? { ...c, desc: e.target.value } : c))}
+                                    style={{ width: '100%', fontSize: '13px', color: '#64748b', lineHeight: '1.4', resize: 'vertical', minHeight: '60px' }}
+                                />
                             </div>
                         ))}
                     </div>

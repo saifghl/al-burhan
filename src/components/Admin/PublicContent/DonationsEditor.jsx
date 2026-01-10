@@ -182,7 +182,7 @@ const DonationsEditor = () => {
                     {/* Thank You Message */}
                     <div className="editor-card">
                         <div className="card-title">Thank You Message</div>
-                        <p style={{ fontSize: '12px', color: '#94a3b8', margin: '-15px 0 10px 0' }}>This message appears after a successful donation.</p>
+                        <p style={{ fontSize: '12px', color: '#94a3b8', margin: '5px 0 10px 0' }}>This message appears after a successful donation.</p>
                         <textarea className="form-textarea" style={{ borderColor: '#86efac' }}></textarea>
                     </div>
                 </div>

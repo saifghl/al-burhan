@@ -130,30 +130,59 @@
 /* Tabs */
 .donation-tabs {
     display: flex;
-    background-color: #e0eadd;
-    /* Muted green/grey */
-    border-radius: 8px;
+    background-color: #fff;
+    /* White background */
+    border-radius: 6px !important;
+    /* Small radius */
     overflow: hidden;
     padding: 5px;
     gap: 5px;
+    border: 1px solid #eee;
+    /* Clean border */
 }
 
 .tab-btn {
     flex: 1;
-    border: none;
+    border: 1px solid transparent;
     background: transparent;
     padding: 10px;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 6px !important;
+    /* Small radius */
     transition: all 0.3s;
+    color: #555;
+    position: relative;
+    /* Ensure no pseudo-elements interfere */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Force Center Text */
+}
+
+.tab-btn:hover {
+    color: #64A926;
+    background-color: #f9fdf9;
+}
+
+
+
+.highlight-link {
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
 .tab-btn.active {
-    background-color: #64A926;
-    color: #fff;
-    font-weight: 600;
+    background-color: #64A926 !important;
+    /* Solid brand green */
+    color: #fff !important;
+    /* White text */
+    font-weight: 700;
+    border-radius: 6px !important;
+    /* Match button radius */
+    border-bottom: none !important;
+    /* Ensure no underline effect */
 }
 
 .info-note {

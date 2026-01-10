@@ -378,7 +378,7 @@
     line-height: 1.4;
 }
 
-.btn-approve {
+.review-content-container .btn-approve {
     width: 100%;
     background: #65a30d;
     color: white;
@@ -396,7 +396,7 @@
     transition: background 0.2s;
 }
 
-.btn-approve:hover {
+.review-content-container .btn-approve:hover {
     background: #4d7c0f;
 }
 
