@@ -97,7 +97,7 @@ const TransparencyReport = () => {
                         <span className="trend-badge trend-up">↗ +12%</span>
                     </div>
                     <span className="stat-label">Total Donations Received</span>
-                    <span className="stat-value">$125,000.00</span>
+                    <span className="stat-value">₹125,000.00</span>
                     {/* Note: User image shows no progress bar here but one card has one. Replicating varied design */}
                 </div>
 
@@ -109,7 +109,7 @@ const TransparencyReport = () => {
                         <span className="trend-badge trend-up">↗ +8%</span>
                     </div>
                     <span className="stat-label">Total Funds Utilized</span>
-                    <span className="stat-value">$98,000.00</span>
+                    <span className="stat-value">₹98,000.00</span>
                     <div className="stat-progress-bar">
                         <div className="stat-progress-fill" style={{ width: '78%', background: '#a855f7' }}></div>
                     </div>
@@ -123,7 +123,7 @@ const TransparencyReport = () => {
                         {/* No trend badge in image for this one */}
                     </div>
                     <span className="stat-label">Remaining Balance</span>
-                    <span className="stat-value">$27,000.00</span>
+                    <span className="stat-value">₹27,000.00</span>
                     <span className="stat-label" style={{ fontSize: '11px', marginTop: '4px' }}>Available for immediate allocation</span>
                 </div>
             </div>
@@ -142,7 +142,7 @@ const TransparencyReport = () => {
                         <div className="usage-bar-bg">
                             <div className="usage-bar-fill" style={{ width: '45%', background: '#0ea5e9' }}></div>
                         </div>
-                        <span className="usage-subtext">$44,100 allocated</span>
+                        <span className="usage-subtext">₹44,100 allocated</span>
                     </div>
 
                     <div className="usage-item">
@@ -153,7 +153,7 @@ const TransparencyReport = () => {
                         <div className="usage-bar-bg">
                             <div className="usage-bar-fill" style={{ width: '30%', background: '#10b981' }}></div>
                         </div>
-                        <span className="usage-subtext">$29,400 allocated</span>
+                        <span className="usage-subtext">₹29,400 allocated</span>
                     </div>
 
                     <div className="usage-item">
@@ -164,7 +164,7 @@ const TransparencyReport = () => {
                         <div className="usage-bar-bg">
                             <div className="usage-bar-fill" style={{ width: '15%', background: '#f59e0b' }}></div>
                         </div>
-                        <span className="usage-subtext">$14,700 allocated</span>
+                        <span className="usage-subtext">₹14,700 allocated</span>
                     </div>
 
                     <div className="usage-item">
@@ -175,7 +175,7 @@ const TransparencyReport = () => {
                         <div className="usage-bar-bg">
                             <div className="usage-bar-fill" style={{ width: '10%', background: '#64748b' }}></div>
                         </div>
-                        <span className="usage-subtext">$9,800 allocated</span>
+                        <span className="usage-subtext">₹9,800 allocated</span>
                     </div>
 
                     <a href="#" className="view-detailed-link" onClick={handleViewCategories}>View Detailed Categories ➔</a>
@@ -208,7 +208,7 @@ const TransparencyReport = () => {
                         </div>
                         <div><span className="category-tag tag-edu">Education</span></div>
                         <span className="util-date">Oct 24, 2023</span>
-                        <span className="util-amount">$1,200.00</span>
+                        <span className="util-amount">₹1,200.00</span>
                     </div>
 
                     <div className="util-item">
@@ -221,7 +221,7 @@ const TransparencyReport = () => {
                         </div>
                         <div><span className="category-tag tag-maint">Maintenance</span></div>
                         <span className="util-date">Oct 20, 2023</span>
-                        <span className="util-amount">$3,500.00</span>
+                        <span className="util-amount">₹3,500.00</span>
                     </div>
 
                     <div className="util-item">
@@ -234,7 +234,7 @@ const TransparencyReport = () => {
                         </div>
                         <div><span className="category-tag tag-admin">Admin</span></div>
                         <span className="util-date">Oct 18, 2023</span>
-                        <span className="util-amount">$450.00</span>
+                        <span className="util-amount">₹450.00</span>
                     </div>
 
                     <div className="util-item">
@@ -247,7 +247,7 @@ const TransparencyReport = () => {
                         </div>
                         <div><span className="category-tag tag-edu">Education</span></div>
                         <span className="util-date">Oct 15, 2023</span>
-                        <span className="util-amount">$5,000.00</span>
+                        <span className="util-amount">₹5,000.00</span>
                     </div>
 
                     <button className="show-all-btn" onClick={handleShowAll}>Show All Transactions</button>

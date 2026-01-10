@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DonationDetailsPage.css';
 import MadarsaThumb from '../../assets/Picture27.png'; // Reusing an asset as placeholder
+import logoText from '../../assets/logo-text.png';
 
 const DonationDetailsPage = () => {
     const navigate = useNavigate();
@@ -28,8 +29,7 @@ const DonationDetailsPage = () => {
             {/* Top Navigation Bar */}
             <header className="top-navbar-full">
                 <div className="navbar-logo-section">
-                    <span className="brand-logo-icon">🏰</span>
-                    <span className="brand-name-text">Al Burhan</span>
+                    <img src={logoText} alt="Al Burhan" className="brand-logo" style={{ height: '40px' }} />
                 </div>
 
                 <div className="navbar-search-section">

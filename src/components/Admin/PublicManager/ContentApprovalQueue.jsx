@@ -15,7 +15,8 @@ import {
     FaTimes,
     FaSearch,
     FaBell,
-    FaDownload
+    FaDownload,
+    FaGavel
 } from 'react-icons/fa';
 import AdminMobileNav from '../AdminDonation/AdminMobileNav';
 import './ContentApprovalQueue.css';
@@ -33,6 +34,8 @@ const ContentApprovalQueue = () => {
     const handleAction = (action, item) => {
         if (action === 'View') {
             navigate('/admin/content-review');
+        } else if (action === 'Approve') {
+            navigate('/admin/approval-rules');
         } else {
             alert(`${action} action triggered for item: ${item}`);
         }
@@ -116,7 +119,28 @@ const ContentApprovalQueue = () => {
             {/* Stats Grid */}
             <div className="ca-stats-grid">
                 <div className="ca-stat-card">
-                    <span className="ca-stat-label label-pending">Pending Review</span>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                        <span className="ca-stat-label label-pending">Pending Review</span>
+                        <div
+                            title="View Approval Rules"
+                            style={{
+                                cursor: 'pointer',
+                                backgroundColor: '#dcfce7',
+                                borderRadius: '8px',
+                                width: '28px',
+                                height: '28px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                navigate('/admin/approval-rules');
+                            }}
+                        >
+                            <FaCheck style={{ color: '#166534', fontSize: '14px' }} />
+                        </div>
+                    </div>
                     <span className="ca-stat-value">12</span>
                 </div>
                 <div className="ca-stat-card" onClick={() => navigate('/admin/drafts')} style={{ cursor: 'pointer' }}>

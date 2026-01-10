@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './SettingsPage.css';
 import '../Donar/Dashboard.css'; // Shared layout
 import UserAvatar from '../../assets/Picture33.png'; // User Avatar
+import logoText from '../../assets/logo-text.png';
 
 // Icons
 const Icons = {
@@ -25,8 +26,7 @@ const SettingsPage = () => {
             {/* Navbar */}
             <header className="sp-navbar">
                 <div className="logo-section">
-                    <span className="logo-icon">🏰</span>
-                    <span className="logo-text">Al Burhan</span>
+                    <img src={logoText} alt="Al Burhan" className="brand-logo" style={{ height: '40px' }} />
                 </div>
                 <div className="header-right">
                     <div className="icon-btn" onClick={() => navigate('/notifications')}><Icons.Bell /></div>

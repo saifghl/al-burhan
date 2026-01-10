@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DonationHistory.css';
 import '../Donar/Dashboard.css';
+import logoText from '../../assets/logo-text.png';
 
 // Importing Assets
 import UserAvatar from '../../assets/Picture33.png'; // Assuming this is a profile pic
@@ -43,8 +44,7 @@ const DonationHistory = () => {
             {/* Left Menu Sidebar - Reused but with active link changed */}
             <aside className={`left-sidebar ${sidebarOpen ? 'open' : ''}`}>
                 <div className="sidebar-brand">
-                    <span className="brand-icon">🏰</span>
-                    <span className="brand-text">Al Burhan</span>
+                    <img src={logoText} alt="Al Burhan" className="brand-logo" style={{ height: '40px' }} />
                 </div>
 
                 <div className="sidebar-menu">

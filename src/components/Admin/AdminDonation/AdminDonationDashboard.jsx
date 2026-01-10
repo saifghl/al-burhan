@@ -16,7 +16,7 @@ const AdminDonationDashboard = () => {
                 </div>
                 <div className="header-actions">
                     <button className="btn-export"><FaCloudDownloadAlt /> Export Data</button>
-                    <button className="btn-new-entry"><FaPlus /> New Entry</button>
+                    {/* New Entry Button Removed */}
                 </div>
             </header>
 
@@ -25,44 +25,52 @@ const AdminDonationDashboard = () => {
                 <div className="stat-card">
                     <div className="stat-info">
                         <h3>Total Received</h3>
-                        <div className="stat-trend positive-pill">
-                            <span className="trend-percent"><FaArrowUp /> +5.2%</span>
-                            <span className="trend-label">vs last month</span>
+                        <div className="stat-main">
+                            <p className="stat-value">₹1,240,500</p>
+                            <div className="stat-trend positive-pill">
+                                <span className="trend-percent"><FaArrowUp /> +5.2%</span>
+                                <span className="trend-label">vs last month</span>
+                            </div>
                         </div>
-                        <p className="stat-value">$1,240,500</p>
                     </div>
                     <div className="stat-icon-bg icon-blue"></div>
                 </div>
                 <div className="stat-card">
                     <div className="stat-info">
                         <h3>Total Donors</h3>
-                        <div className="stat-trend positive-pill">
-                            <span className="trend-percent"><FaArrowUp /> +12.4%</span>
-                            <span className="trend-label">vs last month</span>
+                        <div className="stat-main">
+                            <p className="stat-value">3,420</p>
+                            <div className="stat-trend positive-pill">
+                                <span className="trend-percent"><FaArrowUp /> +12.4%</span>
+                                <span className="trend-label">vs last month</span>
+                            </div>
                         </div>
-                        <p className="stat-value">3,420</p>
                     </div>
                     <div className="stat-icon-bg icon-cyan"></div>
                 </div>
                 <div className="stat-card">
                     <div className="stat-info">
                         <h3>Funds Allocated</h3>
-                        <div className="stat-trend positive-pill">
-                            <span className="trend-percent"><FaArrowUp /> +8.1%</span>
-                            <span className="trend-label">vs last month</span>
+                        <div className="stat-main">
+                            <p className="stat-value">₹980,000</p>
+                            <div className="stat-trend positive-pill">
+                                <span className="trend-percent"><FaArrowUp /> +8.1%</span>
+                                <span className="trend-label">vs last month</span>
+                            </div>
                         </div>
-                        <p className="stat-value">$980,000</p>
                     </div>
                     <div className="stat-icon-bg icon-teal"></div>
                 </div>
                 <div className="stat-card">
                     <div className="stat-info">
                         <h3>Unallocated Balance</h3>
-                        <div className="stat-trend negative-pill">
-                            <span className="trend-percent"><FaArrowDown /> -2.5%</span>
-                            <span className="trend-label">vs last month</span>
+                        <div className="stat-main">
+                            <p className="stat-value">₹260,500</p>
+                            <div className="stat-trend negative-pill">
+                                <span className="trend-percent"><FaArrowDown /> -2.5%</span>
+                                <span className="trend-label">vs last month</span>
+                            </div>
                         </div>
-                        <p className="stat-value">$260,500</p>
                     </div>
                     <div className="stat-icon-bg icon-red"><FaExclamationTriangle /></div>
                 </div>
@@ -81,7 +89,7 @@ const AdminDonationDashboard = () => {
                     <div className="donut-chart-container">
                         <div className="donut-chart">
                             <div className="donut-center">
-                                <h3>980k</h3>
+                                <h3>₹980k</h3>
                                 <p>Allocated</p>
                             </div>
                         </div>
@@ -169,7 +177,7 @@ const AdminDonationDashboard = () => {
                         <h4>View Donors</h4>
                         <p>Manage donor profiles</p>
                     </div>
-                    <div className="action-card">
+                    <div className="action-card" onClick={() => navigate('/admin/donation-records')} style={{ cursor: 'pointer' }}>
                         <div className="action-icon action-teal-light">
                             <FaHandHoldingUsd />
                         </div>
@@ -217,40 +225,40 @@ const AdminDonationDashboard = () => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
+                                <td data-label="Donor">
                                     <div className="donor-cell">
                                         <div className="avatar">SJ</div>
                                         <span>Sarah Jenkins</span>
                                     </div>
                                 </td>
-                                <td className="amount positive">+$5,000.00</td>
-                                <td><span className="badge designation-dark">Student Aid</span></td>
-                                <td className="date-cell">Oct 24, 2023</td>
-                                <td><button className="btn-view">View</button></td>
+                                <td data-label="Amount" className="amount positive">+₹5,000.00</td>
+                                <td data-label="Designation"><span className="badge designation-dark">Student Aid</span></td>
+                                <td data-label="Date" className="date-cell">24 Oct, 2023</td>
+                                <td data-label="Action"><button className="btn-view">View</button></td>
                             </tr>
                             <tr>
-                                <td>
+                                <td data-label="Donor">
                                     <div className="donor-cell">
                                         <div className="avatar avatar-tc">TC</div>
                                         <span>Tech Corp Inc.</span>
                                     </div>
                                 </td>
-                                <td className="amount positive">+$25,000.00</td>
-                                <td><span className="badge designation-dark">Infrastructure</span></td>
-                                <td className="date-cell">Oct 23, 2023</td>
-                                <td><button className="btn-view">View</button></td>
+                                <td data-label="Amount" className="amount positive">+₹25,000.00</td>
+                                <td data-label="Designation"><span className="badge designation-dark">Infrastructure</span></td>
+                                <td data-label="Date" className="date-cell">23 Oct, 2023</td>
+                                <td data-label="Action"><button className="btn-view">View</button></td>
                             </tr>
                             <tr>
-                                <td>
+                                <td data-label="Donor">
                                     <div className="donor-cell">
                                         <div className="avatar">MC</div>
                                         <span>Michael Chen</span>
                                     </div>
                                 </td>
-                                <td className="amount positive">+$1,200.00</td>
-                                <td><span className="badge designation-dark">General</span></td>
-                                <td className="date-cell">Oct 23, 2023</td>
-                                <td><button className="btn-view">View</button></td>
+                                <td data-label="Amount" className="amount positive">+₹1,200.00</td>
+                                <td data-label="Designation"><span className="badge designation-dark">General</span></td>
+                                <td data-label="Date" className="date-cell">23 Oct, 2023</td>
+                                <td data-label="Action"><button className="btn-view">View</button></td>
                             </tr>
                         </tbody>
                     </table>

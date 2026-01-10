@@ -338,6 +338,9 @@
 }
 
 /* Active state text styling removed per request */
+.toggle-switch.active {
+    color: #475569 !important;
+}
 
 .toggle-switch.active .switch::after {
     left: 22px;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DonationAmountPage.css';
 import bannerImg from '../../assets/Picture33.png';
+import logoText from '../../assets/logo-text.png';
 
 const DonationAmountPage = () => {
     const navigate = useNavigate();
@@ -45,8 +46,7 @@ const DonationAmountPage = () => {
         <div className="donation-amount-layout">
             <header className="wizard-header">
                 <div className="brand-section">
-                    <span className="brand-logo-icon">🏰</span>
-                    <span className="brand-name">Al Burhan</span>
+                    <img src={logoText} alt="Al Burhan" className="brand-logo" style={{ height: '40px' }} />
                 </div>
                 <div className="header-actions">
                     <button className="icon-btn"><Icons.Bell /></button>

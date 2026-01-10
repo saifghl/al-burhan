@@ -18,20 +18,20 @@ const DonorDetails = () => {
         addressLines: ['123 Maple Ave', 'Springfield, IL 62704'],
         prefs: ['Email', 'SMS'],
         stats: {
-            total: '$4,250.00',
+            total: '₹4,250.00',
             totalTrend: '+12%',
             lastDate: 'Oct 24, 2023',
             lastMeta: '2 months ago',
-            avg: '$150.00'
+            avg: '₹150.00'
         }
     };
 
     const donations = [
-        { id: '#D-83920', date: 'Oct 24, 2023', purpose: 'Annual Fund', type: 'Recurring • CC ****4242', amount: '$500.00', status: 'Success' },
-        { id: '#D-83411', date: 'Sep 15, 2023', purpose: 'Disaster Relief', type: 'One-time • PayPal', amount: '$250.00', status: 'Success' },
-        { id: '#D-82109', date: 'Aug 01, 2023', purpose: 'Gala Ticket', type: 'Event • CC ****4242', amount: '$1,000.00', status: 'Success' },
-        { id: '#D-81992', date: 'Jul 20, 2023', purpose: 'Annual Fund', type: 'Recurring • CC ****4242', amount: '$500.00', status: 'Failed' },
-        { id: '#D-78801', date: 'May 12, 2023', purpose: 'Spring Campaign', type: 'One-time • ACH', amount: '$2,000.00', status: 'Success' },
+        { id: '#D-83920', date: 'Oct 24, 2023', purpose: 'Annual Fund', type: 'Recurring • CC ****4242', amount: '₹500.00', status: 'Success' },
+        { id: '#D-83411', date: 'Sep 15, 2023', purpose: 'Disaster Relief', type: 'One-time • PayPal', amount: '₹250.00', status: 'Success' },
+        { id: '#D-82109', date: 'Aug 01, 2023', purpose: 'Gala Ticket', type: 'Event • CC ****4242', amount: '₹1,000.00', status: 'Success' },
+        { id: '#D-81992', date: 'Jul 20, 2023', purpose: 'Annual Fund', type: 'Recurring • CC ****4242', amount: '₹500.00', status: 'Failed' },
+        { id: '#D-78801', date: 'May 12, 2023', purpose: 'Spring Campaign', type: 'One-time • ACH', amount: '₹2,000.00', status: 'Success' },
     ];
 
     return (
@@ -60,7 +60,7 @@ const DonorDetails = () => {
                 </div>
                 <div className="dd-header-actions">
                     <button className="btn-outline"><FaEdit /> Edit Profile</button>
-                    <button className="btn-primary"><FaPlus /> New Donation</button>
+                    {/* New Donation button removed */}
                 </div>
             </header>
 

@@ -57,22 +57,21 @@
 .sidebar-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: flex-start;
+  /* Align left */
   padding: 0 10px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  /* Adjusted spacing */
+  height: 50px;
+  /* Fixed height for consistency */
 }
 
-.brand-icon {
-  font-size: 24px;
-  color: #6c9c3e;
-}
-
-.brand-text {
-  font-size: 20px;
-  /* Slightly smaller font */
-  font-weight: 800;
-  /* Bolder as per image */
-  color: #6c9c3e;
+.brand-logo {
+  height: 40px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .menu-group {
@@ -153,8 +152,7 @@
 .dashboard-main {
   flex: 1;
   padding: 24px;
-  width: 100%;
-  /* Force full width */
+  /* Removed fixed width to allow flex to calculation correctly */
   min-width: 0;
   overflow-y: auto;
   background-color: #f9fbfb;
@@ -192,7 +190,7 @@
   /* Pill shape */
   border: 1px solid #eef2f6;
   width: 280px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   transition: all 0.2s ease;
 }
 
@@ -317,13 +315,50 @@
   margin-top: 30px;
 }
 
-.section-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+.impact-header-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-width: 100% !important;
   margin-top: 10px;
-  /* Reduced from 30px */
   margin-bottom: 15px;
+  flex-wrap: nowrap !important;
+}
+
+.impact-header-row .section-heading {
+  margin: 0;
+  white-space: nowrap;
+  flex-grow: 1 !important;
+}
+
+.impact-header-row .view-all-link {
+  white-space: nowrap;
+  flex-shrink: 0 !important;
+  margin-left: 20px;
+  /* Force spacing */
+}
+
+/* Legacy class kept for compatibility if needed elsewhere */
+.section-header-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.section-header-row .section-heading {
+  margin: 0;
+  white-space: nowrap;
+  flex: 1 !important;
+}
+
+.section-header-row .view-all-link {
+  white-space: nowrap;
+  flex-shrink: 0 !important;
 }
 
 .view-all-link {
@@ -453,10 +488,12 @@
   /* Increased padding inside card */
   border-radius: 16px;
   /* Enhanced radius */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  /* Better shadow */
   /* Better shadow */
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .stat-card {
@@ -606,32 +643,90 @@
 /* Recent Donations Table */
 .recent-donations-table-container {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  border-radius: 16px;
+  /* Match cards */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  /* Match cards */
+  border: 1px solid #eef2f6;
+  width: 100%;
   overflow: hidden;
+  /* No scrollbars */
 }
 
 .recent-donations-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
+  /* Force column widths to respect table width */
+}
+
+/* Recent Donations Header - Robust Fix */
+.recent-header-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  flex-wrap: nowrap !important;
+}
+
+.recent-header-row .section-heading {
+  margin: 0;
+  white-space: nowrap;
+  flex-grow: 1 !important;
+}
+
+.recent-header-row .view-all-link {
+  white-space: nowrap;
+  flex-shrink: 0 !important;
+  margin-left: 20px;
+  cursor: pointer;
 }
 
 .recent-donations-table th {
   text-align: left;
-  padding: 15px 20px;
+  padding: 15px 15px;
+  /* Reduced horizontal padding */
   border-bottom: 1px solid #eee;
   color: #1a1a1a;
   font-weight: 700;
   font-size: 14px;
 }
 
+.recent-donations-table th:nth-child(1) {
+  width: 22%;
+}
+
+.recent-donations-table th:nth-child(2) {
+  width: 38%;
+}
+
+.recent-donations-table th:nth-child(3) {
+  width: 20%;
+}
+
+.recent-donations-table th:nth-child(4) {
+  width: 20%;
+}
+
 .recent-donations-table td {
-  padding: 15px 20px;
+  padding: 15px 15px;
   border-bottom: 1px solid #f9f9f9;
   font-size: 14px;
   color: #555;
   vertical-align: middle;
+  white-space: nowrap;
+  /* Removed global overflow hidden to fix Status badge clipping */
 }
+
+/* Explicitly allow overflow for Status column */
+.recent-donations-table td:nth-child(4) {
+  overflow: visible !important;
+}
+
+
 
 .date-col {
   color: #888 !important;
@@ -646,6 +741,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .org-icon {
@@ -656,12 +754,22 @@
 }
 
 .status-badge.completed {
-  background-color: #e8f5e9;
-  color: #2e7d32;
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 12px;
+  background-color: #dcfce7;
+  /* Brighter/Fresh green background */
+  color: #166534;
+  /* Darker green text for contrast */
+  padding: 6px 14px;
+  /* Slightly larger padding */
+  border-radius: 20px;
+  /* Full pill shape */
+  font-size: 13px;
   font-weight: 600;
+  display: inline-flex;
+  /* Ensure block-like behavior for padding */
+  align-items: center;
+  justify-content: center;
+  min-width: 85px;
+  /* Ensure uniform width */
 }
 
 /* Quick Actions Sidebar Panel */
@@ -770,10 +878,7 @@
 
   .stats-grid,
   .impact-grid {
-    grid-template-columns: repeat(3, 1fr);
-    /* Keep 3 columns if space allows, or switch to 2? 3 usually fits on 768+ */
     gap: 15px;
-    /* Tighter gap */
   }
 }
 
@@ -804,7 +909,7 @@
   /* Stack all grids on mobile */
   .stats-grid,
   .impact-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 20px;
   }
 

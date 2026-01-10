@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DonationPaymentPage.css';
+import logoText from '../../assets/logo-text.png';
 import MadarsaThumb from '../../assets/Picture33.png'; // Using placeholder
 import CardPage from './PaymentPages/CardPage';
 import UPIPage from './PaymentPages/UPIPage';
@@ -29,8 +30,7 @@ const DonationPaymentPage = () => {
             {/* Header */}
             <header className="donation-header">
                 <div className="logo-container">
-                    <span className="brand-icon">🏰</span>
-                    <span className="brand-text">Al Burhan</span>
+                    <img src={logoText} alt="Al Burhan" className="brand-logo" style={{ height: '40px' }} />
                 </div>
                 <div className="header-actions">
                     <button className="icon-btn" onClick={() => navigate('/notifications')}><Icons.Bell /></button>

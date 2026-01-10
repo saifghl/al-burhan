@@ -111,6 +111,7 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: 100%;
 }
 
@@ -122,20 +123,35 @@
     letter-spacing: 0.3px;
 }
 
-/* Restoring Pill Styles */
+/* New Wrapper for Value and Trend */
+.stat-main {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -1px;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Trend Pill Styles */
 .stat-trend {
     display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    /* Gap between percent and label */
+    flex-direction: column;
+    align-items: flex-start;
     padding: 4px 10px;
-    border-radius: 20px;
+    border-radius: 12px;
     width: fit-content;
-    margin-bottom: 2rem;
-    /* LARGE margin to prevent overlap */
-    max-width: calc(100% - 60px);
     font-size: 0.75rem;
     font-weight: 600;
+    line-height: 1.2;
 }
 
 .trend-percent {
@@ -143,9 +159,9 @@
     align-items: center;
     gap: 0.3rem;
     font-weight: 700;
+    font-size: 0.8rem;
 }
 
-/* Pill specific colors */
 .stat-trend.positive-pill {
     background-color: #dcfce7;
     color: #166534;
@@ -156,24 +172,14 @@
     color: #991b1b;
 }
 
-/* Ensure label inside pill is styled correctly */
 .stat-trend .trend-label {
     color: inherit;
-    font-weight: 400;
-    font-size: 0.75rem;
+    font-weight: 500;
+    font-size: 0.65rem;
     opacity: 0.9;
+    white-space: nowrap;
 }
 
-.stat-value {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #111827;
-    letter-spacing: -1px;
-    margin: 0;
-    margin-top: auto;
-    /* Push to bottom */
-    line-height: 1;
-}
 
 /* Icon Styling */
 .stat-icon-bg {
@@ -194,7 +200,6 @@
 .stat-icon-bg.icon-cyan,
 .stat-icon-bg.icon-teal {
     background-color: #e0f2fe;
-    /* Different shades if needed, but sticking to blue theme */
 }
 
 .stat-icon-bg.icon-cyan {
@@ -212,23 +217,20 @@
     /* Very light red for watermark */
     width: auto;
     height: auto;
-    font-size: 8rem;
-    /* Adjusted size */
-    top: -15px;
-    /* Positioned to bleed off top/right slightly */
-    right: -25px;
-    opacity: 1;
-    /* Color handles lightness */
-    transform: rotate(10deg);
-    /* Less rotation */
+    font-size: 10rem;
+    /* Massive size */
+    top: -30px;
+    right: -20px;
+    opacity: 0.6;
+    transform: rotate(15deg);
     pointer-events: none;
     z-index: 0;
-    /* Behind content */
 }
 
-/* Ensure SVG fills the triangle shape */
 .stat-icon-bg.icon-red svg {
-    filter: drop-shadow(0 4px 6px rgba(239, 68, 68, 0.1));
+    filter: drop-shadow(0 4px 6px rgba(239, 68, 68, 0.05));
+    width: 1em;
+    height: 1em;
 }
 
 /* Charts Grid */
@@ -411,8 +413,10 @@
 }
 
 .quick-actions h3 {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #1e293b;
+    font-weight: 700;
 }
 
 .actions-grid {
@@ -425,52 +429,81 @@
     background: white;
     padding: 1.5rem;
     border-radius: 12px;
+    border: 1px solid #f1f5f9;
+    /* Subtle border like image */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); Less shadow, more clean */
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.2s ease;
+    min-height: 160px;
+    /* Reduced min-height slightly */
+    justify-content: flex-start;
 }
 
 .action-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
 }
 
 .action-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
+    width: 48px;
+    /* Slightly larger like image */
+    height: 48px;
+    border-radius: 12px;
+    /* Smoother corners */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    flex-shrink: 0;
 }
 
+/* Specific icon background colors based on image hints */
 .action-green-light {
-    background: #e8f5e9;
-    color: #43a047;
+    background-color: #ecfccb;
+    /* View Donors - light lime */
+    color: #4d7c0f;
 }
 
 .action-teal-light {
-    background: #e0f2f1;
-    color: #00897b;
+    background-color: #ccfbf1;
+    /* View Donations - light teal */
+    color: #0f766e;
 }
 
 .action-cyan-light {
-    background: #e0f7fa;
-    color: #00acc1;
+    background-color: #ecfeff;
+    /* Allocate Funds - very light cyan */
+    color: #0891b2;
 }
 
+/* Reuse teal/cyan for publish or tweak */
+.action-blue-light {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+
 .action-card h4 {
-    font-size: 0.95rem;
-    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+    width: 100%;
 }
 
 .action-card p {
-    font-size: 0.8rem;
-    color: #6c757d;
+    font-size: 0.875rem;
+    color: #64748b;
+    /* Slate-500 for description */
+    line-height: 1.5;
+    margin: 0;
+    max-width: 90%;
+    /* Keep text contained */
 }
 
 /* Recent Transactions */
@@ -504,11 +537,21 @@
     border-bottom: 1px solid #eee;
 }
 
+/* Center Align Date Column Header */
+.transactions-table th:nth-child(4) {
+    text-align: center;
+}
+
 .transactions-table td {
     padding: 1rem 1.5rem;
     font-size: 0.9rem;
     border-bottom: 1px solid #f8f9fa;
     vertical-align: middle;
+}
+
+/* Center Align Date Column Value */
+.transactions-table td:nth-child(4) {
+    text-align: center;
 }
 
 .donor-cell {
@@ -549,7 +592,9 @@
 }
 
 .date-cell {
-    color: #adb5bd;
+    color: #64748b;
+    /* Darker slate for better visibility */
+    font-weight: 500;
 }
 
 .btn-view {
@@ -662,42 +707,45 @@
     }
 
     /* Responsive Table to Cards for Mobile */
+    .table-responsive {
+        background: transparent;
+        box-shadow: none;
+        overflow: visible;
+        /* Ensure content flows out */
+        overflow-x: hidden;
+        /* Explicitly prevent horizontal scroll */
+    }
+
+    .transactions-table thead {
+        display: none;
+    }
+
     .transactions-table,
-    .transactions-table thead,
     .transactions-table tbody,
-    .transactions-table th,
-    .transactions-table td,
-    .transactions-table tr {
+    .transactions-table tr,
+    .transactions-table td {
         display: block;
-    }
-
-    .transactions-table thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
+        width: 100%;
     }
 
     .transactions-table tr {
-        border: 1px solid #eee;
+        background: white;
         margin-bottom: 1rem;
         border-radius: 12px;
-        padding: 1rem;
-        background: white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        padding: 1.25rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f1f5f9;
     }
 
     .transactions-table td {
-        border: none;
-        border-bottom: 1px solid #f8f9fa;
-        position: relative;
-        padding-left: 0;
-        /* Changed from 50% */
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        text-align: right;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #f8fafc;
+        text-align: right;
+        min-height: 48px;
+        /* Touch target size */
     }
 
     .transactions-table td:last-child {
@@ -706,38 +754,14 @@
     }
 
     .transactions-table td:before {
-        position: static;
-        /* Reset absolute positioning */
-        width: auto;
-        padding-right: 0;
-        white-space: nowrap;
-        text-align: left;
-        font-weight: 600;
-        color: #adb5bd;
-        font-size: 0.8rem;
         content: attr(data-label);
-        /* Use data-label attribute if added, otherwise stick to specific */
-    }
-
-    /* Specific labels for mobile */
-    .transactions-table td:nth-of-type(1):before {
-        content: "Donor";
-    }
-
-    .transactions-table td:nth-of-type(2):before {
-        content: "Amount";
-    }
-
-    .transactions-table td:nth-of-type(3):before {
-        content: "Designation";
-    }
-
-    .transactions-table td:nth-of-type(4):before {
-        content: "Date";
-    }
-
-    .transactions-table td:nth-of-type(5):before {
-        content: "Action";
+        font-weight: 600;
+        color: #64748b;
+        font-size: 0.85rem;
+        margin-right: auto;
+        /* Push label to left */
+        text-align: left;
+        padding-right: 1rem;
     }
 
     .donor-cell {

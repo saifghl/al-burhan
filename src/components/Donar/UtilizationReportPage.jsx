@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './UtilizationReportPage.css';
 import '../Donar/DonationDetailsPage.css'; // Reusing top nav styling
+import logoText from '../../assets/logo-text.png';
 
 // Importing Assets
 import UserAvatar from '../../assets/Picture33.png';
@@ -39,8 +40,7 @@ const UtilizationReportPage = () => {
             {/* Top Navigation Bar */}
             <header className="top-navbar-full">
                 <div className="navbar-logo-section">
-                    <span className="brand-logo-icon">🏰</span>
-                    <span className="brand-name-text">Al Burhan</span>
+                    <img src={logoText} alt="Al Burhan" className="brand-logo" style={{ height: '40px' }} />
                 </div>
 
                 <div className="search-section-hidden"> {/* Placeholder to push rights */} </div>

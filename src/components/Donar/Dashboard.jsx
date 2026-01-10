@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 import LogoutModal from './LogoutModal';
 
+import { FiMenu, FiHome, FiClock, FiLogOut, FiSearch, FiBell, FiSettings, FiCheck, FiFileText, FiHeart, FiTrendingUp, FiCalendar, FiCreditCard, FiUser, FiArrowRight, FiChevronRight, FiMonitor, FiEdit } from 'react-icons/fi';
+import { FaPiggyBank, FaUtensils, FaGraduationCap } from 'react-icons/fa';
+import logoText from '../../assets/logo-text.png';
+
 // Images (using placeholders or imports if available, here using standard paths/placeholders)
 // Assuming UserAvatar is not imported, using a placeholder or local asset if defined previously.
 // For now, I'll use a placeholder for the avatar as in the previous code.
@@ -21,55 +25,29 @@ const Dashboard = () => {
     navigate('/');
   };
 
-  // Icon Set (Feather Icons style to match the clean look of the image)
-  const Icons = {
-    Menu: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>,
-    Home: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>,
-    Clock: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>,
-    LogOut: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>,
-    Search: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>,
-    Bell: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>,
-    Settings: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>,
-    Check: () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>,
-    FileText: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>,
-    Heart: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>,
-    PiggyBank: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 5c-1.5 0-2.8 0.6-3.5 1.5-1.1-0.6-2.4-1-3.8-1-2.9 0-5.4 1.7-6.5 4.1C4 9.3 3 10.6 3 12.1c0 2.5 1.7 4.6 4 5.2V20c0 0.6 0.4 1 1 1h2c0.6 0 1-0.4 1-1v-1h4v1c0 0.6 0.4 1 1 1h2c0.6 0 1-0.4 1-1v-2.8c1.6-1 2.7-2.7 2.9-4.7l0.1-0.5c0-3.3-2.7-6-6-6zM15 11h.01"></path><path d="M13 11h-2"></path></svg>,
-    TrendingUp: () => <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>,
-    Calendar: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>,
-    CreditCard: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>,
-    Utensils: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"></path></svg>,
-    User: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>,
-    ArrowRight: () => <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>,
-    ChevronRight: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>,
-    Monitor: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>,
-    Edit: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>,
-    GraduationCap: () => <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-  };
-
   return (
     <div className="dashboard-layout">
       {/* ----------------- Sidebar ----------------- */}
       <aside className={`left-sidebar ${sidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-brand">
-          <div className="brand-icon">🏰</div>
-          <span className="brand-text">Al Burhan</span>
+          <img src={logoText} alt="Al Burhan" className="brand-logo" style={{ height: '40px' }} />
         </div>
 
         <div className="sidebar-menu">
           <div className="menu-group">
             <span className="menu-label">Menu</span>
             <a href="#home" className="menu-item active" onClick={(e) => { e.preventDefault(); navigate('/dashboard'); }}>
-              <Icons.Home /> Home
+              <FiHome /> Home
             </a>
             <a href="#history" className="menu-item" onClick={(e) => { e.preventDefault(); navigate('/donation-history'); }}>
-              <Icons.Clock /> Donation History
+              <FiClock /> Donation History
             </a>
           </div>
         </div>
 
         <div className="sidebar-footer">
           <a href="#logout" className="menu-item logout" onClick={handleLogoutClick}>
-            <Icons.LogOut /> Sign Out
+            <FiLogOut /> Sign Out
           </a>
         </div>
       </aside>
@@ -80,22 +58,22 @@ const Dashboard = () => {
         {/* Header */}
         <header className="dashboard-header">
           <div className="mobile-menu-toggle" onClick={() => setSidebarOpen(!sidebarOpen)}>
-            <Icons.Menu />
+            <FiMenu />
           </div>
           <h2 className="section-title">Overview</h2>
 
           <div className="header-actions">
             <div className="search-bar">
-              <Icons.Search />
+              <FiSearch />
               <input type="text" placeholder="Search projects..." />
             </div>
 
             <button className="icon-btn" onClick={() => navigate('/notifications')}>
-              <Icons.Bell />
+              <FiBell />
               <span className="badge">3</span>
             </button>
             <button className="icon-btn" onClick={() => navigate('/settings')}>
-              <Icons.Settings />
+              <FiSettings />
             </button>
 
             <div className="user-avatar" onClick={() => navigate('/profile')}>
@@ -110,17 +88,17 @@ const Dashboard = () => {
           <div className="welcome-card">
             <div className="welcome-text">
               <div className="verified-badge">
-                <span className="check-icon"><Icons.Check /></span> Verified Donor
+                <span className="check-icon"><FiCheck /></span> Verified Donor
               </div>
               <h1>Welcome back, Ahmed</h1>
               <p>Your generosity is creating lasting change. Here is your impact at a glance.</p>
             </div>
             <div className="welcome-actions">
               <div className="view-receipts-link" onClick={() => navigate('/tax-documents')}>
-                <span className="icon"><Icons.FileText /></span> View Receipts
+                <span className="icon"><FiFileText /></span> View Receipts
               </div>
               <button className="donate-now-btn" onClick={() => navigate('/make-donation')}>
-                <span className="icon"><Icons.Heart /></span> Donate Now
+                <span className="icon"><FiHeart /></span> Donate Now
               </button>
             </div>
           </div>
@@ -132,8 +110,8 @@ const Dashboard = () => {
             {/* Card 1: Lifetime */}
             <div className="stat-card">
               <div className="stat-top-row">
-                <div className="stat-icon green-bg"><Icons.PiggyBank /></div>
-                <div className="stat-trend"><Icons.TrendingUp /> +12%</div>
+                <div className="stat-icon green-bg"><FaPiggyBank /></div>
+                <div className="stat-trend"><FiTrendingUp /> +12%</div>
               </div>
               <span className="stat-label">Total Lifetime Donations</span>
               <div className="stat-value">₹12,450</div>
@@ -142,7 +120,7 @@ const Dashboard = () => {
             {/* Card 2: Current Year */}
             <div className="stat-card">
               <div className="stat-top-row">
-                <div className="stat-icon blue-bg"><Icons.Calendar /></div>
+                <div className="stat-icon blue-bg"><FiCalendar /></div>
               </div>
               <span className="stat-label">Current Year Total</span>
               <div className="stat-value">₹1,200</div>
@@ -151,7 +129,7 @@ const Dashboard = () => {
             {/* Card 3: Last Donation */}
             <div className="stat-card">
               <div className="stat-top-row">
-                <div className="stat-icon purple-bg"><Icons.CreditCard /></div>
+                <div className="stat-icon purple-bg"><FiCreditCard /></div>
                 <span className="stat-date">2 days ago</span>
               </div>
               <span className="stat-label">Last Donation</span>
@@ -161,24 +139,28 @@ const Dashboard = () => {
             </div>
           </div>
 
+
+
           {/* 3. Split Content: Impact (Left) vs Quick Actions (Right) */}
-          <div className="content-grid mt-30">
+          <div className="content-grid">
 
             {/* Left Column */}
             <div className="content-left">
 
-              {/* Your Impact Section */}
-              <div className="section-header-row">
+
+
+              {/* Your Impact Section - Aligned with Grid */}
+              <div className="impact-header-row">
                 <h3 className="section-heading" style={{ marginTop: 0 }}>Your Impact</h3>
                 <div className="view-all-link" onClick={() => navigate('/utilization-report')}>
-                  View Impact Report <Icons.ArrowRight />
+                  View Impact Report <FiArrowRight />
                 </div>
               </div>
 
               <div className="impact-grid">
                 <div className="impact-card">
                   <div className="impact-icon orange-bg" style={{ borderRadius: '50%', width: '60px', height: '60px', marginBottom: '15px' }}>
-                    <Icons.GraduationCap />
+                    <FaGraduationCap />
                   </div>
                   <div className="impact-number">5</div>
                   <div className="impact-label">Students Supported</div>
@@ -186,15 +168,15 @@ const Dashboard = () => {
 
                 <div className="impact-card">
                   <div className="impact-icon teal-bg" style={{ borderRadius: '50%', width: '60px', height: '60px', marginBottom: '15px' }}>
-                    <Icons.Utensils />
+                    <FaUtensils />
                   </div>
                   <div className="impact-number">200</div>
                   <div className="impact-label">Meals Sponsored</div>
                 </div>
 
                 <div className="impact-card">
-                  <div className="impact-icon blue-light-bg" style={{ borderRadius: '50%', width: '60px', height: '60px', marginBottom: '15px' }}>
-                    <Icons.User />
+                  <div className="impact-icon purple-bg" style={{ borderRadius: '50%', width: '60px', height: '60px', marginBottom: '15px' }}>
+                    <FiUser />
                   </div>
                   <div className="impact-number">2</div>
                   <div className="impact-label">Teachers Assisted</div>
@@ -202,7 +184,7 @@ const Dashboard = () => {
               </div>
 
               {/* Recent Donations Table */}
-              <div className="section-header-row">
+              <div className="recent-header-row">
                 <h3 className="section-heading">Recent Donations</h3>
                 <span className="view-all-link" onClick={() => navigate('/donation-history')}>View All</span>
               </div>
@@ -261,30 +243,30 @@ const Dashboard = () => {
 
               <div className="quick-actions-list">
                 <div className="action-item" onClick={() => navigate('/tax-documents')}>
-                  <div className="action-icon green-light-bg"><Icons.FileText /></div>
+                  <div className="action-icon green-light-bg"><FiFileText /></div>
                   <div className="action-details">
                     <div className="action-title">Tax Receipts</div>
                     <div className="action-subtitle">Download for 2023</div>
                   </div>
-                  <div className="action-arrow"><Icons.ChevronRight /></div>
+                  <div className="action-arrow"><FiChevronRight /></div>
                 </div>
 
                 <div className="action-item" onClick={() => navigate('/utilization-report')}>
-                  <div className="action-icon green-light-bg"><Icons.Monitor /></div>
+                  <div className="action-icon green-light-bg"><FiMonitor /></div>
                   <div className="action-details">
                     <div className="action-title">Transparency</div>
                     <div className="action-subtitle">View fund distribution</div>
                   </div>
-                  <div className="action-arrow"><Icons.ChevronRight /></div>
+                  <div className="action-arrow"><FiChevronRight /></div>
                 </div>
 
                 <div className="action-item" onClick={() => navigate('/profile')}>
-                  <div className="action-icon green-light-bg"><Icons.Edit /></div>
+                  <div className="action-icon green-light-bg"><FiEdit /></div>
                   <div className="action-details">
                     <div className="action-title">Update Profile</div>
                     <div className="action-subtitle">Manage preferences</div>
                   </div>
-                  <div className="action-arrow"><Icons.ChevronRight /></div>
+                  <div className="action-arrow"><FiChevronRight /></div>
                 </div>
               </div>
 
