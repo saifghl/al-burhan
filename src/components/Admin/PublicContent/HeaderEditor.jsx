@@ -138,12 +138,15 @@ const HeaderEditor = () => {
                                             />
                                         </div>
                                     </td>
-                                    <td style={{ textAlign: 'center' }}>
-                                        <FaTrash
-                                            className="action-icon"
-                                            onClick={() => deleteItem(item.id)}
-                                            title="Delete Link"
-                                        />
+                                    <td style={{ textAlign: 'center', verticalAlign: 'middle' }}>
+                                        <div style={{ display: 'flex', justifyItems: 'center', alignItems: 'center', width: '100%' }}>
+                                            <FaTrash
+                                                className="action-icon"
+                                                onClick={() => deleteItem(item.id)}
+                                                title="Delete Link"
+                                                style={{ fontSize: '18px', width: '18px', height: '18px', margin: '0 auto' }}
+                                            />
+                                        </div>
                                     </td>
                                 </tr>
                             ))}

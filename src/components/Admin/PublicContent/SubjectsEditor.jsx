@@ -57,7 +57,7 @@ const SubjectsEditor = () => {
                             <th>Levels / Department</th>
                             <th>Status</th>
                             <th>Visibility</th>
-                            <th>Actions</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -110,9 +110,7 @@ const SubjectsEditor = () => {
                                         />
                                     </div>
                                 </td>
-                                <td>
-                                    {/* Action placeholder */}
-                                </td>
+
                             </tr>
                         ))}
                     </tbody>

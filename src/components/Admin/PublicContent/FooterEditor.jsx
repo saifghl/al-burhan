@@ -128,6 +128,7 @@ const FooterEditor = () => {
                                     <FaTrash
                                         className="action-icon"
                                         onClick={() => deleteLink(link.id, quickLinks, setQuickLinks)}
+                                        style={{ fontSize: '18px', width: '18px', height: '18px' }}
                                     />
                                 </div>
                             ))}
@@ -163,6 +164,7 @@ const FooterEditor = () => {
                                     <FaTrash
                                         className="action-icon"
                                         onClick={() => deleteLink(link.id, legalLinks, setLegalLinks)}
+                                        style={{ fontSize: '18px', width: '18px', height: '18px' }}
                                     />
                                 </div>
                             ))}

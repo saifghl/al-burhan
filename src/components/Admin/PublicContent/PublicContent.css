@@ -307,7 +307,9 @@ input:checked+.pcm-slider:before {
     cursor: pointer;
     transition: color 0.2s;
     margin: 0 5px;
-    font-size: 18px;
+    font-size: 18px !important;
+    width: 18px;
+    height: 18px;
     /* Restrict size */
 }
 
