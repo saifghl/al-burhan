@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './UrgentAppealPage.css';
 import '../Donar/Dashboard.css'; // Shared layout styles
 import UserAvatar from '../../assets/Picture33.png'; // User Avatar
+import logoText from '../../assets/logo-text.png';
 import CampaignImg1 from '../../assets/Picture37.png'; // Assuming these are the provided assets
 import CampaignImg2 from '../../assets/Picture38.png';
 import MadarsaLogo from '../../assets/Picture27.png'; // Placeholder for Madarsa Logo
@@ -59,10 +60,7 @@ const UrgentAppealPage = () => {
             <main className="ua-main full-width">
                 <header className="ua-header-standalone">
                     <div className="logo-section">
-                        <div className="logo-icon">
-                            <span style={{ fontSize: '24px' }}>🏰</span>
-                        </div>
-                        <span className="logo-text" style={{ fontWeight: 'bold', fontSize: '20px', marginLeft: '10px', color: '#6c9c3e' }}>Al Burhan</span>
+                        <img src={logoText} alt="Al Burhan" className="brand-logo" style={{ height: '40px' }} />
                     </div>
                     <div className="header-right" style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
                         <div className="icon-btn" onClick={() => navigate('/notifications')} style={{ cursor: 'pointer' }}><Icons.Bell /></div>

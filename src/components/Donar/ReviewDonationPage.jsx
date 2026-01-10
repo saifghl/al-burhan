@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ReviewDonationPage.css';
+import logoText from '../../assets/logo-text.png';
 import MadarsaImg from '../../assets/Picture33.png';
 
 const ReviewDonationPage = () => {
@@ -36,8 +37,7 @@ const ReviewDonationPage = () => {
         <div className="review-page">
             <header className="wizard-header">
                 <div className="brand-section">
-                    <span className="brand-logo-icon">🏰</span>
-                    <span className="brand-name">Al Burhan</span>
+                    <img src={logoText} alt="Al Burhan" className="brand-logo" style={{ height: '40px' }} />
                 </div>
                 <div className="header-actions">
                     <button className="icon-btn"><Icons.Bell /></button>

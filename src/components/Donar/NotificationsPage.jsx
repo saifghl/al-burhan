@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './NotificationsPage.css';
 import UserAvatar from '../../assets/Picture33.png'; // Assuming same user avatar
+import logoText from '../../assets/logo-text.png';
 
 const NotificationsPage = () => {
     const navigate = useNavigate();
@@ -104,8 +105,7 @@ const NotificationsPage = () => {
             {/* Reuse Top Navbar structure */}
             <header className="top-navbar-full">
                 <div className="navbar-logo-section">
-                    <span className="brand-logo-icon">🏰</span>
-                    <span className="brand-name-text">Al Burhan</span>
+                    <img src={logoText} alt="Al Burhan" className="brand-logo" style={{ height: '40px' }} />
                 </div>
 
                 <div className="navbar-spacer"></div>

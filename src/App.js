@@ -239,10 +239,10 @@ function App() {
               <Route path="dashboard" element={<AdminDashboard />} />
               <Route path="public-content" element={<PublicContentManager />} />
               <Route path="teachers" element={<AllTeachers />} />
-              <Route path="donation-dashboard" element={<AdminDonationDashboard />} />
+              <Route path="donations" element={<AdminDonationDashboard />} />
               <Route path="donors" element={<DonorManagement />} />
               <Route path="donors/:id" element={<DonorDetails />} />
-              <Route path="donations" element={<DonationRecords />} />
+              <Route path="donation-records" element={<DonationRecords />} />
               <Route path="utilization-history" element={<UtilizationHistory />} />
               <Route path="fund-allocation" element={<FundAllocation />} />
               {/* ... other admin routes ... */}

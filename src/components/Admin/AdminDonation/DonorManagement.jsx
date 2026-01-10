@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { FaPlus, FaCloudDownloadAlt, FaSearch, FaEllipsisV, FaEye, FaBan, FaUnlock, FaUserFriends, FaUserCheck, FaMoneyBillWave, FaArrowUp } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { FaPlus, FaCloudDownloadAlt, FaSearch, FaEllipsisV, FaEye, FaBan, FaUnlock, FaUserFriends, FaUserCheck, FaMoneyBillWave, FaArrowUp, FaFileInvoiceDollar } from 'react-icons/fa';
 import './DonorManagement.css';
 
 const DonorManagement = () => {
+    const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
 
     const donors = [
@@ -30,7 +32,9 @@ const DonorManagement = () => {
                     <h1>Donor Management</h1>
                     <p>Oversee and manage all registered donor accounts and their contributions.</p>
                 </div>
-                <button className="btn-add-donor"><FaPlus /> Add New Donor</button>
+                <button className="btn-add-donor" onClick={() => navigate('/admin/generate-receipt')}>
+                    <FaFileInvoiceDollar /> Generate Receipt
+                </button>
             </header>
 
             {/* Stats Cards */}
@@ -103,8 +107,9 @@ const DonorManagement = () => {
                                 </td>
                                 <td>
                                     <div className="action-buttons">
-                                        <button className="btn-icon" onClick={() => window.location.href = `/admin/donors/${donor.id}`}><FaEye /></button>
-                                        <button className="btn-icon">{donor.status === 'Active' ? <FaBan /> : <FaUnlock />}</button>
+                                        <button className="btn-icon" title="View Profile" onClick={() => window.location.href = `/admin/donors/${donor.id}`}><FaEye /></button>
+                                        <button className="btn-icon" title="Generate Receipt" onClick={() => navigate('/admin/generate-receipt')}><FaFileInvoiceDollar /></button>
+                                        <button className="btn-icon" title="Block/Unblock">{donor.status === 'Active' ? <FaBan /> : <FaUnlock />}</button>
                                     </div>
                                 </td>
                             </tr>
